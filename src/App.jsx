@@ -1,7 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import Header from './Components/Header';
+
 import Home from './Components/Home/Home';
+import Test from './Components/Test/Test';
 
 function App() {
   const location = useLocation();
@@ -19,6 +21,7 @@ function App() {
       <div  className={`${isHomePage ? 'w-full' : 'flex-grow w-[85%]'}`}>
         <Routes>
           <Route path="/" element={<Home/>} />
+          <Route path="/test" element={<Test/>} />
         </Routes>
       </div>
     </div>
