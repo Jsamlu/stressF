@@ -1,14 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-// import Header from "../Header.jsx"
 // import Footer from "../Footer.jsx"
-import Block from  "./Block.jsx"
+
 
 function Test() {
   return (
     <div className='min-h-screen'>
-      {/* <Header></Header> */}
-      <Block/>
       <div className=" h-screen">
         <div className='bg- bg-purple-500 absolute -z-10 h-[300px] w-full  '></div>
           <div className='z-10 pl-[200px] pr-[200px]'>
@@ -19,7 +17,9 @@ function Test() {
               </li>
             </ul>
           </div>
-        
+        <div>
+        <Link to="/forum">Take Test</Link>
+        </div>
       </div>
       {/* <Footer></Footer> */}
     </div>

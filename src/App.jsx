@@ -5,6 +5,8 @@ import Header from './Components/Header';
 import Home from './Components/Home/Home';
 import Test from './Components/Test/Test';
 import Forum from './Components/Test/Forum';
+import Resources from './Components/Resources/Resources'
+import Activities from './Components/Activities/Activities';
 
 function App() {
   const location = useLocation();
@@ -24,6 +26,10 @@ function App() {
           <Route path="/" element={<Home/>} />
           <Route path="/test" element={<Test/>} />
           <Route path="/forum" element={<Forum/>} />
+          <Route path="/resources" element={<Resources/>} />
+          <Route path="/activities" element={<Activities/>} />
+          <Route path="*" element={<p>404 ERROR</p>} />
+          
         </Routes>
       </div>
     </div>

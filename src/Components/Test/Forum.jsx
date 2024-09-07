@@ -17,11 +17,6 @@ export default function Forum(){
                         <div className="pl-10 mt-5">
                             <ul className="">
                                 <li className="flex gap-5 mt-3 p-3 bg-purple-100 rounded-xl" ><input type="radio" name="ans" value="1" /><span>{QList.an1}</span></li>
-                                <li className="flex gap-5 mt-3 p-3 bg-purple-100 rounded-xl"><input type="radio" name="ans" value="2" /><span>{QList.an1}</span></li>
-                                <li className="flex gap-5 mt-3 p-3 bg-purple-100 rounded-xl"><input type="radio" name="ans" value="3" /><span>{QList.an1}</span></li>
-                                <li className="flex gap-5 mt-3 p-3 bg-purple-100 rounded-xl"><input type="radio" name="ans" value="4" /><span>{QList.an1}</span></li>
-                                <li className="flex gap-5 mt-3 p-3 bg-purple-100 rounded-xl"><input type="radio" name="ans" value="5" /><span>{QList.an1}</span></li>       
-        
                             </ul>
                         </div>
                     </div>
