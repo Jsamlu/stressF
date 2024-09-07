@@ -28,7 +28,7 @@ export default function Home() {
       >
         <Header />
     </div>
-    <div className="m-10 lg:mr-[300px] lg:ml-[300px] grid lg:grid gap-10">
+    <div className={`${showHeader ? 'md:ms-[15%] ' : 'ms-0'}m-10 lg:mr-[300px] lg:ml-[300px] grid lg:grid gap-10  transition-all duration-500 ease-out  `}>
       <div className="mt-10 grid grid-cols-2  gap-5  items-center rounded-xl shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] ">
         <div className="rounded-tl-xl rounded-bl-xl h-full lg:h-[300px] object-cover overflow-hidden">
           <img src="/assets/qna.jpg" alt="QnA" className=" rounded-tl-xl rounded-bl-xl"/>
