@@ -7,7 +7,6 @@ function Hero() {
   return (
     <>
       <div id='Home' className=' w-screen h-[100vh] backdrop-blur-xl'></div>
-      
       <div className="p-8 absolute top-[150px] w-screen h-screen items-center">
         
         <div className='align-middle'>

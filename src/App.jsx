@@ -4,6 +4,7 @@ import Header from './Components/Header';
 
 import Home from './Components/Home/Home';
 import Test from './Components/Test/Test';
+import Forum from './Components/Test/Forum';
 
 function App() {
   const location = useLocation();
@@ -22,6 +23,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home/>} />
           <Route path="/test" element={<Test/>} />
+          <Route path="/forum" element={<Forum/>} />
         </Routes>
       </div>
     </div>
