@@ -1,33 +1,52 @@
 import QList from "./QList";
 
-// import Header from "../Header";
-// import Footer from "../Footer";
-import Block from "./Block";
+
+
 
 export default function Forum(){
     return(
         <div className="min-h-screen">
-            {/* <Header></Header> */}
-            <Block/>
+           
+            
             <div className="pl-[100px] pr-[100px]">
                 {
-                    QList.map(QList => {
-                    <div className="mt-10 p-10 bg-purple-300 rounded-xl">
+                    QList.map((QList) => {
+                        return(
+                            <div className="mt-10 p-10 bg-purple-300 rounded-xl">
                         <p>{QList.id}{QList.question}</p>
                         <div className="pl-10 mt-5">
                             <ul className="">
-                                <li className="flex gap-5 mt-3 p-3 bg-purple-100 rounded-xl" ><input type="radio" name="ans" value="1" /><span>{QList.an1}</span></li>
+                                <li className="flex gap-5 mt-3 p-3 bg-purple-100 rounded-xl" ><input type="radio" name="ans"        value="1" />
+                                <span>{QList.an1}</span>
+                                </li>
+
+                                <li className="flex gap-5 mt-3 p-3 bg-purple-100 rounded-xl" ><input type="radio" name="ans"        value="1" />
+                                <span>{QList.an2}</span>
+                                </li>
+
+                                <li className="flex gap-5 mt-3 p-3 bg-purple-100 rounded-xl" ><input type="radio" name="ans"        value="1" />
+                                <span>{QList.an3}</span>
+                                </li>
+
+                                <li className="flex gap-5 mt-3 p-3 bg-purple-100 rounded-xl" ><input type="radio" name="ans"        value="1" />
+                                <span>{QList.an4}</span>
+                                </li>
+
+                                <li className="flex gap-5 mt-3 p-3 bg-purple-100 rounded-xl" ><input type="radio" name="ans"        value="1" />
+                                <span>{QList.an5}</span>
+                                </li>
                             </ul>
                         </div>
                     </div>
 
+                        );
                     }
 
                     )
                 }
                     
             </div>
-            {/* <Footer/> */}
+            
         </div>
     );
 }

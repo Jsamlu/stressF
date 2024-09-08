@@ -11,6 +11,7 @@ import Activities from './Components/Activities/Activities';
 function App() {
   const location = useLocation();
   const isHomePage = location.pathname === "/";
+  const isforumPage = location.pathname === "/forum";
 
   return (
 
@@ -21,7 +22,7 @@ function App() {
         </div>
       )}
 
-      <div  className={`${isHomePage ? 'w-full' : 'flex-grow w-[85%]'}`}>
+      <div  className={`${isforumPage} ? w-full ${isHomePage ? 'w-full' : 'flex-grow w-[85%]'} `}>
         <Routes>
           <Route path="/" element={<Home/>} />
           <Route path="/test" element={<Test/>} />
