@@ -11,14 +11,14 @@ export default function Activities() {
   return (
     <>
       <div id="Activities">
-        <div className="m-10 mb-20 lg:ml-[100px] p-5 bg-white rounded-xl min-h-screen relative">
+        <div className=" p-10 bg-white">
           <div>
             <p className="text-5xl text-[#0f444c] font-bold">Activities</p>
 
             <p className="text-3xl mt-[50px] text-[#0f444c] font-slim">
               Meditation
             </p>
-            <div className="md:ml-[50px] md:mr-[50px] mt-[50px] grid lg:grid-cols-4 gap-4">
+            <div className="md:ml-[50px]  mt-[50px] grid lg:grid-cols-3 gap-2 bg-black ">
               {MedList.map((MedList) => {
                 return (
                   <div className="h-[500px] w-[300px] bg-white rounded-xl grid grid-rows-3 shadow-2xl hover:scale-105 transition-all duration-75 ease-in-out">
