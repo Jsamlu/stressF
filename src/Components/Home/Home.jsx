@@ -23,7 +23,7 @@ export default function Home() {
     <>
     <Hero/>
     <div
-        className={`md:flex hidden fixed top-0 left-0 w-full z-50 transition-all duration-700 ease-in-out transform ${showHeader ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full'
+        className={`md:flex hidden fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-in-out transform ${showHeader ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full'
           }`}
       >
         <Header />

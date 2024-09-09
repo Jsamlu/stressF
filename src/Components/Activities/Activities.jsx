@@ -18,7 +18,7 @@ export default function Activities() {
             <p className="text-3xl mt-[50px] text-[#0f444c] font-slim">
               Meditation
             </p>
-            <div className="md:ml-[50px]  mt-[50px] grid lg:grid-cols-3 gap-2 bg-black ">
+            <div className="md:ml-[50px]  mt-[50px] grid lg:grid-cols-3 ">
               {MedList.map((MedList) => {
                 return (
                   <div className="h-[500px] w-[300px] bg-white rounded-xl grid grid-rows-3 shadow-2xl hover:scale-105 transition-all duration-75 ease-in-out">
@@ -47,7 +47,7 @@ export default function Activities() {
             <p className="text-3xl mt-[50px] text-[#0f444c] font-slim">
               Self Activities
             </p>
-            <div className="md:ml-[50px] md:mr-[50px] mt-[50px] grid lg:grid-cols-4 gap-4">
+            <div className="md:ml-[50px] md:mr-[50px] mt-[50px] grid lg:grid-cols-3 gap-4">
               {SelfList.map((SelfList) => {
                 return (
                   <div className="h-[500px] w-[300px] bg-white rounded-xl grid  shadow-2xl hover:scale-105 transition-all duration-75 ease-in-out">
@@ -76,7 +76,7 @@ export default function Activities() {
             <p className="text-3xl mt-[50px] text-[#0f444c] font-slim">
               Social Activities
             </p>
-            <div className="md:ml-[50px] md:mr-[50px] mt-[50px] grid lg:grid-cols-4 gap-4">
+            <div className="md:ml-[50px] md:mr-[50px] mt-[50px] grid lg:grid-cols-3 gap-4">
               {SocList.map((SocList) => {
                 return (
                   <div className="h-[500px] w-[300px] bg-white rounded-xl grid grid-rows-2 shadow-2xl hover:scale-105 transition-all duration-75 ease-in-out">

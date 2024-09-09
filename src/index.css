@@ -2,7 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-header{
+
+/* S_header */
+/* header{
     transition: background-color 0.5s ease-in-out;
     @apply rounded-xl;
 }
@@ -13,4 +15,4 @@ header.scrolled{
     box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.436);
     color: purple;
     @apply  rounded-xl;
-}
+} */

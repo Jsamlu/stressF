@@ -37,6 +37,7 @@ export default function Forum(){
                                 </li>
                             </ul>
                         </div>
+
                     </div>
 
                         );
@@ -45,6 +46,9 @@ export default function Forum(){
                     )
                 }
                     
+                        <div>
+                            <input type="submit"  className="p-3 mb-5 bg-gradient-to-br from-blue-200 to-purple-300 rounded-xl text-2xl"></input>
+                        </div>
             </div>
             
         </div>

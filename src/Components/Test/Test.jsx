@@ -17,7 +17,7 @@ function Test() {
               </li>
             </ul>
           </div>
-        <div>
+        <div className='pl-[200px] pr-[200px]'>
         <Link to="/forum">Take Test</Link>
         </div>
       </div>
