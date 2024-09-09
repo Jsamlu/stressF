@@ -1,7 +1,5 @@
 import React from "react";
 
-
-// import Footer from "../Footer.jsx";
 function Resources() {
   return (
     <div id="Resources">
