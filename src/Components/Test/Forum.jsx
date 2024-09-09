@@ -47,8 +47,8 @@ export default function Forum(){
                     )
                 }
                     
-                        <div>
-                            <Link to='/test' className="p-3 mb-5 bg-gradient-to-br from-blue-200 to-purple-300 rounded-xl text-2xl">End test</Link>
+                        <div className="mt-5 mr-5 mb-5">
+                            <Link to='/test' className="p-2 bg-gradient-to-br from-blue-200 to-purple-300 rounded-xl text-2xl">End test</Link>
                         </div>
             </div>
             
