@@ -21,7 +21,7 @@ export default function Activities() {
             <div className="md:ml-[50px]  mt-[50px] grid lg:grid-cols-3 ">
               {MedList.map((MedList) => {
                 return (
-                  <div className="h-[500px] w-[300px] bg-white rounded-xl grid grid-rows-3 shadow-2xl hover:scale-105 transition-all duration-75 ease-in-out">
+                  <div className="h-[500px] w-[300px] bg-white rounded-xl grid grid-rows-3 shadow-2xl hover:scale-105 transition-all duration-300 ease-in-out">
                     <div className="rounded-tr-xl rounded-tl-xl overflow-hidden row-span-2 h-[300px]">
                       <img src={MedList.image} alt="" />
                     </div>
@@ -34,7 +34,7 @@ export default function Activities() {
                       </p>
                       <a
                         href="/links"
-                        className="text-white text-center right-0 block bg-blue-400 rounded-lg p-1 mr-[200px] hover:bg-white hover:text-blue-800 border-2 border-white hover:boder-2 hover:border-blue-900"
+                        className="text-white text-center right-0 block bg-blue-400 rounded-lg p-1 mr-[200px] hover:bg-white hover:text-blue-800 border-2 border-white hover:boder-2 hover:border-blue-900 transition-all duration-300"
                       >
                         visit
                       </a>
@@ -50,7 +50,7 @@ export default function Activities() {
             <div className="md:ml-[50px] md:mr-[50px] mt-[50px] grid lg:grid-cols-3 gap-4">
               {SelfList.map((SelfList) => {
                 return (
-                  <div className="h-[500px] w-[300px] bg-white rounded-xl grid  shadow-2xl hover:scale-105 transition-all duration-75 ease-in-out">
+                  <div className="h-[500px] w-[300px] bg-white rounded-xl grid  shadow-2xl hover:scale-105 transition-all duration-300 ease-in-out">
                     <div className="rounded-tr-xl rounded-tl-xl overflow-hidden h-[250px]">
                       <img src={SelfList.image} alt="" />
                     </div>
@@ -63,7 +63,7 @@ export default function Activities() {
                       </p>
                       <a
                         href="/links"
-                        className="text-white text-center right-0 block bg-blue-400 rounded-lg p-1 mr-[200px] hover:bg-white hover:text-blue-800 border-2 border-white hover:boder-2 hover:border-blue-900"
+                        className="text-white text-center right-0 block bg-blue-400 rounded-lg p-1 mr-[200px] hover:bg-white hover:text-blue-800 border-2 border-white hover:boder-2 hover:border-blue-900 transition-all duration-300"
                       >
                         visit
                       </a>
@@ -79,7 +79,7 @@ export default function Activities() {
             <div className="md:ml-[50px] md:mr-[50px] mt-[50px] grid lg:grid-cols-3 gap-4">
               {SocList.map((SocList) => {
                 return (
-                  <div className="h-[500px] w-[300px] bg-white rounded-xl grid grid-rows-2 shadow-2xl hover:scale-105 transition-all duration-75 ease-in-out">
+                  <div className="h-[500px] w-[300px] bg-white rounded-xl grid grid-rows-2 shadow-2xl hover:scale-105 transition-all duration-300 ease-in-out">
                     <div className="rounded-tr-xl rounded-tl-xl overflow-hidden h-[300px]">
                       <img src={SocList.img} alt="" />
                     </div>
@@ -92,7 +92,7 @@ export default function Activities() {
                       </p>
                       <a
                         href="/links"
-                        className="text-white text-center right-0 block bg-blue-400 rounded-lg p-1 mr-[200px] hover:bg-white hover:text-blue-800 border-2 border-white hover:boder-2 hover:border-blue-900"
+                        className="text-white text-center right-0 block bg-blue-400 rounded-lg p-1 mr-[200px] hover:bg-white hover:text-blue-800 border-2 border-white hover:boder-2 hover:border-blue-900 transition-all duration-300"
                       >
                         visit
                       </a>

@@ -19,7 +19,7 @@ export default function Header (){
     //     <Link to='/activities'> Activities</Link>
     //   </div>
     // </div>
-    <div className="p-9 border-r shadow-sm fixed top-0 left-0 h-screen w-[15]%] flex flex-col bg-white z-10">
+    <div className="p-9 border-r shadow-sm fixed top-0 left-0 h-screen w-[15%] flex flex-col bg-white z-10">
         <div className="mb-10 text-center">
           <Link to="/" className=" text-4xl font-thin">
             Stress

@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+body{
+    overflow-x: hidden;
+    height: 100%;
+    background-color: white;
+}
+body::-webkit-scrollbar {
+    display: none;
+  }
 
 /* S_header */
 /* header{
