@@ -7,7 +7,6 @@ import QList from "./QList";
 export default function Forum(){
     return(
         <div className="min-h-screen">
-           
             
             <div className="pl-[100px] pr-[100px]">
                 {
