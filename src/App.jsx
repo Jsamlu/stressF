@@ -7,11 +7,17 @@ import Test from './Components/Test/Test';
 import Forum from './Components/Test/Forum';
 import Resources from './Components/Resources/Resources'
 import Activities from './Components/Activities/Activities';
+import Login from './Components/Login/Login';
+import Community from './Components/Community/Community';
+import Aboutus from './Components/Aboutus/Aboutus';
+import Games from './Components/Games/Games';
+import Counselling from './Components/Counselling/Counselling';
+import Journal from './Components/Journal/Journal'
+import Footer from './Components/Footer';
 
 function App() {
   const location = useLocation();
   const isHomePage = location.pathname === "/";
-  const isforumPage = location.pathname === "/forum";
 
   return (
 
@@ -22,13 +28,22 @@ function App() {
         </div>
       )}
 
-      <div  className={`${isforumPage} ? w-full ${isHomePage ? 'w-full' : 'flex-grow w-[85%]'} `}>
+      <div  className={`${isHomePage ? 'w-full' : 'flex-grow w-[85%]'} `}>
         <Routes>
+          {/* Links */}
           <Route path="/" element={<Home/>} />
           <Route path="/test" element={<Test/>} />
           <Route path="/forum" element={<Forum/>} />
           <Route path="/resources" element={<Resources/>} />
           <Route path="/activities" element={<Activities/>} />
+          <Route path="/login" element={<Login/>} />
+          <Route path="/community" element={<Community/>} />
+          <Route path="/journal" element={<Journal/>} />
+          <Route path="/about_us" element={<Aboutus/>} />
+          <Route path="/games" element={<Games/>} />
+          <Route path="/counselling" element={<Counselling/>} />
+
+          {/* ERROR page */}
           <Route path="*" element={<p>404 ERROR</p>} />
           
         </Routes>
@@ -41,6 +56,7 @@ function MainApp() {
   return (
     <Router>
       <App />
+      <Footer/>
     </Router>
   );
 }

@@ -13,7 +13,7 @@ function S_header() {
           <Link to="/activities" className=" hover:text-yellow-400">Activities</Link>
         </nav>
         <login className="justify-end text-2xl">
-          <Link to="/login-page">Login  </Link>
+          <Link to="/login">Login </Link>
         </login>
       </header>
     </div>

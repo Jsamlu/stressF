@@ -16,7 +16,7 @@
     {
         id:'3',
         image:'/assets/med/img3.jpg',
-        name:'',
+        name:'pratice meditation',
         desc:'Mindfulness is the practice of gently focusing your awareness on the present moment over and over again.',
         link:'#'
     },

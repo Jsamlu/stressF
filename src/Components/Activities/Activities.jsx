@@ -23,7 +23,7 @@ export default function Activities() {
                 return (
                   <div className="h-[500px] w-[300px] bg-white rounded-xl grid grid-rows-3 shadow-2xl hover:scale-105 transition-all duration-300 ease-in-out">
                     <div className="rounded-tr-xl rounded-tl-xl overflow-hidden row-span-2 h-[300px]">
-                      <img src={MedList.image} alt="" />
+                      <img src={MedList.image} alt="" className="transform hover:scale-[110%] transition-all duration-300"/>
                     </div>
                     <div className="ml-5">
                       <p className="font-bold text-lg">
@@ -34,7 +34,7 @@ export default function Activities() {
                       </p>
                       <a
                         href="/links"
-                        className="text-white text-center right-0 block bg-blue-400 rounded-lg p-1 mr-[200px] hover:bg-white hover:text-blue-800 border-2 border-white hover:boder-2 hover:border-blue-900 transition-all duration-300"
+                        className="text-white text-center right-0 block bg-blue-400 rounded-lg p-1 mr-[200px] hover:bg-white   hover:font-bold hover:text-blue-800 border-2 border-white hover:boder-2 hover:border-blue-900 transition-all duration-400"
                       >
                         visit
                       </a>
@@ -51,8 +51,8 @@ export default function Activities() {
               {SelfList.map((SelfList) => {
                 return (
                   <div className="h-[500px] w-[300px] bg-white rounded-xl grid  shadow-2xl hover:scale-105 transition-all duration-300 ease-in-out">
-                    <div className="rounded-tr-xl rounded-tl-xl overflow-hidden h-[250px]">
-                      <img src={SelfList.image} alt="" />
+                    <div className="rounded-tr-xl rounded-tl-xl overflow-hidden h-[250px] ">
+                      <img src={SelfList.image} alt="" className="transform hover:scale-[110%] transition-all duration-300" />
                     </div>
                     <div className="ml-5">
                       <p className="font-bold text-lg">
@@ -63,7 +63,7 @@ export default function Activities() {
                       </p>
                       <a
                         href="/links"
-                        className="text-white text-center right-0 block bg-blue-400 rounded-lg p-1 mr-[200px] hover:bg-white hover:text-blue-800 border-2 border-white hover:boder-2 hover:border-blue-900 transition-all duration-300"
+                        className="text-white text-center right-0 block bg-blue-400 rounded-lg p-1 mr-[200px] hover:bg-white hover:text-blue-800 border-2 border-white hover:boder-2 hover:border-blue-900 hover:font-bold transition-all duration-400"
                       >
                         visit
                       </a>
@@ -81,7 +81,7 @@ export default function Activities() {
                 return (
                   <div className="h-[500px] w-[300px] bg-white rounded-xl grid grid-rows-2 shadow-2xl hover:scale-105 transition-all duration-300 ease-in-out">
                     <div className="rounded-tr-xl rounded-tl-xl overflow-hidden h-[300px]">
-                      <img src={SocList.img} alt="" />
+                      <img src={SocList.img} alt="" className="transform hover:scale-[110%] transition-all duration-300"/>
                     </div>
                     <div className="ml-5">
                       <p className="font-bold text-lg">
@@ -92,7 +92,7 @@ export default function Activities() {
                       </p>
                       <a
                         href="/links"
-                        className="text-white text-center right-0 block bg-blue-400 rounded-lg p-1 mr-[200px] hover:bg-white hover:text-blue-800 border-2 border-white hover:boder-2 hover:border-blue-900 transition-all duration-300"
+                        className="text-white text-center right-0 block bg-blue-400 rounded-lg p-1 mr-[200px] hover:font-bold hover:bg-white hover:text-blue-800 border-2 border-white hover:boder-2 hover:border-blue-900 transition-all duration-400"
                       >
                         visit
                       </a>

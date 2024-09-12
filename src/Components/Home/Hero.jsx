@@ -8,7 +8,7 @@ function Hero() {
   return (
     <>
       <S_header></S_header>
-      <div className=" w-screen h-[100vh] backdrop-blur-xl bg-[url('/assets2/BGwallpaper.jpeg')] bg-cover bg-no-repeat"></div>
+      <div className="h-[100vh] backdrop-blur-xl bg-[url('/assets2/BGwallpaper.jpeg')] bg-cover bg-no-repeat"></div>
       <div className="p-8 absolute top-[150px] w-screen h-screen items-center">
         
         <div className='align-middle'>
@@ -24,7 +24,7 @@ function Hero() {
         </div>
       </div>
     
-
+      <hr className="p-1 bg-indigo-300"/>
     </>//home's main div
   );
 }

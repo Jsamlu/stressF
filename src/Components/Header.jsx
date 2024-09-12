@@ -50,11 +50,11 @@ export default function Header (){
         <div className="mb-10 mt-5 p-5  bg-gradient-to-br from-purple-100 to-purple-300  rounded-xl text-2xl ">
           <ul>
             <li>
-              <Link className=" text-2xl">Community</Link>
+              <Link to={"/community"} className=" text-2xl">Community</Link>
             </li>
             
             <li className="mt-5">
-              <Link className=" text-2xl">Journel</Link>
+              <Link to={"/journal"} className=" text-2xl">Journal</Link>
             </li>
           </ul>
         </div>
