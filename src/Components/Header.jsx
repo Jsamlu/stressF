@@ -17,31 +17,21 @@ export default function Header() {
     //     <Link to='/activities'> Activities</Link>
     //   </div>
     // </div>
-    <div className="p-9 border-r shadow-sm fixed top-0 left-0 rounded-xl h-screen w-[15%] flex flex-col bg-white">
-      <div className="mb-10 text-center">
+    <div className="border-r shadow-sm fixed top-0 left-0 rounded-xl h-screen w-[15%] flex flex-col bg-white">
+      <div className="mt-10 mb-10 text-center">
         <Link to="/" className=" text-4xl font-thin">
-          Stress
+          D-Stress
         </Link>
       </div>
 
-      <div className="mb-5 mt-10  bg-gradient-to-br from-purple-100 to-purple-300  rounded-xl text-xl text-left ">
-        <ul>
-          <li>
-            <Link to="/test" className="p-7">Test</Link>
-          </li>
-          <li>
-            <Link to="/resources" className="p-7">Resources</Link>
-          </li>
-          <li className="p-7">
-            <Link to="/activities">Activities</Link>
-          </li>
-          <li className="p-7">
-            <Link to="/counselling">Counselling</Link>
-          </li>
-          <li className="p-7">
-            <Link to="/about_us">About_us</Link>
-          </li>
-        </ul>
+      <div className="p-10 h-full w-full bg-gradient-to-br from-indigo-100 to-indigo-300 text-xl text-left ">
+        <div className="flex flex-col text-center">
+          <Link to="/test" className="p-7">Test</Link>
+          <Link to="/about_us" className="p-7">About_us</Link>
+          <Link to="/resources" className="p-7">Resources</Link>
+          <Link to="/activities" className="p-7">Activities</Link>
+          <Link to="/counselling" className="p-7">Counselling</Link>
+        </div>
       </div>
 
       {/* <div className="mb-10 mt-5 p-5  bg-gradient-to-br from-purple-100 to-purple-300  rounded-xl text-2xl ">

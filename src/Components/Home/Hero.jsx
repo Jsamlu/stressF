@@ -17,7 +17,7 @@ function Hero() {
         <div className='align-middle'>
           
           <div className='text-balck pl-7'> 
-            <h2 className="lg:text-7xl  lg:font-bold text-3xl font-bold text-left text-white font-outline-1">You can't control the waves, but you can learn to surf</h2>
+            <h2 className="lg:text-7xl  lg:font-bold text-3xl font-bold text-left text-white font-outline-1">Stress is like a Buble if not pop it only grows Bigger</h2>
             <p className='lg:mt-20 lg:text-3xl mt-10 text-left lg:font-bold text-white'>Self-care is not selfish, it's essential</p>
             <p className='lg:mt-2 lg:text-2xl text-xl text-left text-white'>Gain an understanding of stress, its causes, and effective strategies to manage it.</p>
             <div className='m-10 flex items-center justify-start gap-10 '>
