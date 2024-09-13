@@ -8,9 +8,11 @@ import S_header from '../../S_header';
 function Hero() {
   return (
     <>
+      <div className="">
+        <img src={'/assets2/BGwallpaper.jpeg'} className='h-screen w-screen object-cover'  alt="" />
+      </div>
       <S_header></S_header>
-      <div className="h-[100vh] backdrop-blur-xl bg-[url('/assets2/BGwallpaper.jpeg')] bg-cover bg-no-repeat"></div>
-      <div className="p-8 absolute top-[150px] w-screen h-screen items-center">
+      <div className="p-8 pt-[150px] absolute top-0 w-screen h-screen items-center backdrop-blur-sm">
         
         <div className='align-middle'>
           
