@@ -31,13 +31,18 @@ export default function Footer (){
         },
     ];
 
- return <div className=" bg-indigo-950">
+ return <div className=" bg-indigo-950 relative bottom-0">
         {/* quick links */}
         <hr className="p-1 bg-indigo-300"/>
-        <div className="md:ml-[300px] p-5 text-indigo-200 font-semibold flex flex-col"> 
+        <div className="md:ml-[250px] p-5 text-indigo-200 font-semibold flex flex-col w-screen"> 
             {Flinks.map(FL =>{
                 return <Link to={FL.href}>{FL.label}</Link>
             })}
+            
+        </div>
+        <hr className="text-indigo-400 " />
+        <div className="md:ml-[250px] text-indigo-300">
+            © all rights are reserverd by D-Stress
         </div>
     </div>
 }

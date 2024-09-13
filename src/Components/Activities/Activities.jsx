@@ -2,6 +2,7 @@ import React from "react";
 
 
 // import Footer from "../Footer.jsx"
+import Sfooter from "../Sfooter";
 
 import MedList from "./MedList.jsx";
 import SocList from "./SocList.jsx"
@@ -11,7 +12,7 @@ export default function Activities() {
   return (
     <>
       <div id="Activities">
-        <div className=" p-10 bg-white">
+        <div className=" p-10 bg-indigo-100">
           <div>
             <p className="text-5xl text-[#0f444c] font-bold">Activities</p>
 
@@ -105,6 +106,7 @@ export default function Activities() {
           </div>
         </div>
       </div>
+      <Sfooter/>
     </>
   );
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import Sfooter from '../Sfooter';
 
 // import Footer from "../Footer.jsx"
 
@@ -22,7 +22,7 @@ function Test() {
         <Link to="/forum" className='text-blue-600'>Take Test</Link>
         </div>
       </div>
-      {/* <Footer></Footer> */}
+      <Sfooter/>
     </div>
   );
 }

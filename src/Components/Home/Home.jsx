@@ -2,7 +2,7 @@ import Hero from "./Hero.jsx"
 import React, { useState, useEffect } from 'react';
 
 import Header from '../Header.jsx';
-// import Footer from '../Footer.jsx'
+import Footer from '../Footer.jsx'
 
 export default function Home() {
   const [showHeader, setShowHeader] = useState(false);
@@ -24,13 +24,13 @@ export default function Home() {
     <Hero></Hero>
     
     <div
-        className={`md:flex hidden fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-in-out transform ${showHeader ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full'
-          }`}
+        className={`${showHeader ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-[300px]'
+          } md:flex hidden fixed top-0 left-0 w-full z-50 transition-all duration-1000 ease-in-out transform `}
       >
         <Header />
     </div>
     
-    <div className={` ${showHeader ? 'md:ms-[15%] ' : 'ms-0'}m-10 lg:mr-[300px] lg:ml-[300px] grid lg:grid gap-10 transition-all duration-300 ease-in-out`}>  
+    <div className={`${showHeader ?  'ms-0' : 'md:ms-[15%] '}  pt-10 pb-10 lg:mr-[300px] lg:ml-[300px] grid lg:grid gap-10 transition-all duration-300 ease-in-out`}>  
       <div className="bg-white mt-10 grid grid-cols-2  gap-5  items-center rounded-xl shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] ">
         <div className="rounded-tl-xl rounded-bl-xl h-full lg:h-[300px] object-cover overflow-hidden">
           <img src="/assets/qna.jpg" alt="QnA" className="transform hover:scale-[110%] transition-all duration-300 rounded-tl-xl rounded-bl-xl"/>
@@ -74,7 +74,7 @@ export default function Home() {
         </div>
       </div>
     </div>
-    {/* <Footer/> */}
+    <Footer/>
     </div>
   );
 }

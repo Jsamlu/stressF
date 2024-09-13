@@ -13,7 +13,8 @@ import Aboutus from './Components/Aboutus/Aboutus';
 import Games from './Components/Games/Games';
 import Counselling from './Components/Counselling/Counselling';
 import Journal from './Components/Journal/Journal'
-import Footer from './Components/Footer';
+
+
 
 function App() {
   const location = useLocation();
@@ -28,7 +29,7 @@ function App() {
         </div>
       )}
 
-      <div  className={`${isHomePage ? 'w-full' : 'flex-grow w-[85%]'} `}>
+      <div  className={`${isHomePage ? ' md:w-full ' : 'flex-grow w-[85%]'} `}>
         <Routes>
           {/* Links */}
           <Route path="/" element={<Home/>} />
@@ -56,7 +57,6 @@ function MainApp() {
   return (
     <Router>
       <App />
-      <Footer/>
     </Router>
   );
 }

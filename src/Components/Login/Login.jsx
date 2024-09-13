@@ -1,6 +1,7 @@
 
 import './login.css';
 import React, { useState } from 'react';
+import Sfooter from '../Sfooter'
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -28,6 +29,7 @@ const Login = () => {
   };
 
   return (
+    <>
     <div className="login-container">
       <h2>Login</h2>
       {error && <p className="error">{error}</p>}
@@ -55,6 +57,8 @@ const Login = () => {
         <button type="submit">Login</button>
       </form>
     </div>
+    <Sfooter/>
+    </>
   );
 };
 
