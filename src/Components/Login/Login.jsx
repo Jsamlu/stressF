@@ -1,63 +1,93 @@
-
-import './login.css';
-import React, { useState } from 'react';
-import Sfooter from '../Sfooter'
+import "./login.css";
+import React, { useState } from "react";
+import Sfooter from "../Sfooter";
 
 const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     // Simple validation
     if (!email || !password) {
-      setError('Both fields are required');
+      setError("Both fields are required");
       return;
     }
 
     // Here you would typically handle authentication
     // For now, we just log the credentials
-    console.log('Email:', email);
-    console.log('Password:', password);
+    console.log("Email:", email);
+    console.log("Password:", password);
 
     // Clear the form and error message
-    setEmail('');
-    setPassword('');
-    setError('');
+    setEmail("");
+    setPassword("");
+    setError("");
   };
 
   return (
     <>
-    <div className="login-container">
-      <h2>Login</h2>
-      {error && <p className="error">{error}</p>}
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="email">Email:</label>
-          <input
-            type="email"
-            id="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
+    <div className="h-full w-full cont">
+      <div className=" grid grid-cols-2">
+        <div className="login-container  ">
+          <h2>Login</h2>
+          {error && <p className="error">{error}</p>}
+          <form onSubmit={handleSubmit}>
+            <div className="form-group mt-10">
+              <label htmlFor="email">Email:</label>
+              <input
+                type="email"
+                id="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </div>
+            <div className="form-group mt-5">
+              <label htmlFor="password">Password:</label>
+              <input
+                type="password"
+                id="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+            </div>
+            <button className="mt-10 p-5 rounded-xl bg-[#4ea1f9] text-white" type="submit">Login</button>
+          </form>
         </div>
-        <div className="form-group">
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </div>
-        <button type="submit">Login</button>
-      </form>
-    </div>
-    <Sfooter/>
+        <div className="bg-blue-500 ml-1 h-full w-full rounded-lg login-container text-white">
+          <h2>Sign in</h2>
+          {error && <p className="error">{error}</p>}
+          <form onSubmit={handleSubmit}>
+            <div className="form-group mt-10 text-white">
+              <label htmlFor="email">Email:</label>
+              <input
+                type="email"
+                id="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </div>
+            <div className="form-group mt-5 text-white">
+              <label htmlFor="password">Password:</label>
+              <input
+                type="password"
+                id="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+            </div>
+            <button className="mt-10 p-5 rounded-xl bg-white text-blue-500" type="submit">Sign in</button>
+          </form>
+        </div>  
+      </div>
+      </div>
+      <Sfooter />
     </>
   );
 };

@@ -30,7 +30,7 @@ export default function Home() {
         <Header />
     </div>
     
-    <div className={`${showHeader ?  'ms-0' : 'md:ms-[15%] '}  pt-10 pb-10 lg:mr-[300px] lg:ml-[300px] grid lg:grid gap-10 transition-all duration-300 ease-in-out`}>  
+    <div className={`${showHeader ?  'ms-0' : 'md:ms-[15%] '}  pt-10 pb-10 lg:mr-[300px] lg:ml-[300px] transition-all duration-300 ease-in-out`}>  
       <div className="bg-white mt-10 grid grid-cols-2  gap-5  items-center rounded-xl shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] ">
         <div className="rounded-tl-xl rounded-bl-xl h-full lg:h-[300px] object-cover overflow-hidden">
           <img src="/assets/qna.jpg" alt="QnA" className="transform hover:scale-[110%] transition-all duration-300 rounded-tl-xl rounded-bl-xl"/>

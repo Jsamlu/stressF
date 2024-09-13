@@ -1,8 +1,16 @@
 /* src/Login.css */
 
+.cont{
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .login-container {
 
-    max-width: 400px;
+    width: 400px;
+    height: 400px;
     margin: auto;
     padding: 2rem;
     border: 1px solid #ddd;
@@ -42,7 +50,8 @@
   }
   
   button:hover {
-    background-color: #0056b3;
+    background-color:  rgb(59 130 246);
+    color:white;
   }
   
   .error {

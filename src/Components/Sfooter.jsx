@@ -34,7 +34,7 @@ export default function Footer (){
  return <div className=" bg-indigo-950 relative bottom-0">
         {/* quick links */}
         <hr className="p-1 bg-indigo-300"/>
-        <div className="md:p-5 text-indigo-200 font-semibold flex flex-col w-screen"> 
+        <div className="md:p-5 text-indigo-200 font-semibold grid md:grid-row-3 md:grid-cols-3 w-screen"> 
             {Flinks.map(FL =>{
                 return <Link to={FL.href}>{FL.label}</Link>
             })}

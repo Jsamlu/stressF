@@ -1,10 +1,6 @@
-import Sfooter from '../Sfooter';
+export default function About_us(){
+  return<div>
+    <p>this is About us</p>
+  </div>
 
-export default function Aboutus() {
-  return <div>
-    <p>
-        this is About us page
-    </p>
-    <Sfooter/>
-  </div>;
 }

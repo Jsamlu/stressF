@@ -34,7 +34,7 @@ export default function Footer (){
  return <div className=" bg-indigo-950 relative bottom-0">
         {/* quick links */}
         <hr className="p-1 bg-indigo-300"/>
-        <div className="md:ml-[250px] p-5 text-indigo-200 font-semibold flex flex-col w-screen"> 
+        <div className="md:ml-[250px]  p-5 text-indigo-200 font-semibold grid md:grid-row-3 md:grid-cols-3 w-screen"> 
             {Flinks.map(FL =>{
                 return <Link to={FL.href}>{FL.label}</Link>
             })}
@@ -47,14 +47,3 @@ export default function Footer (){
     </div>
 }
 
-// <Route path="/" element={<Home/>} />
-//           <Route path="/test" element={</>} />
-//           <Route path="/forum" element={<Forum/>} />
-//           <Route path="/resources" element={<Resources/>} />
-//           <Route path="/activities" element={<Activities/>} />
-//           <Route path="/login" element={<Login/>} />
-//           <Route path="/community" element={<Community/>} />
-//           <Route path="/journal" element={<Journal/>} />
-//           <Route path="/about_us" element={<Aboutus/>} />
-//           <Route path="/games" element={<Games/>} />
-//           <Route path="/counselling" element={<Counselling/>} />

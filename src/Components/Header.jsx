@@ -27,10 +27,10 @@ export default function Header() {
       <div className="p-10 h-full w-full bg-gradient-to-br from-indigo-100 to-indigo-300 text-xl text-left ">
         <div className="flex flex-col text-center">
           <Link to="/test" className="p-7">Test</Link>
-          <Link to="/about_us" className="p-7">About_us</Link>
           <Link to="/resources" className="p-7">Resources</Link>
           <Link to="/activities" className="p-7">Activities</Link>
           <Link to="/counselling" className="p-7">Counselling</Link>
+          <Link to="/about_us" className="p-7">About us</Link>
         </div>
       </div>
 
