@@ -20,7 +20,7 @@ export default function Home() {
     }, []);
 
   return (
-    <div className="bg-indigo-100">
+    <div className="bg-indigo-100 min-h-screen min-w-screen">
     <Hero></Hero>
     
     <div
@@ -38,9 +38,8 @@ export default function Home() {
 
         <div className="pl-10 pr-10 pt-5 pb-5 lg:pl-10 lg:pr-10 lg:pt-10">
           <h1 className="text-xl  text-purple-900 font-bold">Stress Analysis</h1>
-          <p className="text-sm text-balance lg:text-xl text-purple-800 mt-5">
-            This website will help you to analyze the stress you are currently
-            facing through a qustionnaire. 
+          <p className="text-sm text-balance lg:text-xl text-gray-500 mt-5">
+          Our platform provides an easy-to-use questionnaire that analyzes your stress levels 
           </p>
         </div>
       </div>
@@ -48,11 +47,8 @@ export default function Home() {
       <div className="bg-white mt-10 grid grid-cols-2  gap-5  items-center rounded-xl shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]">
         <div className="pl-10 pr-10 pt-5 pb-5 lg:pl-10 lg:pr-10 lg:pt-10">
           <h1 className="text-xl  text-purple-900 font-bold">Activities</h1>
-          <p className="text-sm text-balance lg:text-xl text-purple-800 mt-5">
-            By your stress analysis, this website also suggests the ways in
-            which one can manage the stress level of day to day activities. Some
-            activities are at individual level while you can perform them at
-            community level as well.
+          <p className="text-sm text-balance lg:text-xl text-gray-500 mt-5">
+          Our platform offers personalized activity suggestions to help you de-stress. From mindfulness exercises to light physical activities, we have something for everyone.
           </p>
         </div>
         <div className=" h-full lg:h-[300px] object-cover overflow-hidden rounded-tr-xl rounded-br-xl ">
@@ -66,7 +62,7 @@ export default function Home() {
         </div>
         <div className="pl-10 pr-10 pt-5 pb-5 lg:pl-10 lg:pr-10 lg:pt-10">
           <h1 className="text-xl  text-purple-900 font-bold ">Counselling</h1>
-          <p className="text-sm text-balance lg:text-xl text-purple-800 mt-5">
+          <p className="text-sm text-balance lg:text-xl text-gray-500 mt-5">
             If the condition does not get better even after continuous
             evaluating, recommendations to some professionals can be made
             available.

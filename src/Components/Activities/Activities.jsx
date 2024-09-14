@@ -7,21 +7,27 @@ import Sfooter from "../Sfooter";
 import MedList from "./MedList.jsx";
 import SocList from "./SocList.jsx"
 import SelfList from "./SelfList.jsx";
+import SearchBar from "../SearchBar";
 
+// import ACT from './ACT'
 export default function Activities() {
   return (
     <>
       <div id="Activities">
         <div className=" p-10 bg-indigo-100">
           <div>
+            <div className="flex justify-between items-center">
             <p className="text-5xl text-[#0f444c] font-bold">Activities</p>
 
+            <div className="absolute right-2 top-2 bottom-2"><SearchBar/></div>
+            </div>
             <p className="text-3xl mt-[50px] text-[#0f444c] font-slim">
               Meditation
             </p>
             <div className="md:ml-[50px]  mt-[50px] grid lg:grid-cols-3 ">
               {MedList.map((MedList) => {
-                return (
+                
+              return (
                   <div className="h-[500px] w-[300px] bg-white rounded-xl grid grid-rows-3 shadow-2xl hover:scale-105 transition-all duration-300 ease-in-out">
                     <div className="rounded-tr-xl rounded-tl-xl overflow-hidden row-span-2 h-[300px]">
                       <img src={MedList.image} alt="" className="transform hover:scale-[110%] transition-all duration-300"/>
@@ -42,7 +48,8 @@ export default function Activities() {
                     </div>
                   </div>
                 );
-              })}
+              })
+              }
             </div>
 
             <p className="text-3xl mt-[50px] text-[#0f444c] font-slim">

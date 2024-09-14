@@ -42,7 +42,7 @@ export default function Footer (){
         </div>
         <hr className="text-indigo-400 " />
         <div className="md:ml-[250px] text-indigo-300">
-            © all rights are reserverd by D-Stress
+            © 2024 D-Stress
         </div>
     </div>
 }

@@ -1,7 +1,7 @@
 const CList =[
     {
         id:1,
-        image:"/assets/counselling/doc1.png",
+        image:"/assets/counselling/doc3.png",///assets/counselling/doc1.png actual
         name:"Dr. Varsha Choudhari",
         title:['Counselling Psychologist','Homoeopath','Psychologist','Psychotherapist'],
         degree:["MA - Psychology, BHMS"],
@@ -11,11 +11,12 @@ const CList =[
         desc:`I run Awakened Living Counseling Center, at Sahakarnagar in Pune. I provide Professional Counselling Services to clients from all walks of life and all age groups. Clients are assured of full confidentiality during therapy. Face to face as well as Online Counselling sessions are available on appointment. The satisfaction and relief I see on the client's face at the end of a session , is the driving force which motivates me to serve our society with renewed enthusiasm. I have started a You Tube channel with an intention to remove all the myths and misconceptions about Counseling and to create awareness in our society of the various counselling services available. You can gain access to the videos by visiting the channel link which is https://youtube. Com/channel/UCDVopE0Kl4Xi7rGoX6OafWQ
         In addition , I am also a practicing homeopath and have been treating and curing patients using homeopathic and Bach flower remedies.`,
         fees:"1800",
+        availability:"available",
 
     },
     {
         id:2,
-        image:"/assets/counselling/doc2.png",
+        image:"/assets/counselling/doc2.png ",
         name:"Mr. Ashutosh Udawant",
         title:['Therapist','Clinical Psychologist'],
         degree:['M.Phil - Clinical Psychology'],
@@ -23,7 +24,7 @@ const CList =[
         addr:"Counseling Center, at Sahakarnagar in Pune",
         desc:`Medical Registration Verified \nRCI Certified Clinical Psychologist \nCRR No:- A41853 IACP:- PLM 508/14/16 Clinical Interview Psychodiagnostic and psychometric Psychotherapy Intervention `,
         fees:"1800",
-
+        availability:"available",
     },
     {
         id:3,
@@ -38,7 +39,7 @@ const CList =[
 She is a Master practitioner in below-mentioned areas NLP, REBT, CBT, EFT, TA, Music Therapy, Graphologist, and much more....\n
 She is also a philanthropist who loves spending time at NGOs to selflessly help the ones in need.`,
         fees:"1800",
-
+        availability:"available",
     },
     {
         id:4,
@@ -51,7 +52,7 @@ She is also a philanthropist who loves spending time at NGOs to selflessly help 
         addr:"Counseling Center, at Sahakarnagar in Pune",
         desc:"Cosultant HomoeopathPsychological Counsellor",
         fees:"1800",
-
+        availability:"available",
     },
     {
         id:5,
@@ -65,7 +66,7 @@ She is also a philanthropist who loves spending time at NGOs to selflessly help 
         desc:`Mr Gopal Bhagat (Counseling Psychologist, Clinical Psychologist, and Psychotherapist)with 11 years of extensive experience, and hold a distinguished Master's degree in Clinical Psychology and Philosophy, with specialized expertise in the intricate realms of Psychological & Philosophical Counseling. Additionally, I possess a Postgraduate Diploma in Clinical and Counselling Psychology. Presently, I serve as a practitioner at My Mind Counseling in Sadashiv Peth, Pune, and also have the great privilege of working with Dr. Vidyadhar Watve, who is a well-known psychiatrist in India.\n
 Member American Psychological Association.\n ⚕️ "The ultimate goal of my therapeutic counseling is to heal you and make positive changes."`,
 fees:"1800",
-
+availability:"available",
     },
     {
         id:6,
@@ -80,7 +81,7 @@ fees:"1800",
 At the core of Mr. Naik's practice lies the belief that educating individuals about mental health is as vital as providing treatment. By empowering his clients with knowledge about their own personal "Normality," he helps them unleash their full potential and achieve remarkable results. In addition to his expertise in mental health, Mr. Naik also offers exceptional life and business coaching services. With over 12 years of experience, he has successfully assisted numerous individuals and businesses in achieving growth and success.\n
 If you're seeking the best Psychologist, Therapist, and Counsellor in Pune, look no further than Mr. Omkar Naik. Experience his transformative approach to mental health and witness the positive changes in your life or business. `,
         fees:"1800",
-
+        availability:"available",
     },
     {
         id:7,
@@ -93,7 +94,7 @@ If you're seeking the best Psychologist, Therapist, and Counsellor in Pune, look
         addr:"Counseling Center, at Sahakarnagar in Pune",
         desc:"His objective is to support people in resolving complexity and achieving clarity and peace in their lives. In his spare time he enjoys working out, organizing, studying philosophy and spending time with his family. ",
         fees:"1800",
-
+        availability:"available",
     },
 ];
 

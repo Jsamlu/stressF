@@ -15,6 +15,8 @@ import Counselling from './Components/Counselling/Counselling';
 import Journal from './Components/Journal/Journal'
 
 
+// scrap
+import Scrap from './Components/scrap/scrap'
 
 function App() {
   const location = useLocation();
@@ -46,6 +48,7 @@ function App() {
 
           {/* ERROR page */}
           <Route path="*" element={<p>404 ERROR</p>} />
+          <Route path="/scrap" element={<Scrap/>} />
           
         </Routes>
       </div>
