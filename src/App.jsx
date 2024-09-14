@@ -26,12 +26,12 @@ function App() {
 
     <div className='flex'>
       {!isHomePage && (
-        <div className="w-[15%] hidden md:flex">
+        <div className="md:w-[15%] hidden md:flex">
           <Header />
         </div>
       )}
 
-      <div  className={`${isHomePage ? ' md:w-full ' : 'flex-grow w-[85%]'} `}>
+      <div  className={`${isHomePage ? ' md:w-full ' : 'md:flex-grow md:w-[85%]'} `}>
         <Routes>
           {/* Links */}
           <Route path="/" element={<Home/>} />

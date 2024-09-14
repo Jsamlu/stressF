@@ -12,17 +12,17 @@ export default function Header() {
     { href: "/about_us", label: "About us" },
   ];
   return (
-    <div className="border-r shadow-sm fixed top-0 left-0 rounded-xl h-screen w-[15%] flex-col bg-white hidden lg:flex">
+    <div className="border-r shadow-sm fixed top-0 left-0 rounded-xl h-screen w-[15%] flex-col bg-white hidden md:flex">
       <div className="mt-10 mb-10 text-center">
         <Link to="/" className="flex justify-center">
           <img src="/assets2/Logo2.png" alt="logo" className=" w-[180px]"/>
         </Link>
       </div>
 
-      <div className="p-10 h-full w-full bg-gradient-to-br from-indigo-300 to-indigo-500 text-white text-xl text-left ">
+      <div className=" lg:px-10 py-10 h-full w-full bg-gradient-to-br from-indigo-300 to-indigo-500 text-white md:text-xl text-left ">
         <div className="flex flex-col text-center">
           {navlinks.map((navlink)=>{
-            return<Link to={navlink.href} className="p-7">{navlink.label}</Link>
+            return<Link to={navlink.href} className="py-7">{navlink.label}</Link>
           })}  
           {/* <Link to="/test" className="p-7">Test</Link>
           <Link to="/resources" className="p-7">Resources</Link>

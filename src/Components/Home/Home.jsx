@@ -25,7 +25,7 @@ export default function Home() {
     
     <div
         className={`${showHeader ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-[300px]'
-          } md:flex hidden fixed top-0 left-0 w-full z-50 transition-all duration-1000 ease-in-out transform `}
+          } lg:flex hidden fixed top-0 left-0 w-full z-50 transition-all duration-1000 ease-in-out transform `}
       >
         <Header />
     </div>
