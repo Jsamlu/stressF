@@ -9,7 +9,7 @@ export default function Home() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollThreshold = window.innerHeight * 0.8; // 80% of the viewport height
+      const scrollThreshold = window.innerHeight * 0.3; // 80% of the viewport height
       setShowHeader(window.scrollY > scrollThreshold);
     };
 
@@ -30,8 +30,8 @@ export default function Home() {
         <Header />
     </div>
     
-    <div className={`${showHeader ?  'ms-0' : 'md:ms-[15%] '}  pt-10 pb-10 lg:mr-[300px] lg:ml-[300px] transition-all duration-300 ease-in-out`}>  
-      <div className="bg-white mt-10 grid grid-cols-2  gap-5  items-center rounded-xl shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] ">
+    <div className={`${showHeader ?  'ms-0' : 'lg:ms-[18%] '}  py-10 lg:mr-[100px] lg:ml-[350px] transition-all duration-300 ease-in-out`}>  
+      <div className="bg-white mt-10 grid grid-cols-2  gap-5  items-center rounded-xl shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] h-[300px] w-[950px]">
         <div className="rounded-tl-xl rounded-bl-xl h-full lg:h-[300px] object-cover overflow-hidden">
           <img src="/assets/qna.jpg" alt="QnA" className="transform hover:scale-[110%] transition-all duration-300 rounded-tl-xl rounded-bl-xl"/>
         </div>
@@ -44,7 +44,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="bg-white mt-10 grid grid-cols-2  gap-5  items-center rounded-xl shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]">
+      <div className="bg-white mt-10 grid grid-cols-2  gap-5  items-center rounded-xl shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] h-[300px] w-[950px]">
         <div className="pl-10 pr-10 pt-5 pb-5 lg:pl-10 lg:pr-10 lg:pt-10">
           <h1 className="text-xl  text-purple-900 font-bold">Activities</h1>
           <p className="text-sm text-balance lg:text-xl text-gray-500 mt-5">
@@ -56,7 +56,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="bg-white mt-10 grid grid-cols-2  gap-5  items-center rounded-xl shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]">
+      <div className="bg-white mt-10 grid grid-cols-2  gap-5  items-center rounded-xl shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] h-[300px] w-[950px]">
         <div className=" h-full lg:h-[300px] object-cover overflow-hidden rounded-tl-xl rounded-bl-xl">
         <img src="/assets/counselling.jpg" alt="counselling" className="transform hover:scale-[110%] transition-all duration-300 rounded-tl-xl rounded-bl-xl"/>
         </div>

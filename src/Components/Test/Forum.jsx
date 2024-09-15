@@ -9,6 +9,7 @@ export default function Forum() {
         {QList.map((QList) => {
           return (
             <div className="mb-5 p-10 bg-white rounded-xl">
+              <form action="">
               <p >
                 {QList.id}.&nbsp; 
                 {QList.question}
@@ -52,6 +53,7 @@ export default function Forum() {
 
                 </ul>
               </div>
+              </form>
             </div>
           );
         })}

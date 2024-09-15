@@ -28,7 +28,7 @@ export default function Counselling() {
                   </div>
                   <p className="text-gray-700 text-sm mb-2">
                     <span className="font-semibold">Service: </span>
-                    {CList.title}
+                    {CList.title.join(", ")}
                   </p>
                   <p className="text-gray-700 text-sm mb-2">
                     <span className="font-semibold">Experience: </span>
