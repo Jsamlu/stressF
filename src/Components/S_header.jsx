@@ -25,7 +25,7 @@ function S_header() {
         </nav>
         <div className='lg:hidden'>
           {/* mobile nav */}
-          <button onClick={toggleNav}>{showNav ? <FaTimes /> : <FaBars />}</button>
+          <button onClick={toggleNav} className='text-2xl hover:bg-transparent'>{showNav ? <FaTimes /> : <FaBars />}</button>
         </div>
         <div>
           {/* login options */}
@@ -35,7 +35,7 @@ function S_header() {
           } w-screen text-center bg-gray-600 rounded-md text-white px-10 absolute top-0 right-0 z-30`}
       >
         <button onClick={toggleNav}
-        className='flex justify-end h-[100px] items-center'
+        className='flex justify-end h-[100px] items-center text-2xl hover:bg-transparent'
         >{showNav ? <FaTimes /> : <FaBars />}</button>
         <ul className="flex flex-col space-y-10 text-2xl font-semibold">
           <li>
