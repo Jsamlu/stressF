@@ -8,10 +8,12 @@ import {
 import React from "react";
 import Rlist from "./Rlist";
 import Sfooter from '../Sfooter';
+import S_header from "../S_header";
 
 function Resources() {
   return (
     <div id="Resources" className="bg-indigo-100">
+      <div className="md:hidden"><S_header/></div>
       <div className="p-[60px]   rounded-xl min-h-screen">
         <p className="text-5xl  text-[#0f444c] font-bold">Resources</p>
         <div className="p-5 mt-10  grid grid-cols-1 md:grid-cols-2">

@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 import QList from "./QList";
 import Sfooter from '../Sfooter';
+import S_header from "../S_header";
 
 export default function Forum() {
   return (
     <div className="min-h-screen bg-indigo-200 ">
+      <div className="md:hidden"><S_header/></div>
       <div className="p-10 pl-[100px] pr-[100px]">
         {QList.map((QList) => {
           return (

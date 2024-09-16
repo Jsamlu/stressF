@@ -1,10 +1,12 @@
 import CList from "./CList";
 import Sfooter from "../Sfooter";
 import SearchBar from "../SearchBar";
+import S_header from "../S_header";
 
 export default function Counselling() {
   return (
     <div className="bg-indigo-100 w-full">
+      <div className="md:hidden"><S_header/></div>
       <div className="flex justify-between">
       <h1 className="pl-10 pt-10 mb-5 text-3xl font-bold text-[#0f444c]">
         Counselling Services

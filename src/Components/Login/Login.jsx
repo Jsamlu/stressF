@@ -1,6 +1,7 @@
 import "./login.css";
 import React, { useState } from "react";
 import Sfooter from "../Sfooter";
+import S_header from "../S_header";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -29,6 +30,7 @@ const Login = () => {
 
   return (
     <>
+      <div className="md:hidden"><S_header/></div>
       <div className="h-full w-full cont ">
         <div className=" grid grid-cols-2">
           <div className="login-container  ">

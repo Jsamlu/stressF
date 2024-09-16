@@ -1,6 +1,11 @@
+import S_header from "../S_header";
+
 export default function About_us(){
   return (
+    <>
+    <div className="md:hidden"><S_header/></div>
     <div className="bg-gray-50 min-h-screen flex items-center justify-center">
+      
       <div className="max-w-4xl mx-auto p-8">
         <h1 className="text-4xl font-bold text-center text-blue-600 mb-6">
           About D-Stress
@@ -41,6 +46,7 @@ export default function About_us(){
         </p>
       </div>
     </div>
+    </>
   );
 
 }

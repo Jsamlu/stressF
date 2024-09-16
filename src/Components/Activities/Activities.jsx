@@ -8,12 +8,13 @@ import MedList from "./MedList.jsx";
 import SocList from "./SocList.jsx"
 import SelfList from "./SelfList.jsx";
 import SearchBar from "../SearchBar";
-
+import S_header from "../S_header";
 // import ACT from './ACT'
 export default function Activities() {
   return (
     <>
       <div id="Activities">
+      <div className="md:hidden"><S_header/></div>
         <div className=" p-10 bg-indigo-100">
           <div>
             <div className="flex justify-between items-center">

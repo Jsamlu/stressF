@@ -29,10 +29,10 @@ export default function Home() {
       >
         <Header />
     </div>
-    
-    <div className={`${showHeader ?  'ms-0' : 'lg:ms-[18%] '}  py-10 lg:mr-[100px] lg:ml-[350px] transition-all duration-300 ease-in-out`}>  
-      <div className="bg-white mt-10 grid grid-cols-2  gap-5  items-center rounded-xl shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] h-[300px] w-[950px]">
-        <div className="rounded-tl-xl rounded-bl-xl h-full lg:h-[300px] object-cover overflow-hidden">
+    {/* ${showHeader ?  'md:ms-[20%]' : ' ms-0'}  */}
+    <div className={` py-10 md:w-[50%] w-[90%] h-full mr-auto ml-auto transition-all duration-300 ease-in-out `}>  
+      <div className="bg-white md:mt-10 grid grid-cols-2  gap-5  items-center rounded-xl shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] lg:h-[300px] lg:w-[950px] h-[250px] w-[400px]">
+        <div className="rounded-tl-xl rounded-bl-xl  lg:h-[300px] object-cover overflow-hidden">
           <img src="/assets/qna.jpg" alt="QnA" className="transform hover:scale-[110%] transition-all duration-300 rounded-tl-xl rounded-bl-xl"/>
         </div>
 

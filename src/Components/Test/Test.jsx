@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Sfooter from '../Sfooter';
+import S_header from '../S_header';
 
 // import Footer from "../Footer.jsx"
 
@@ -8,6 +9,7 @@ import Sfooter from '../Sfooter';
 function Test() {
   return (
     <div className='min-h-screen'>
+      <div className="md:hidden"><S_header/></div>
       <div className=" h-screen"> 
         <div className='bg- bg-purple-500 absolute -z-10 h-[300px] w-full  '></div>
           <div className=' pl-[200px] pr-[200px]'>

@@ -32,7 +32,7 @@ function S_header() {
         </div>
       </header>
       <div className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out ${showNav ? 'min-h-full opacity-100' : 'max-h-0 opacity-0'
-          } w-screen text-center bg-gray-600 rounded-md text-white px-10 absolute top-0 right-0 z-30`}
+          } w-screen text-center bg-teal-600 rounded-md text-white px-10 absolute top-0 right-0 z-30`}
       >
         <button onClick={toggleNav}
         className='flex justify-end h-[100px] items-center text-2xl hover:bg-transparent'
