@@ -31,7 +31,7 @@ export default function Home() {
     </div>
     {/* */  /*width lg:w-[950px] sm:w-[450px] md:w-[700px] w-[300px]*/}
 
-    <div className={` ${showHeader ?  'md:ms-[18%]' : ' ms-0'}  bg-indigo-100 md:px-15 sm:px-20 px-10 lg:px-20 py-10  w-[100%] h-full mr-auto ml-auto transition-all duration-700 ease-in-out `}>  
+    <div className={` ${showHeader ?  'md:ms-[18%]' : ' ms-0'}  bg-indigo-100 md:px-15 sm:px-20 px-10 lg:px-20 py-10  w-[100%] h-full mr-auto ml-auto transition-all duration-700 ease-in-out overflow-hidden `}>  
       <div className="bg-white md:mt-10 grid grid-cols-2  gap-1  items-center rounded-xl shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] md:h-[300px] w-10/12 h-[200px] ">
         <div className="rounded-tl-xl rounded-bl-xl h-full w-full object-cover overflow-hidden">
           <img src="/assets/qna.jpg" alt="QnA" className="h-full w-full transform hover:scale-[110%] transition-all duration-300 rounded-tl-xl rounded-bl-xl"/>
