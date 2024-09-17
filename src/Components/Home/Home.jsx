@@ -57,7 +57,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="bg-white mt-10 grid grid-cols-2  gap-1  items-center rounded-xl shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] md:h-[300px] w-10/20 h-[200px] ">
+      <div className="bg-white mt-10 grid grid-cols-2  gap-1  items-center rounded-xl shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] md:h-[300px] h-[200px] w-10/12 ">
         <div className=" h-full w-full object-cover overflow-hidden rounded-tl-xl rounded-bl-xl">
         <img src="/assets/counselling.jpg" alt="counselling" className="h-full w-full transform hover:scale-[110%] transition-all duration-300 rounded-tl-xl rounded-bl-xl"/>
         </div>
