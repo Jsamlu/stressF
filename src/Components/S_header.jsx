@@ -23,7 +23,7 @@ function S_header() {
           <Link to="/resources" className=" hover:text-yellow-400">Resources</Link>
           <Link to="/activities" className=" hover:text-yellow-400">Activities</Link>
         </nav>
-        <div className='lg:hidden'>
+        <div className='md:hidden'>
           {/* mobile nav */}
           <button onClick={toggleNav} className='text-2xl hover:bg-transparent'>{showNav ? <FaTimes /> : <FaBars />}</button>
         </div>
