@@ -4,6 +4,8 @@ import { LuCircleDashed } from "react-icons/lu";
 import { useNavigate } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { useState } from 'react';
+import Games from './Games/Games.jsx'
+import { MdExitToApp } from "react-icons/md";
 
 function S_header() {
   const navigate = useNavigate();
@@ -11,12 +13,18 @@ function S_header() {
   const toggleNav = () => {
     setShowNav(!showNav);
   };
+
+  const[GameON, setGameON] = useState(false);
+  const togglegame = () => {
+    setGameON(!GameON);
+  };
+
   return (
     <div>
       <header className= {`text-white lg:pr-[50px] lg:pl-[50px] px-10 flex absolute top-0 w-screen z-20 h-[100px] items-center ${showNav?'opacity-0' : 'opacity-100'} `}>
         <div className='flex items-center gap-x-5 flex-1'>
         <Link to="/" className=" md:w-[200px] w-[150px]"><img src="/assets2/Logo.png" alt="logo" /></Link>
-        <Link className='text-3xl'><LuCircleDashed /></Link>
+        <button className='text-3xl w-[50px] hover:bg-transparent animate-bounce' onClick={togglegame}>{GameON ? <MdExitToApp /> :<LuCircleDashed />}</button>
         </div>
         <nav className='items-center  mr-0 pr-7 pl-7 text-2xl hidden lg:flex justify-end transform ease-in-out gap-10'>
           <Link to="/test" className=" hover:text-yellow-400">Test</Link>
@@ -59,6 +67,11 @@ function S_header() {
           </li>
 
         </ul>
+      </div>
+      <div className={`${GameON ? 'z-50 absolute' : '-z-50 hidden'
+          } w-screen text-center  rounded-md text-white absolute top-0 right-0 z-40 `}>
+        <button onClick={togglegame} className=" absolute top-0 left-[20px] z-50 text-5xl  w-[100px] hover:bg-transparent transition-all duration-500" >{GameON ?<MdExitToApp />:  <LuCircleDashed />}</button>
+        {/* <Games/> */}
       </div>
       
     </div>

@@ -6,10 +6,11 @@ import Footer from "../Footer.jsx";
 import Aim from "./Aim.jsx";
 import Faq from "./Faq.jsx";
 
-import Games from '../Games/Games.jsx'
+
 export default function Home() {
   const [showHeader, setShowHeader] = useState(false);
 
+  
   useEffect(() => {
     const handleScroll = () => {
       const scrollThreshold = window.innerHeight * 0.5; // 80% of the viewport height
@@ -24,9 +25,6 @@ export default function Home() {
 
   return (
     <div className=" min-h-screen bg-indigo-100">
-      <div>
-        <Games/>
-      </div>
       <Hero></Hero>
       <hr className="p-1 bg-white" />
 
@@ -57,7 +55,7 @@ export default function Home() {
           showHeader ? "md:ms-[17%]" : " ms-0"
         }   md:px-15 sm:px-20  px-10 lg:px-20 py-10  w-[100%] h-full mx-auto transition-all duration-700 ease-in-out overflow-hidden `}
       >
-        <div className="bg-white md:mt-10 grid grid-cols-2 md:mx-0 mx-auto  gap-1  items-center rounded-xl shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] md:h-[300px] w-10/12 h-[200px] ">
+        <div className="bg-white md:mt-10 grid grid-cols-2 md:mx-0 mx-auto  gap-1  items-center rounded-xl shadow-[0_35px_60px_-15px_rgba(0,0,0,0.2)] md:h-[300px] w-10/12 h-[200px] ">
           <div className="rounded-tl-xl rounded-bl-xl h-full w-full object-cover overflow-hidden">
             <img
               src="/assets/qna.jpg"
@@ -76,7 +74,7 @@ export default function Home() {
             </p>
           </div>
         </div>
-        <div className="bg-white mt-10 grid grid-cols-2  gap-1 md:mx-0 mx-auto items-center rounded-xl shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] md:h-[300px] h-[200px] w-10/12">
+        <div className="bg-white mt-10 grid grid-cols-2  gap-1 md:mx-0 mx-auto items-center rounded-xl shadow-[0_35px_60px_-15px_rgba(0,0,0,0.2)] md:h-[300px] h-[200px] w-10/12">
           <div className="pl-10 pr-10 pt-5 pb-5 lg:pl-10 lg:pr-10 lg:pt-10">
             <h1 className="text-[15px] sm:text-lg md:text-xl  text-purple-900 font-bold">
               Activities
@@ -96,7 +94,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="bg-white mt-10 grid grid-cols-2  gap-1 md:mx-0 mx-auto items-center rounded-xl shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] md:h-[300px] h-[200px] w-10/12  mb-10">
+        <div className="bg-white mt-10 grid grid-cols-2  gap-1 md:mx-0 mx-auto items-center rounded-xl shadow-[0_35px_60px_-15px_rgba(0,0,0,0.2)] md:h-[300px] h-[200px] w-10/12  mb-10">
           <div className=" h-full w-full object-cover overflow-hidden rounded-tl-xl rounded-bl-xl">
             <img
               src="/assets/counselling.jpg"
@@ -122,7 +120,6 @@ export default function Home() {
           showHeader ? "md:ms-[17%]" : " ms-0"
         }   md:px-15 sm:px-20  px-10 lg:px-20 py-10  w-[100%] h-full mx-auto transition-all duration-700 ease-in-out overflow-hidden `}
       >
-        <Faq />
       </div>
       <Footer />
     </div>

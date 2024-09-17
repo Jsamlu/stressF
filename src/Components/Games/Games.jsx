@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from "react";
 
 const BubbleGame = () => {
   const canvasRef = useRef(null);
@@ -6,7 +6,7 @@ const BubbleGame = () => {
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    const c = canvas.getContext('2d');
+    const c = canvas.getContext("2d");
 
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
@@ -32,7 +32,7 @@ const BubbleGame = () => {
 
       update() {
         this.draw();
-        if(this.radius <= 80){
+        if (this.radius <= 80) {
           this.radius += 0.5;
         }
       }
@@ -51,7 +51,7 @@ const BubbleGame = () => {
       let x = Math.random() * canvas.width;
       let y = Math.random() * canvas.height;
       let radius = 20;
-      let color ='rgba(100,200,250,0.8)';
+      let color = "rgba(100,200,250,0.8)";
       bubbleArray.push(new Bubble(x, y, radius, color));
     };
 
@@ -64,10 +64,10 @@ const BubbleGame = () => {
         bubbleArray.forEach((bubble, bubbleIndex) => {
           let dist = Math.hypot(click.x - bubble.x, click.y - bubble.y);
           console.log(dist);
-          if ((dist-170 - bubble.radius - click.radius ) <= 20) {
+          if (dist - 170 - bubble.radius - click.radius <= 20) {
             bubbleArray.splice(bubbleIndex, 1);
             clickEventArray.splice(clickIndex, 1);
-            setScoreCount((prev) => prev + 1); 
+            setScoreCount((prev) => prev + 1);
           }
         });
       });
@@ -78,7 +78,7 @@ const BubbleGame = () => {
       clickEventArray.push(new ClickEvent(event.clientX, event.clientY));
     };
 
-    canvas.addEventListener('click', handleClick);
+    canvas.addEventListener("click", handleClick);
 
     // Generate bubbles every 500ms
     const interval = setInterval(getBubble, 2000);
@@ -90,14 +90,16 @@ const BubbleGame = () => {
     return () => {
       cancelAnimationFrame(animationId);
       clearInterval(interval);
-      canvas.removeEventListener('click', handleClick);
+      canvas.removeEventListener("click", handleClick);
     };
   }, []);
 
   return (
-    <div className='bg-[rgba(131,191,250,0.4)] backdrop-blur-[2px] absolute top-0 right-0 bottom-0 left-0 w-screen h-screen z-50'>
-      <canvas ref={canvasRef} />
-    </div>
+    <>
+      <div className="bg-[rgba(131,191,250,0.4)] backdrop-blur-[2px] absolute top-0 right-0 bottom-0 left-0 w-screen h-screen">
+        <canvas ref={canvasRef} />
+      </div>
+    </>
   );
 };
 

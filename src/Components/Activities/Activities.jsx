@@ -25,7 +25,7 @@ export default function Activities() {
             <p className="text-3xl mt-[50px] text-[#0f444c] font-slim">
               Meditation
             </p>
-            <div className="md:ml-[50px]  mt-[50px] grid lg:grid-cols-3 ">
+            <div className="md:ml-[50px]  mt-[50px] grid md:grid-cols-3 gap-y-10">
               {MedList.map((MedList) => {
                 
               return (
@@ -56,7 +56,7 @@ export default function Activities() {
             <p className="text-3xl mt-[50px] text-[#0f444c] font-slim">
               Self Activities
             </p>
-            <div className="md:ml-[50px] md:mr-[50px] mt-[50px] grid lg:grid-cols-3 gap-4">
+            <div className="md:ml-[50px] md:mr-[50px] mt-[50px] grid md:grid-cols-3 gap-4 gap-y-10">
               {SelfList.map((SelfList) => {
                 return (
                   <div className="h-[500px] w-[300px] bg-white rounded-xl grid  shadow-2xl hover:scale-105 transition-all duration-300 ease-in-out">
@@ -85,14 +85,14 @@ export default function Activities() {
             <p className="text-3xl mt-[50px] text-[#0f444c] font-slim">
               Social Activities
             </p>
-            <div className="md:ml-[50px] md:mr-[50px] mt-[50px] grid lg:grid-cols-3 gap-4">
+            <div className="md:ml-[50px] md:mr-[50px] mt-[50px] grid md:grid-cols-3 gap-y-10">
               {SocList.map((SocList) => {
                 return (
                   <div className="h-[500px] w-[300px] bg-white rounded-xl grid grid-rows-2 shadow-2xl hover:scale-105 transition-all duration-300 ease-in-out">
                     <div className="rounded-tr-xl rounded-tl-xl overflow-hidden h-[300px]">
                       <img src={SocList.img} alt="" className="transform hover:scale-[110%] transition-all duration-300"/>
                     </div>
-                    <div className="ml-5">
+                    <div className="ml-10">
                       <p className="font-bold text-lg">
                         {SocList.name}
                       </p>
