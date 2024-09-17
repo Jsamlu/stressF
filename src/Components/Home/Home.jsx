@@ -20,7 +20,7 @@ export default function Home() {
     }, []);
 
   return (
-    <div className="bg-indigo-100 min-h-screen min-w-screen">
+    <div className="bg-indigo-100 min-h-screen">
     <Hero></Hero>
     
     <div
@@ -31,7 +31,7 @@ export default function Home() {
     </div>
     {/* ${showHeader ?  'md:ms-[20%]' : ' ms-0'}  */}
     <div className={` py-10 lg:w-[50%] md:[60%] sm:w-[85%] w-[90%] h-full mr-auto ml-auto transition-all duration-300 ease-in-out `}>  
-      <div className="bg-white md:mt-10 grid grid-cols-2  gap-1  items-center rounded-xl shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] md:h-[300px] md:w-[800px] lg:w-[950px] sm:w-[550px] h-[200px] w-[450px]">
+      <div className="bg-white md:mt-10 grid grid-cols-2  gap-1  items-center rounded-xl shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] md:h-[300px] md:w-[700px] lg:w-[950px] sm:w-[550px] h-[200px] w-[450px]">
         <div className="rounded-tl-xl rounded-bl-xl h-full w-full object-cover overflow-hidden">
           <img src="/assets/qna.jpg" alt="QnA" className="h-full w-full transform hover:scale-[110%] transition-all duration-300 rounded-tl-xl rounded-bl-xl"/>
         </div>
@@ -44,7 +44,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="bg-white mt-10 grid grid-cols-2  gap-1  items-center rounded-xl shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] md:h-[300px] md:w-[800px] lg:w-[950px] sm:w-[550px] h-[210px] w-[450px]">
+      <div className="bg-white mt-10 grid grid-cols-2  gap-1  items-center rounded-xl shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] md:h-[300px] md:w-[700px] lg:w-[950px] sm:w-[550px] h-[210px] w-[450px]">
         <div className="pl-10 pr-10 pt-5 pb-5 lg:pl-10 lg:pr-10 lg:pt-10">
           <h1 className="text-lg md:text-xl  text-purple-900 font-bold">Activities</h1>
           <p className="text-xs md:text-sm text-balance lg:text-xl text-gray-500 mt-2 md:mt-5">
@@ -56,7 +56,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="bg-white mt-10 grid grid-cols-2  gap-1  items-center rounded-xl shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] md:h-[300px] md:w-[800px] lg:w-[950px] sm:w-[550px] h-[200px] w-[450px]">
+      <div className="bg-white mt-10 grid grid-cols-2  gap-1  items-center rounded-xl shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] md:h-[300px] md:w-[700px] lg:w-[950px] sm:w-[550px] h-[200px] w-[450px]">
         <div className=" h-full  object-cover overflow-hidden rounded-tl-xl rounded-bl-xl">
         <img src="/assets/counselling.jpg" alt="counselling" className="h-full w-full transform hover:scale-[110%] transition-all duration-300 rounded-tl-xl rounded-bl-xl"/>
         </div>
