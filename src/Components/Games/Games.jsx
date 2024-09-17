@@ -32,7 +32,9 @@ const BubbleGame = () => {
 
       update() {
         this.draw();
-        this.radius += 0.5;
+        if(this.radius <= 80){
+          this.radius += 0.5;
+        }
       }
     }
 
@@ -40,7 +42,7 @@ const BubbleGame = () => {
       constructor(x, y) {
         this.x = x;
         this.y = y;
-        this.radius = 10;
+        this.radius = 5;
         this.color = "green";
       }
     }
@@ -49,7 +51,7 @@ const BubbleGame = () => {
       let x = Math.random() * canvas.width;
       let y = Math.random() * canvas.height;
       let radius = 20;
-      let color ='#68cc83';
+      let color ='rgba(100,200,250,0.8)';
       bubbleArray.push(new Bubble(x, y, radius, color));
     };
 
@@ -61,11 +63,11 @@ const BubbleGame = () => {
       clickEventArray.forEach((click, clickIndex) => {
         bubbleArray.forEach((bubble, bubbleIndex) => {
           let dist = Math.hypot(click.x - bubble.x, click.y - bubble.y);
-          if ((dist - bubble.radius - click.radius) < 20) {
-            console.log('pop');
+          console.log(dist);
+          if ((dist-170 - bubble.radius - click.radius ) <= 20) {
             bubbleArray.splice(bubbleIndex, 1);
             clickEventArray.splice(clickIndex, 1);
-            setScoreCount((prev) => prev + 1);
+            setScoreCount((prev) => prev + 1); 
           }
         });
       });
@@ -93,9 +95,8 @@ const BubbleGame = () => {
   }, []);
 
   return (
-    <div>
+    <div className='bg-[rgba(131,191,250,0.4)] backdrop-blur-[2px] absolute top-0 right-0 bottom-0 left-0 w-screen h-screen z-50'>
       <canvas ref={canvasRef} />
-      <div>Score: {scoreCount}</div>
     </div>
   );
 };

@@ -4,6 +4,7 @@
 
 body{
     overflow-x: hidden;
+
     height: 100%;
     background-color: white;
 }
@@ -102,5 +103,5 @@ header.scrolled{
 }
 
 .ds{
-  filter: drop-shadow(0 10px 10px rgb(0 0 0 / 0.5));
+  filter: drop-shadow(0 10px 10px rgba(9, 38, 127, 0.3));
 }

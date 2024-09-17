@@ -12,7 +12,7 @@ export default function Header() {
     { href: "/about_us", label: "About us" },
   ];
   return (
-    <div className="border-r shadow-sm fixed top-0 left-0 rounded-xl h-screen w-[18%] flex-col bg-white hidden md:flex">
+    <div className="border-r shadow-sm fixed top-0 left-0 bottom-0 rounded-xl h-screen w-[18%] flex-col bg-white hidden md:flex">
       <div className="mt-10 mb-10 text-center">
         <Link to="/" className="flex justify-center">
           <img src="/assets2/Logo2.png" alt="logo" className=" w-[180px]"/>
