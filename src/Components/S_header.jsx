@@ -173,7 +173,7 @@ function S_header() {
         >
           {GameON ? <MdExitToApp /> : <LuCircleDashed />}
         </button>
-        {/* <Games/> */}
+        <Games/>
       </div>
     </div>
   );
