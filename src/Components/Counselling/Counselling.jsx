@@ -73,9 +73,9 @@ export default function Counselling() {
                       : "Unavailable"}
                   </p>
                 </div>
-                <div className="px-6 py-4">
+                <div className=" px-6 py-4">
                   <button
-                    className={`${
+                    className={`w-[80%] relative bottom-5 left-auto right-auto ${
                       CList.availability === "available"
                         ? "bg-blue-500 hover:bg-blue-700"
                         : "bg-gray-500 cursor-not-allowed"

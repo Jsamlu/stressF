@@ -7,7 +7,7 @@ import Sfooter from "../Sfooter";
 import MedList from "./MedList.jsx";
 import SocList from "./SocList.jsx"
 import SelfList from "./SelfList.jsx";
-import SearchBar from "../SearchBar";
+// import SearchBar from "../SearchBar";
 import S_header from "../S_header";
 // import ACT from './ACT'
 export default function Activities() {
@@ -20,7 +20,7 @@ export default function Activities() {
             <div className="flex justify-between items-center">
             <p className="text-5xl text-[#0f444c] font-bold">Activities</p>
 
-            <div className="absolute right-2 top-2 bottom-2"><SearchBar/></div>
+            {/* <div className="absolute right-2 top-2 bottom-2"><SearchBar/></div> */}
             </div>
             <p className="text-3xl mt-[50px] text-[#0f444c] font-slim">
               Meditation
