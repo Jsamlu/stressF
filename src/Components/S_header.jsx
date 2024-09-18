@@ -7,8 +7,8 @@ import { FaUserCircle } from "react-icons/fa";
 import { useState } from "react";
 import { MdExitToApp } from "react-icons/md";
 import { BsJournalBookmarkFill } from "react-icons/bs";
-import { TbUsersGroup } from "react-icons/tb";
-
+// import { TbUsersGroup } from "react-icons/tb";
+import Games from './Games/Games'
 function S_header() {
   const navigate = useNavigate();
   const [showNav, setShowNav] = useState(false);
