@@ -4,7 +4,7 @@ import Sfooter from "../Sfooter";
 import S_header from "../S_header";
 import { Link } from "react-router-dom";
 
-const Login = () => {
+const Signin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -32,10 +32,10 @@ const Login = () => {
   return (
     <>
       <div className="md:hidden"><S_header/></div>
-      <div className="bg-indigo-200 h-full w-full cont ">
+      <div className="h-full w-full cont bg-teal-200">
         <div className="">
-          <div className="login-container  bg-white">
-            <h2>Login</h2>
+          <div className="login-container bg-white ">
+            <h2>Sign In</h2>
             {error && <p className="error">{error}</p>}
             <form onSubmit={handleSubmit}>
               <div className="form-group mt-10">
@@ -62,12 +62,12 @@ const Login = () => {
               </div>
               <button
 
-                className="mt-5 p-5 rounded-xl bg-[#4ea1f9] text-white transition-all duration-400"
+                className="mt-5 p-5 rounded-xl bg-teal-600 hover:bg-teal-500 text-white transition-all duration-400"
                 type="submit"
               >
-                Login
+                Sign in
               </button>
-              <p className="mx-[5%] mt-4">Register as New&nbsp; <Link to="/signin" className="hover:text-blue-800 text-blue-500">Sign-In</Link></p>
+              <p className="mx-[5%] mt-4">Already have an account&nbsp; <Link to="/login" className="hover:text-teal-800 text-teal-500">Login</Link></p>
             </form>
           </div>
         </div>
@@ -77,4 +77,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Signin;

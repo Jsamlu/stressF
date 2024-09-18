@@ -4,7 +4,6 @@ import React, { useState, useEffect } from "react";
 import Header from "../Header.jsx";
 import Footer from "../Footer.jsx";
 import Aim from "./Aim.jsx";
-import Faq from "../Aboutus/Faq.jsx";
 
 
 export default function Home() {
@@ -113,13 +112,6 @@ export default function Home() {
             </p>
           </div>
         </div>
-      </div>
-      <hr className="p-1 bg-white" />
-      <div
-        className={` ${
-          showHeader ? "md:ms-[17%]" : " ms-0"
-        }   md:px-15 sm:px-20  px-10 lg:px-20 py-10  w-[100%] h-full mx-auto transition-all duration-700 ease-in-out overflow-hidden `}
-      >
       </div>
       <Footer />
     </div>

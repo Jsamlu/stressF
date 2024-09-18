@@ -31,7 +31,7 @@ function Hero() {
             <div className=" mx-10 my-10 flex items-center justify-start gap-10 ">
               <Link
                 to="/test"
-                className="text-white text-xl md:text-3xl font-semibold  px-3 py-2 mb-1  text-center shadow-lg shadow-gray-500 bg-teal-500 hover:bg-teal-700 rounded-full transition-all duration-300"
+                className="text-white text-xl md:mt-5 md:text-3xl font-semibold  px-3 py-2 mb-1  text-center shadow-lg shadow-gray-500 bg-teal-500 hover:bg-teal-700 rounded-full transition-all duration-300"
               >
                 Get Started
               </Link>

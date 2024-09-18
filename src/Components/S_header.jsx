@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import { LuCircleDashed } from "react-icons/lu";
 import { useNavigate } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
+import { FaUserCircle } from "react-icons/fa";
 import { useState } from 'react';
-import Games from './Games/Games.jsx'
 import { MdExitToApp } from "react-icons/md";
 
 function S_header() {
@@ -37,6 +37,7 @@ function S_header() {
         </div>
         <div>
           {/* login options */}
+          <Link to="/login" className=" hover:text-sky-700 text-5xl transition-all duration-75"><FaUserCircle /></Link>
         </div>
       </header>
       <div className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out ${showNav ? 'min-h-full opacity-100' : 'max-h-0 opacity-0'

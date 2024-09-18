@@ -14,6 +14,7 @@ import Games from './Components/Games/Games';
 import Counselling from './Components/Counselling/Counselling';
 import Journal from './Components/Journal/Journal'
 import ScrollToTop from './Components/ScrollToTop';
+import Signin from './Components/Login/Signin';
 
 // scrap
 import Scrap from './Components/scrap/scrap'
@@ -40,6 +41,7 @@ function App() {
           <Route path="/resources" element={<Resources/>} />
           <Route path="/activities" element={<Activities/>} />
           <Route path="/login" element={<Login/>} />
+          <Route path="/signin" element={<Signin/>} />
           <Route path="/community" element={<Community/>} />
           <Route path="/journal" element={<Journal/>} />
           <Route path="/about_us" element={<Aboutus/>} />
