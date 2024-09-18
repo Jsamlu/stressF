@@ -9,7 +9,7 @@ import {
 export default function Faq(){
     return <div>
         <div className="Quections mx-5">
-            <h1 className='md:text-3xl text-2xl text-purple-800 mb-10'>FAQ's</h1>
+            <h1 className='md:text-4xl text-center text-2xl font-bold text-purple-800 mb-10'>FAQ's</h1>
               <ul id="QEC">
                 {FaqList.map((FaqList) => {
                   return (

@@ -1,5 +1,7 @@
 import S_header from "../S_header";
 import Faq from "./Faq";
+import Sfooter from '../Sfooter';
+
 
 export default function About_us(){
   return (
@@ -52,6 +54,7 @@ export default function About_us(){
     <div className="px-[5%] py-[3%]">
     <Faq/>
     </div>
+    <Sfooter/>
     </>
   );
 
