@@ -11,7 +11,7 @@ function Test() {
       <div className="md:hidden">
         <S_header />
       </div>
-      <div className=" md:pt-10 pt-[100px] w-full h-full  ">
+      <div className=" md:pt-10 pt-[50px] w-full h-full  ">
         <div className="grid md:grid-cols-3 ">
           <div className="md:col-span-2 bg-white my-10 w-[95%] mx-auto px-[5%] py-[3%] rounded-xl">
             <div>
