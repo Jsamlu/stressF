@@ -18,11 +18,11 @@ function Hero() {
       <div className="p-8 pt-[150px] md:pt-[100px] absolute top-0 w-screen h-screen items-center backdrop-blur-sm max-w-full">
         <div className="z-10">
           <div className="text-balck pl-7">
-            <h2 className="sm:text-4xl lg:text-7xl  lg:font-semibold text-2xl font-bold text-left text-teal-100 ds">
+            <h2 className="sm:text-4xl md:mt-5 lg:text-7xl  lg:font-semibold text-2xl font-bold text-left text-teal-100 ds">
               Find peace in the present moment;
               it’s where stress fades away.
             </h2>
-            <p className="text-prety mt-7 md:mt-10 lg:text-3xl sm:text-xl text-lg text-left text-white ds">
+            <p className="text-prety mt-7 md:mt-5 lg:text-3xl sm:text-xl text-lg text-left text-white ds">
               Hey there! We know that being a student can sometimes feel
               overwhelming.<br /> Whether it's juggling assignments, exams, or just
               everyday challenges, stress can sneak up on you.<br /> That’s where
