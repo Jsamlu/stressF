@@ -4,13 +4,13 @@ export default function () {
       <div className="md:ml-[10%] w-[60%] mx-auto  md:pt-4 pb-4 rounded-xl flex flex-col gap-y-5">
         <hr className="border-0 h-[1px]  bg-gray-400"/>
         <div className="text-center md:3xl text-xl overflow-hidden flex justify-center"><img src="/assets2/Logo2.png" className="h-[40px]" alt="logo" /></div>
-        <div className=" md:text-2xl text-lg pt-1 pb-4 text-center text-wrap text-gray-500">
-          <p className="leading-10">
+        <div className=" md:text-2xl sm:text-lg text-sm pt-1 pb-4 text-center text-wrap text-gray-500">
+          <p className="sm:leading-10">
             student life can be a whirlwind of deadlines,
             exams, and all the pressures that come with juggling school, work,
             and personal life.</p>
             <br /> 
-            <p className="leading-10">That’s why we’re here! D-Stress is your go-to
+            <p className="sm:leading-10">That’s why we’re here! D-Stress is your go-to
             space for managing stress and creating healthier habits, so you can
             feel more in control and less overwhelmed. Whether you need quick
             relaxation tips, a habit tracker to keep you on track, or just a
