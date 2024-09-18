@@ -13,7 +13,7 @@ import Aboutus from './Components/Aboutus/Aboutus';
 import Games from './Components/Games/Games';
 import Counselling from './Components/Counselling/Counselling';
 import Journal from './Components/Journal/Journal'
-
+import ScrollToTop from './Components/ScrollToTop';
 
 // scrap
 import Scrap from './Components/scrap/scrap'
@@ -59,6 +59,7 @@ function App() {
 function MainApp() {
   return (
     <Router>
+      <ScrollToTop/>
       <App />
     </Router>
   );
