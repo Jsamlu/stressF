@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import Header from "../Header.jsx";
 import Footer from "../Footer.jsx";
 import Aim from "./Aim.jsx";
-import Faq from "./Faq.jsx";
+import Faq from "../Aboutus/Faq.jsx";
 
 
 export default function Home() {

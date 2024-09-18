@@ -8,8 +8,8 @@ import {
 
 export default function Faq(){
     return <div>
-        <div className="Quections mr-[30%]">
-            <h1 className='md:text-5xl text-purple-800 mb-10'>FAQ's</h1>
+        <div className="Quections mx-5">
+            <h1 className='md:text-3xl text-2xl text-purple-800 mb-10'>FAQ's</h1>
               <ul id="QEC">
                 {FaqList.map((FaqList) => {
                   return (
@@ -33,5 +33,6 @@ export default function Faq(){
                 })}
               </ul>
             </div>
+            
     </div>
 }

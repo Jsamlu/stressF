@@ -28,7 +28,7 @@ function Test() {
             <div className="mx-[1%] py-[10%]">
               <Link
                 to="/forum"
-                className="bg-blue-500 px-2 py-3 md:px-4 md:py-4 rounded-xl text-white  text-lg md:text-2xl"
+                className="bg-teal-600 px-2 py-3 md:px-4 md:py-4 rounded-xl text-white  text-lg md:text-2xl hover:bg-teal-500 transition-all duration-100"
               >
                 Take Test
               </Link>

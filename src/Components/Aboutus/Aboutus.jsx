@@ -1,9 +1,11 @@
 import S_header from "../S_header";
+import Faq from "./Faq";
 
 export default function About_us(){
   return (
     <>
     <div className="md:hidden"><S_header/></div>
+    <div className="md:hidden h-[100px] w-full bg-blue-600"></div>
     <div className="bg-gray-50 min-h-screen flex items-center justify-center">
       
       <div className="max-w-4xl mx-auto p-8">
@@ -45,6 +47,10 @@ export default function About_us(){
           productive lives.
         </p>
       </div>
+    </div>
+    <hr className="border-0 h-[2px] bg-gray-300"></hr>
+    <div className="px-[5%] py-[3%]">
+    <Faq/>
     </div>
     </>
   );
