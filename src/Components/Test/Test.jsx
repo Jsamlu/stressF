@@ -21,8 +21,7 @@ function Test() {
                 out how you're really feeling.
               </h1>
               <p className="text-gray-500 md:text-2xl text-xl">
-                "Life can get overwhelming, but understanding your stress levels
-                is the first step toward relief. Take this quick test to gain
+                "Take this quick test to gain
                 insights and personalized suggestions to help you manage stress
                 better. You’ve got this!
               </p>
