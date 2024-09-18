@@ -15,6 +15,7 @@ export default function Activities() {
     <>
       <div id="Activities">
       <div className="md:hidden"><S_header/></div>
+    <div className="md:hidden h-[100px] w-full bg-blue-600"></div>
         <div className=" p-10 bg-indigo-100">
           <div>
             <div className="flex justify-between items-center">

@@ -65,12 +65,12 @@ function S_header() {
 
         <div className="flex gap-5 text-2xl md:text-5xl">
           {/* community page */}
-          <Link
+          {/* <Link
             to="/community"
             className=" hover:text-sky-700 transition-all duration-75"
           >
             <TbUsersGroup />
-          </Link>
+          </Link> */}
           {/* Journal page */}
           <Link
             to="/journal"

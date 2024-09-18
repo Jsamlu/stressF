@@ -14,9 +14,8 @@ import Vlist from './Vlist';
 function Resources() {
   return (
     <div id="Resources" className="bg-indigo-100">
-      <div className="md:hidden">
-        <S_header />
-      </div>
+      <div className="md:hidden"><S_header/></div>
+      <div className="md:hidden h-[100px] w-full bg-blue-600"></div>
       <div className="px-[20px]  rounded-xl min-h-screen">
         <p className="text-5xl  text-[#0f444c] font-bold">Resources</p>
         <div className="p-5 mt-10  grid grid-cols-1 md:grid-cols-2 gap-x-3">

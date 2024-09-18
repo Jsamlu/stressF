@@ -7,6 +7,7 @@ export default function Counselling() {
   return (
     <div className="bg-indigo-100 w-full">
       <div className="md:hidden"><S_header/></div>
+      <div className="md:hidden h-[100px] w-full bg-blue-600"></div>
       <div className="flex justify-between">
       <h1 className="pl-10 pt-10 mb-5 text-3xl font-bold text-[#0f444c]">
         Counselling Services

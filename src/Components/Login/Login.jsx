@@ -32,6 +32,7 @@ const Login = () => {
   return (
     <>
       <div className="md:hidden"><S_header/></div>
+      <div className="md:hidden h-[100px] w-full bg-blue-600"></div>
       <div className="bg-indigo-200 h-full w-full cont ">
         <div className="">
           <div className="login-container  bg-white">
