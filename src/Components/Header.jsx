@@ -8,6 +8,7 @@ export default function Header() {
     { href: "/test", label: "Test" },
     { href: "/resources", label: "Resources" },
     { href: "/activities", label: "Activities" },
+    { href: "/maingame", label: "Games" },
     { href: "/counselling", label: "Counselling" },
     { href: "/about_us", label: "About us" },
   ];

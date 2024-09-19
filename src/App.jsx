@@ -17,6 +17,7 @@ import Signin from './Components/Login/Signin';
 import Journal from './Components/Journal/Journal';
 // scrap
 import Scrap from './Components/scrap/scrap'
+import MainGame from './Components/Games/MainGame';
 
 function App() {
   const location = useLocation();
@@ -46,6 +47,7 @@ function App() {
           <Route path="/about_us" element={<Aboutus/>} />
           <Route path="/games" element={<Games/>} />
           <Route path="/counselling" element={<Counselling/>} />
+          <Route path="/maingame" element={<MainGame/>} />
 
           {/* ERROR page */}
           <Route path="*" element={<p>404 ERROR</p>} />

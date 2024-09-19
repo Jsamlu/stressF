@@ -1,14 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { LuCircleDashed } from "react-icons/lu";
+
 import { useNavigate } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { FaUserCircle } from "react-icons/fa";
 import { useState } from "react";
-import { MdExitToApp } from "react-icons/md";
+
 import { BsJournalBookmarkFill } from "react-icons/bs";
 // import { TbUsersGroup } from "react-icons/tb";
-import Games from './Games/Games'
 function S_header() {
   const navigate = useNavigate();
   const [showNav, setShowNav] = useState(false);
@@ -32,12 +31,6 @@ function S_header() {
           <Link to="/" className=" md:w-[200px] w-[150px]">
             <img src="/assets2/Logo.png" alt="logo" />
           </Link>
-          <button
-            className="text-3xl w-[50px] hover:bg-transparent animate-bounce"
-            onClick={togglegame}
-          >
-            {GameON ? <MdExitToApp /> : <LuCircleDashed />}
-          </button>
         </div>
         <nav className="items-center  mr-0 pr-7 pl-7 text-2xl hidden lg:flex justify-end transform ease-in-out gap-10">
           <Link to="/test" className=" hover:text-yellow-400">
@@ -51,6 +44,8 @@ function S_header() {
           </Link>
           <Link to="/counselling" className=" hover:text-yellow-400">
             Counselling
+          </Link><Link to="/maingame" className=" hover:text-yellow-400">
+            Games
           </Link>
         </nav>
         <div className="md:hidden px-5">
@@ -153,6 +148,16 @@ function S_header() {
           <li>
             <button
               onClick={() => {
+                navigate("/maingame");
+                setShowNav(false);
+              }}
+            >
+             Games
+            </button>
+          </li>
+          <li>
+            <button
+              onClick={() => {
                 navigate("/about_us");
                 setShowNav(false);
               }}
@@ -161,19 +166,6 @@ function S_header() {
             </button>
           </li>
         </ul>
-      </div>
-      <div
-        className={`${
-          GameON ? "z-50 absolute" : "-z-50 hidden"
-        } w-screen text-center  rounded-md text-white absolute top-0 right-0 z-40 `}
-      >
-        <button
-          onClick={togglegame}
-          className=" absolute top-0 left-[20px] z-50 text-5xl  w-[100px] hover:bg-transparent transition-all duration-500"
-        >
-          {GameON ? <MdExitToApp /> : <LuCircleDashed />}
-        </button>
-        <Games/>
       </div>
     </div>
   );

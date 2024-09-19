@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
-
+import { Link } from "react-router-dom";
+import { RxExit } from "react-icons/rx";
 const BubbleGame = () => {
   const canvasRef = useRef(null);
   const [scoreCount, setScoreCount] = useState(0);
@@ -96,7 +97,8 @@ const BubbleGame = () => {
 
   return (
     <>
-      <div className="bg-[rgba(131,191,250,0.4)] backdrop-blur-[2px] absolute top-0 right-0 bottom-0 left-0 w-screen h-screen">
+      <div className="bg-teal-600 backdrop-blur-[2px] absolute top-0 right-0 bottom-0 left-0 w-screen h-screen">
+        <Link className="text-2xl md:text-5xl pt-5 text-white hover:text-teal-400" to="/maingame"><RxExit /></Link>
         <canvas ref={canvasRef} />
       </div>
     </>

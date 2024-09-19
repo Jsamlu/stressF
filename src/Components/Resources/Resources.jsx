@@ -18,7 +18,7 @@ function Resources() {
       <div className="md:hidden h-[100px] w-full bg-blue-600"></div>
       <div className="px-[20px]  rounded-xl min-h-screen">
         <p className="text-5xl  text-[#0f444c] font-bold">Resources</p>
-        <div className="p-5 mt-10  grid grid-cols-1 md:grid-cols-2 gap-x-3">
+        <div className="p-5 mt-10  grid grid-cols-1 md:grid-cols-2 gap-y-10 gap-x-3">
           <div>
             <div className="Quections">
               <ul id="QEC">
@@ -68,6 +68,17 @@ function Resources() {
 
           </div>
         </div>
+      </div>
+      <div>
+      <p className="ml-10 md:text-3xl text-xl font-bold">Links</p>
+      <div className="grid gap-y-5 m-10">
+        <a className="text-blue-500 hover:text-blue-700" href="https://www.who.int/news-room/questions-and-answers/item/stress">WHO on Stress</a>
+        <a className="text-blue-500 hover:text-blue-700" href="https://www.who.int/publications/i/item/9789240003927">WHO Going what matters</a>
+        <a className="text-blue-500 hover:text-blue-700" href="https://www.unicef.org/parenting/mental-health/what-is-stress">UNICEF on Stress</a>
+        <a className="text-blue-500 hover:text-blue-700" href="https://www.apa.org/topics/stress">American Psychological Association on Stress</a>
+        <a className="text-blue-500 hover:text-blue-700" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2568977/">National Institutes of Health on Stress</a>
+      </div>
+
       </div>
       <Sfooter />
     </div>
