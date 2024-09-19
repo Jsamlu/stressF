@@ -23,7 +23,10 @@ export default function Header() {
       <div className=" lg:px-10 px-6 py-10 h-full w-full bg-gradient-to-br from-indigo-300 to-indigo-500 text-white md:text-2xl text-left ">
         <div className="flex flex-col text-center">
           {navlinks.map((navlink)=>{
-            return<Link to={navlink.href} className="py-7">{navlink.label}</Link>
+            return<>
+            <Link to={navlink.href} className="hover:bg-indigo-300 p-5">{navlink.label}</Link>
+            {/* <hr className="border-0 h-[1px] bg-indigo-500"></hr> */}
+            </>
           })}  
           {/* <Link to="/test" className="p-7">Test</Link>
           <Link to="/resources" className="p-7">Resources</Link>
