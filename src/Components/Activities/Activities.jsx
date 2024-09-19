@@ -42,7 +42,7 @@ export default function Activities() {
                         {MedList.desc}
                       </p>
                       <a
-                        href="/links"
+                        href="#"
                         className="text-white text-center right-0 block bg-blue-400 rounded-lg p-1 mr-[200px] hover:bg-white   hover:font-bold hover:text-blue-800 border-2 border-white hover:boder-2 hover:border-blue-900 transition-all duration-400"
                       >
                         visit
