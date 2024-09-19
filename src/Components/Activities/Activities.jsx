@@ -41,12 +41,15 @@ export default function Activities() {
                       <p className="mt-2 mb-3">
                         {MedList.desc}
                       </p>
-                      <a
+                      <div className="grid grid-cols-2"> 
+                        <a
                         href="#"
-                        className="text-white text-center right-0 block bg-blue-400 rounded-lg p-1 mr-[200px] hover:bg-white   hover:font-bold hover:text-blue-800 border-2 border-white hover:boder-2 hover:border-blue-900 transition-all duration-400"
+                        className="text-white text-center right-0 block bg-blue-400 rounded-lg p-1 hover:bg-white   hover:font-bold hover:text-blue-800 border-2 border-white hover:boder-2 hover:border-blue-900 transition-all duration-400"
                       >
                         visit
                       </a>
+                      <button  className="text-white text-center bg-blue-400 rounded-lg p-1 hover:bg-white   hover:font-bold hover:text-blue-800 border-2 border-white hover:boder-2 hover:border-blue-900 transition-all duration-400">+</button>
+                      </div>
                     </div>
                   </div>
                 );
