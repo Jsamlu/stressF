@@ -24,7 +24,7 @@ export default function Header() {
         <div className="flex flex-col text-center">
           {navlinks.map((navlink)=>{
             return<>
-            <Link to={navlink.href} className="hover:bg-gradient-to-br from-indigo-200 to-indigo-300 p-5">{navlink.label}</Link>
+            <Link to={navlink.href} className="hover:bg-gradient-to-br from-indigo-200 to-indigo-300 p-5 transition-all duration-300">{navlink.label}</Link>
             {/* <hr className="border-0 h-[1px] bg-indigo-500"></hr> */}
             </>
           })}  
