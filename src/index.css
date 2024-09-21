@@ -97,9 +97,9 @@ header.scrolled{
   .font-outline-0 {
     -webkit-text-stroke: 0.5px rgb(59, 45, 154);
   }
-  .font-outline-10 {
-    -webkit-text-stroke: 10px rgb(59, 45, 154);
-  }
+  /* .font-outline-10 {
+    -webkit-text-stroke: 10px rgba(4, 61, 122, 0.4);
+  } */
 }
 
 .ds{

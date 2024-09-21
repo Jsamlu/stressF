@@ -20,13 +20,15 @@ function Hero() {
           <div className="text-balck pl-7">
             <h2 className="sm:text-4xl md:mt-5 lg:text-7xl  lg:font-semibold text-2xl font-bold text-left text-teal-100 ds">
               Find peace in the present moment;
-              <br/>it’s where stress fades away.
+              <br />
+              it’s where stress fades away.
             </h2>
             <p className="text-prety mt-7 md:mt-5 lg:text-3xl sm:text-xl text-lg text-left text-white ds">
               Hey there! We know that being a student can sometimes feel
-              overwhelming.<br /> Whether it's juggling assignments, exams, or just
-              everyday challenges, stress can sneak up on you.<br /> That’s where
-              D-stress comes in!
+              overwhelming.
+              <br /> Whether it's juggling assignments, exams, or just everyday
+              challenges, stress can sneak up on you.
+              <br /> That’s where D-stress comes in!
             </p>
             <div className=" mx-10 my-10 flex items-center justify-start gap-10 ">
               <Link

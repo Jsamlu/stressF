@@ -20,11 +20,11 @@ export default function Header() {
         </Link>
       </div>
 
-      <div className=" lg:px-10 px-6 py-10 h-full w-full bg-gradient-to-br from-indigo-300 to-indigo-500 text-white md:text-2xl text-left ">
+      <div className=" lg:px-10 px-6 py-10 h-full w-full bg-gradient-to-br from-indigo-300 to-indigo-500  md:text-2xl text-left ">
         <div className="flex flex-col text-center">
           {navlinks.map((navlink)=>{
             return<>
-            <Link to={navlink.href} className="hover:bg-gradient-to-br from-indigo-200 to-indigo-300 p-5 transition-all duration-300">{navlink.label}</Link>
+            <Link to={navlink.href} className="hover:text-indigo-800 text-white hover:font-semibold hover:bg-gradient-to-br from-indigo-200 to-indigo-300 p-5 transition-all duration-300">{navlink.label}</Link>
             {/* <hr className="border-0 h-[1px] bg-indigo-500"></hr> */}
             </>
           })}  

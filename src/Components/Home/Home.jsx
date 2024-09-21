@@ -5,11 +5,11 @@ import Header from "../Header.jsx";
 import Footer from "../Footer.jsx";
 import Aim from "./Aim.jsx";
 
+import Feature_List from "./Feature_List.jsx";
 
 export default function Home() {
   const [showHeader, setShowHeader] = useState(false);
 
-  
   useEffect(() => {
     const handleScroll = () => {
       const scrollThreshold = window.innerHeight * 0.5; // 80% of the viewport height
@@ -54,7 +54,7 @@ export default function Home() {
           showHeader ? "md:ms-[17%]" : " ms-0"
         }   md:px-15 sm:px-20  px-10 lg:px-20 py-10  w-[100%] h-full mx-auto transition-all duration-700 ease-in-out overflow-hidden `}
       >
-        <div className="bg-white md:mt-10 grid grid-cols-2 md:mx-0 mx-auto  gap-1  items-center rounded-xl shadow-[0_35px_60px_-15px_rgba(0,0,0,0.2)] md:h-[300px] w-10/12 h-[200px] ">
+        {/* <div className="bg-white md:mt-10 grid grid-cols-2 md:mx-0 mx-auto  gap-1  items-center rounded-xl shadow-[0_35px_60px_-15px_rgba(0,0,0,0.2)] md:h-[300px] w-10/12 h-[200px] ">
           <div className="rounded-tl-xl rounded-bl-xl h-full w-full object-cover overflow-hidden">
             <img
               src="/assets/qna.jpg"
@@ -110,6 +110,25 @@ export default function Home() {
               evaluating, recommendations to some professionals can be made
               available.
             </p>
+          </div>
+        </div> */}
+        <div className="w-[80%] mx-[1%] ">
+          <div className="grid grid-cols-3 px-2 py-2  gap-x-5">
+            {Feature_List.map((list) => {
+              return (
+                <div className="">
+                  <div className="rounded-xl  flex relative object-cover h-[300px] w-[350px]">
+                    <div className=" backdrop-blur-0 hover:backdrop-blur-lg"></div>
+                    <img
+                      src={list.image}
+                      alt="qna.jpg"
+                      className="h-full w-full hover:bg-blue-500/50 transform hover:scale-[110%] transition-all duration-300"
+                    />
+                    <div className="absolute  opacity-[0%] hover:opacity-[50%] h-[300px] w-[350px] bg-blue-800 text-white text-4xl text-center transform transition-all duration-300">helllllllllo</div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
