@@ -33,7 +33,7 @@ const H_scroll = ({list}) => {
       {/* Horizontal Scrollable Container */}
       <div
         ref={scrollContainer}
-        className="flex space-x-4 items-center overflow-x-scroll"
+        className="flex space-x-4 items-center overflow-x-scroll no-scrollbar"
         style={{ whiteSpace: 'nowrap' }}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
@@ -68,14 +68,13 @@ const H_scroll = ({list}) => {
         ))}
         {list.map((list) => (
           <div className="">
-          <div className="rounded-xl  flex relative object-cover h-[300px] w-[350px]">
-            <div className=" backdrop-blur-0 hover:backdrop-blur-lg"></div>
+          <div className="rounded-xl  flex relative object-cover h-[300px] w-[350px] transform hover:scale-[110%] scale-90 transition-all duration-500">
             <img loading="lazy"
               src={list.image}
               alt="qna.jpg"
-              className="h-full w-full hover:bg-blue-500/50 transform hover:scale-[110%] scale-90 transition-all duration-500"
+              className="h-full w-full "
             />
-            {/* <div className="absolute  opacity-[0%] hover:opacity-[50%] h-[300px] w-[350px] bg-blue-800 text-white text-4xl text-center transform transition-all duration-500">helllllllllo</div> */}
+            <div className="absolute  opacity-[0%] hover:opacity-[50%] h-[300px] w-[350px] bg-blue-800 text-white text-4xl text-center transform transition-all duration-500">helllllllllo</div>
           </div>
         </div>
        

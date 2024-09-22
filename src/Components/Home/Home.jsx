@@ -114,9 +114,9 @@ export default function Home() {
         } py-10 mx-auto transition-all duration-700 ease-in-out overflow-hidden md:block hidden `}
       >
         <div className="">
-          <h1 className="pb-10 mx-[45%] text-3xl font-semibold text-indigo-800">Features</h1>
+          <h1 className="pb-10 mx-[45%] text-3xl font-semibold text-indigo-800 underline underline-offset-[10px] decoration-2">Features</h1>
         </div>
-        <div className=" ">
+        <div className=" bg-white">
           <H_scroll list={Feature_List} />
         </div>
       </div>
