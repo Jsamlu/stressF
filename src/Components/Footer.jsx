@@ -40,7 +40,7 @@ export default function Footer (){
           },
     ];
 
- return <div className=" bg-indigo-950 lg:ml-[270px] md:h-[40vh]">
+ return <div className=" bg-blue-950 lg:ml-[270px] md:h-[40vh]">
         {/* quick links */}
         <hr className=" bg-indigo-300"/>
         <div className=" md:p-5 grid md:grid-row-3 w-screen h-[85%]">

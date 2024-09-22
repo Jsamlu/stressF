@@ -18,7 +18,7 @@ function Hero() {
       <div className="p-8 pt-[150px] md:pt-[100px] absolute top-0 w-screen h-screen items-center backdrop-blur-sm max-w-full">
         <div className="z-10">
           <div className="text-balck pl-7">
-            <h2 className="sm:text-4xl md:mt-5 lg:text-7xl  lg:font-semibold text-2xl font-bold text-left text-teal-100 ds">
+            <h2 className="sm:text-4xl md:mt-5 lg:text-7xl  lg:font-semibold text-2xl font-bold text-left text-sky-400 ds">
               Find peace in the present moment;
               <br />
               it’s where stress fades away.

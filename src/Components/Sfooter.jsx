@@ -54,7 +54,7 @@ export default function Footer() {
                 return (
                   <Link
                     to={FL.href}
-                    className="text-sm hover:text-indigo-400 transition-all duration-300 transform hover:-translate-x-1"
+                    className="text-sm  hover:text-sky-400 transition-all duration-300 transform hover:-translate-x-1"
                   >
                     {FL.label}
                   </Link>
