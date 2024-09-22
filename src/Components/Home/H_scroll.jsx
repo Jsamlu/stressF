@@ -47,7 +47,7 @@ const H_scroll = ({list}) => {
               alt="qna.jpg"
               className="h-full w-full hover:bg-blue-500/50 transform hover:scale-[110%] scale-90 transition-all duration-500 rounded-xl "
             />
-            {/* <div className="absolute  opacity-[0%] hover:opacity-[50%] h-[300px] w-[350px] bg-blue-800 text-white text-4xl text-center transform transition-all duration-500">helllllllllo</div> */}
+            <div className="absolute  opacity-[0%] hover:opacity-[50%] h-[300px] w-[350px] bg-blue-800 text-white text-4xl text-center transform transition-all duration-500">helllllllllo</div>
           </div>
         </div>
        
@@ -61,7 +61,7 @@ const H_scroll = ({list}) => {
               alt="qna.jpg"
               className="h-full w-full hover:bg-blue-500/50 transform hover:scale-[110%] scale-90 transition-all duration-500 rounded-xl"
             />
-            {/* <div className="absolute  opacity-[0%] hover:opacity-[50%] h-[300px] w-[350px] bg-blue-800 text-white text-4xl text-center transform transition-all duration-500">helllllllllo</div> */}
+            <div className="absolute  opacity-[0%] hover:opacity-[50%] h-[300px] w-[350px] bg-blue-800 text-white text-4xl text-center transform transition-all duration-500">helllllllllo</div>
           </div>
         </div>
        
