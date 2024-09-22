@@ -33,7 +33,7 @@ const Signin = () => {
     <>
       <div className="md:hidden"><S_header/></div>
       <div className="md:hidden h-[100px] w-full bg-blue-600"></div>
-      <div className="h-full w-full cont bg-teal-200">
+      <div className="h-full w-full cont bg-sky-200">
         <div className="">
           <div className="login-container bg-white ">
             <h2>Sign In</h2>
@@ -63,12 +63,12 @@ const Signin = () => {
               </div>
               <button
 
-                className="mt-5 p-5 rounded-xl bg-teal-600 hover:bg-teal-500 text-white transition-all duration-400"
+                className="mt-5 p-5 rounded-xl bg-sky-600 hover:bg-sky-500 text-white transition-all duration-400"
                 type="submit"
               >
                 Sign in
               </button>
-              <p className="mx-[5%] mt-4">Already have an account&nbsp; <Link to="/login" className="hover:text-teal-800 text-teal-500">Login</Link></p>
+              <p className="mx-[5%] mt-4">Already have an account&nbsp; <Link to="/login" className="hover:text-sky-800 text-sky-500">Login</Link></p>
             </form>
           </div>
         </div>
