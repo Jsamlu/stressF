@@ -70,13 +70,13 @@ function Resources() {
         </div>
       </div>
       <div>
-      <p className="ml-10 md:text-3xl text-xl font-bold">Links</p>
+      <p className="ml-10">Links</p>
       <div className="grid gap-y-5 m-10">
-        <a className="text-blue-500 hover:text-blue-700" href="https://www.who.int/news-room/questions-and-answers/item/stress">WHO on Stress</a>
-        <a className="text-blue-500 hover:text-blue-700" href="https://www.who.int/publications/i/item/9789240003927">WHO Going what matters</a>
-        <a className="text-blue-500 hover:text-blue-700" href="https://www.unicef.org/parenting/mental-health/what-is-stress">UNICEF on Stress</a>
-        <a className="text-blue-500 hover:text-blue-700" href="https://www.apa.org/topics/stress">American Psychological Association on Stress</a>
-        <a className="text-blue-500 hover:text-blue-700" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2568977/">National Institutes of Health on Stress</a>
+        <a className="text-blue-500 hover:text-blue-700 md:text-xl text-lg font-thin transition-all duration-500 underline-offset-0 decoration-transparent hover:decoration-blue-700 underline hover:underline-offset-[10px]" href="https://www.who.int/news-room/questions-and-answers/item/stress">WHO on Stress</a>
+        <a className="text-blue-500 hover:text-blue-700 md:text-xl text-lg font-thin transition-all duration-500 underline-offset-0 decoration-transparent hover:decoration-blue-700 underline hover:underline-offset-[10px]" href="https://www.who.int/publications/i/item/9789240003927">WHO Going what matters</a>
+        <a className="text-blue-500 hover:text-blue-700 md:text-xl text-lg font-thin transition-all duration-500 underline-offset-0 decoration-transparent hover:decoration-blue-700 underline hover:underline-offset-[10px]" href="https://www.unicef.org/parenting/mental-health/what-is-stress">UNICEF on Stress</a>
+        <a className="text-blue-500 hover:text-blue-700 md:text-xl text-lg font-thin transition-all duration-500 underline-offset-0 decoration-transparent hover:decoration-blue-700 underline hover:underline-offset-[10px]" href="https://www.apa.org/topics/stress">American Psychological Association on Stress</a>
+        <a className="text-blue-500 hover:text-blue-700 md:text-xl text-lg font-thin transition-all duration-500 underline-offset-0 decoration-transparent hover:decoration-blue-700 underline hover:underline-offset-[10px]" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2568977/">National Institutes of Health on Stress</a>
       </div>
 
       </div>
