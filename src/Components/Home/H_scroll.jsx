@@ -10,7 +10,7 @@ const H_scroll = ({list}) => {
 
     if (!container) return;
 
-    let scrollSpeed = 3;
+    let scrollSpeed = 1;
     let animationFrameId;
 
     const scroll = () => {

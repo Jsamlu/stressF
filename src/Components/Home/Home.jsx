@@ -7,6 +7,7 @@ import Aim from "./Aim.jsx";
 import H_scroll from "./H_scroll.jsx";
 
 import Feature_List from "./Feature_List.jsx";
+// import { Report } from "../Report/Report.jsx";
 
 export default function Home() {
   const [showHeader, setShowHeader] = useState(false);
@@ -119,6 +120,9 @@ export default function Home() {
         <div className=" bg-indigo-200 py-5">
           <H_scroll list={Feature_List} />
         </div>
+      </div>
+      <div>
+        {/* <Report/> */}
       </div>
       <Footer />
     </div>
