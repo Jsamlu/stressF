@@ -24,7 +24,7 @@ export default function Header() {
         <div className="flex flex-col text-center">
           {navlinks.map((navlink)=>{
             return<>
-            <Link to={navlink.href} className="underline underline-offset-0 decoration-transparent hover:decoration-blue-500 hover:underline-offset-[10px] hover:text-blue-500 text-white  hover:bg-gradient-to-br from-sky-200 to-sky-300 p-5 hover:scale-105 transition-all duration-150">{navlink.label}</Link>
+            <Link to={navlink.href} className="underline underline-offset-0 decoration-transparent hover:decoration-blue-500 hover:underline-offset-[10px] hover:text-blue-500 text-white  hover:bg-gradient-to-br from-sky-200 to-sky-300 p-5 hover:scale-105 transition-all duration-150 hover:rounded-xl">{navlink.label}</Link>
             {/* <hr className="border-0 h-[1px] bg-indigo-500"></hr> */}
             </>
           })}  
