@@ -10,7 +10,7 @@ const H_scroll = ({list}) => {
 
     if (!container) return;
 
-    let scrollSpeed = 1;
+    let scrollSpeed = 3;
     let animationFrameId;
 
     const scroll = () => {
@@ -41,11 +41,11 @@ const H_scroll = ({list}) => {
         {list.map((list) => (
           <div className="">
           <div className="rounded-xl  flex relative object-cover h-[300px] w-[350px]">
-            <div className=" backdrop-blur-0 hover:backdrop-blur-lg"></div>
+            <div className=" backdrop-blur-0 hover:backdrop-blur-lg rounded-xl"></div>
             <img loading="lazy"
               src={list.image}
               alt="qna.jpg"
-              className="h-full w-full hover:bg-blue-500/50 transform hover:scale-[110%] scale-90 transition-all duration-500"
+              className="h-full w-full hover:bg-blue-500/50 transform hover:scale-[110%] scale-90 transition-all duration-500 rounded-xl "
             />
             {/* <div className="absolute  opacity-[0%] hover:opacity-[50%] h-[300px] w-[350px] bg-blue-800 text-white text-4xl text-center transform transition-all duration-500">helllllllllo</div> */}
           </div>
@@ -59,7 +59,7 @@ const H_scroll = ({list}) => {
             <img loading="lazy"
               src={list.image}
               alt="qna.jpg"
-              className="h-full w-full hover:bg-blue-500/50 transform hover:scale-[110%] scale-90 transition-all duration-500"
+              className="h-full w-full hover:bg-blue-500/50 transform hover:scale-[110%] scale-90 transition-all duration-500 rounded-xl"
             />
             {/* <div className="absolute  opacity-[0%] hover:opacity-[50%] h-[300px] w-[350px] bg-blue-800 text-white text-4xl text-center transform transition-all duration-500">helllllllllo</div> */}
           </div>

@@ -16,7 +16,25 @@ const Feature_List =[
         label:`Counselling`,
         decs:`If the condition does not get better even after continuous evaluating, recommendations to some professionals can be made available.`,
         image:"/assets/counselling.jpg",
-    }
+    },
+    {
+        id:4,
+        label:`Community`,
+        decs:`If the condition does not get better even after continuous evaluating, recommendations to some professionals can be made available.`,
+        image:"/assets/community.jpg",
+    },
+    {
+        id:5,
+        label:`Chatbot`,
+        decs:`If the condition does not get better even after continuous evaluating, recommendations to some professionals can be made available.`,
+        image:"/assets/chatbot.jpg",
+    },
+    {
+        id:6,
+        label:`Games`,
+        decs:`If the condition does not get better even after continuous evaluating, recommendations to some professionals can be made available.`,
+        image:"/assets/self/self3.jpg",
+    },
 ]
 
 export default Feature_List;
