@@ -120,3 +120,11 @@ header.scrolled{
       scrollbar-width: none;  /* Firefox */
 }
 }
+
+.txt {
+  width:250px;
+  height: 70px;
+  overflow:hidden; 
+  text-overflow:ellipsis;
+  white-space:wrap; 
+}

@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import CList from "./CList";
 import Sfooter from "../Sfooter";
+import S_header from "../S_header";
 
 export default function Prof_page() {
   const { id } = useParams();
