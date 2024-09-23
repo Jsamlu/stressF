@@ -9,7 +9,7 @@ export default function Header() {
     { href: "/resources", label: "Resources" },
     { href: "/activities", label: "Activities" },
     { href: "/maingame", label: "Games" },
-    { href: "/counselling", label: "Counselling" },
+    { href: "/counselling", label: "Professionals" },
     { href: "/about_us", label: "About us" },
   ];
   return (
@@ -20,7 +20,7 @@ export default function Header() {
         </Link>
       </div>
 
-      <div className=" lg:px-10 px-6 py-10 h-full w-full bg-gradient-to-br from-sky-200 to-sky-600  md:text-2xl text-left ">
+      <div className=" lg:px-10 px-6 py-10 h-full w-full bg-gradient-to-br from-sky-200 to-sky-600  lg:text-2xl md:text-lg text-left ">
         <div className="flex flex-col text-center">
           {navlinks.map((navlink)=>{
             return<>

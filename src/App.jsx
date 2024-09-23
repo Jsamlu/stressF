@@ -18,21 +18,24 @@ import Journal from './Components/Journal/Journal';
 // scrap
 import Scrap from './Components/scrap/scrap'
 import MainGame from './Components/Games/MainGame';
+import Prof_page from './Components/Counselling/Prof_page';
+import { ActivityId } from './Components/Activities/ActivityId';
 
 function App() {
   const location = useLocation();
   const isHomePage = location.pathname === "/";
+  const isforumPage = location.pathname === "/forum";
 
   return (
 
     <div className='flex'>
-      {!isHomePage && (
+      {!(isHomePage || isforumPage )&& (
         <div className="md:w-[18%] hidden md:flex">
           <Header />
         </div>
       )}
 
-      <div  className={`${isHomePage ? ' md:w-full ' : 'md:flex-grow md:w-[80%]'} `}>
+      <div  className={`${isHomePage ? ' md:w-full ' : 'md:flex-grow md:w-[80%]'}${isforumPage ? ' md:w-full ' : 'md:flex-grow md:w-[80%]'} `}>
         <Routes>
           {/* Links */}
           <Route path="/" element={<Home/>} />
@@ -40,6 +43,7 @@ function App() {
           <Route path="/forum" element={<Forum/>} />
           <Route path="/resources" element={<Resources/>} />
           <Route path="/activities" element={<Activities/>} />
+          <Route path="/activities/:id" element={<ActivityId/>} />
           <Route path="/login" element={<Login/>} />
           <Route path="/signin" element={<Signin/>} />
           <Route path="/community" element={<Community/>} />
@@ -47,6 +51,7 @@ function App() {
           <Route path="/about_us" element={<Aboutus/>} />
           <Route path="/games" element={<Games/>} />
           <Route path="/counselling" element={<Counselling/>} />
+          <Route path="/Counselling/:id" element={<Prof_page/>} />
           <Route path="/maingame" element={<MainGame/>} />
 
           {/* ERROR page */}

@@ -2,24 +2,28 @@ import CList from "./CList";
 import Sfooter from "../Sfooter";
 import SearchBar from "../SearchBar";
 import S_header from "../S_header";
+import { Link } from "react-router-dom";
 
 export default function Counselling() {
   return (
-    <div className="bg-indigo-100 w-full">
-      <div className="md:hidden"><S_header/></div>
+    <div className="bg-sky-100 w-full">
+      <div className="md:hidden">
+        <S_header />
+      </div>
       <div className="md:hidden h-[100px] w-full bg-blue-600"></div>
       <div className="flex justify-between">
-      <h1 className="pl-10 pt-10 mb-5 text-3xl font-bold text-[#0f444c]">
-        Counselling Services
-      </h1>
-      <div className="flex justify-end px-20 mb-10"><SearchBar/></div>
+        <h1 className="pl-10 pt-10 mb-5 text-3xl font-bold text-[#0f444c]">
+          Counselling Services
+        </h1>
+        <div className="flex justify-end px-5 md:px-20 ">
+          <SearchBar />
+        </div>
       </div>
-      <div className="p-10  pr-5 pl-28 justify-evenly">
+      <div className="px-[10%] py-10 justify-evenly">
         <div className="grid md:grid-cols-2 gap-y-10">
-
           {CList.map((CList) => {
             return (
-              <div className=" max-w-sm rounded-xl overflow-hidden shadow-lg bg-white border border-gray-200 transform hover:scale-105 transition-all duration-300">
+              <div className=" py-10 max-w-sm rounded-xl overflow-hidden shadow-lg bg-white border border-gray-200 transform hover:scale-105 transition-all duration-300">
                 <img
                   className="mx-6 my-2 w-22 h-22 object-cover rounded-full"
                   src={CList.image}
@@ -42,8 +46,7 @@ export default function Counselling() {
                     {CList.addr}
                   </p>
                   <p className="text-gray-700 text-sm mb-2">
-                    <span className="font-semibold">Fees: </span>₹
-                    {CList.fees}
+                    <span className="font-semibold">Fees: </span>₹{CList.fees}
                   </p>
                   <div className="flex items-center mb-2">
                     <span className="text-gray-700 text-sm font-semibold mr-2">
@@ -74,13 +77,15 @@ export default function Counselling() {
                       : "Unavailable"}
                   </p>
                 </div>
-                <div className=" px-6 py-4">
+
+                <div className=" px-6 py-4 mx-auto">
+                  <Link className="w-[20%] text-xl text-center absolute bottom-6 left-10  text-sky-500 hover:text-sky-700 font-bold py-2 px-2 rounded-full focus:outline-none" to={`${CList.id}`}>Visit</Link>
                   <button
-                    className={`w-[80%] relative bottom-5 left-auto right-auto ${
+                    className={`w-[40%] absolute bottom-5 right-10 ${
                       CList.availability === "available"
                         ? "bg-blue-500 hover:bg-blue-700"
                         : "bg-gray-500 cursor-not-allowed"
-                    } text-white font-bold py-2 px-4 rounded focus:outline-none`}
+                    } text-white font-bold py-2 px-4 rounded-xl focus:outline-none`}
                     disabled={CList.availability !== "available"}
                   >
                     Book Appointment

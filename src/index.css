@@ -103,7 +103,10 @@ header.scrolled{
 }
 
 .ds{
-  filter: drop-shadow(0 10px 10px rgba(255, 255, 255, 1));
+  filter: drop-shadow(0 10px 10px rgb(225, 254, 255));
+}
+.ds2{
+  filter: drop-shadow(0 10px 5px rgb(0, 225, 255));
 }
 
 @layer utilities {

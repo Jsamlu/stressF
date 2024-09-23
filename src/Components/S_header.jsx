@@ -33,18 +33,18 @@ function S_header() {
           </Link>
         </div>
         <nav className="items-center  mr-0 pr-7 pl-7 text-2xl hidden lg:flex justify-end transform ease-in-out gap-10">
-          <Link to="/test" className=" hover:text-yellow-400">
+          <Link to="/test" className="  hover:text-sky-700 underline underline-offset-0 hover:underline-offset-[10px] decoration-transparent hover:decoration-sky-700 transition-all duration-300">
             Test
           </Link>
-          <Link to="/resources" className=" hover:text-yellow-400">
+          <Link to="/resources" className="  hover:text-sky-700 underline underline-offset-0 hover:underline-offset-[10px] decoration-transparent hover:decoration-sky-700 transition-all duration-300">
             Resources
           </Link>
-          <Link to="/activities" className=" hover:text-yellow-400">
+          <Link to="/activities" className="  hover:text-sky-700 underline underline-offset-0 hover:underline-offset-[10px] decoration-transparent hover:decoration-sky-700 transition-all duration-300">
             Activities
           </Link>
-          <Link to="/counselling" className=" hover:text-yellow-400">
+          <Link to="/counselling" className="  hover:text-sky-700 underline underline-offset-0 hover:underline-offset-[10px] decoration-transparent hover:decoration-sky-700 transition-all duration-300">
             Counselling
-          </Link><Link to="/maingame" className=" hover:text-yellow-400">
+          </Link><Link to="/maingame" className="  hover:text-sky-700 underline underline-offset-0 hover:underline-offset-[10px] decoration-transparent hover:decoration-sky-700 transition-all duration-300">
             Games
           </Link>
         </nav>
@@ -52,7 +52,7 @@ function S_header() {
           {/* mobile nav */}
           <button
             onClick={toggleNav}
-            className="md:text-5xl text-2xl hover:bg-transparent"
+            className="md:text-5xl text-2xl hover:bg-transparent transition-all duration-300"
           >
             {showNav ? <FaTimes /> : <FaBars />}
           </button>
@@ -69,14 +69,14 @@ function S_header() {
           {/* Journal page */}
           <Link
             to="/journal"
-            className=" hover:text-sky-700 transition-all duration-75"
+            className=" hover:text-sky-700 transition-all duration-300"
           >
             <BsJournalBookmarkFill />
           </Link>
           {/* login options */}
           <Link
             to="/login"
-            className=" hover:text-sky-700 transition-all duration-75"
+            className=" hover:text-sky-700 transition-all duration-300"
           >
             <FaUserCircle />
           </Link>
@@ -85,11 +85,11 @@ function S_header() {
       <div
         className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out ${
           showNav ? "min-h-full opacity-100" : "max-h-0 opacity-0"
-        } w-screen text-center bg-teal-600 rounded-md text-white px-10 absolute top-0 right-0 z-30`}
+        } w-screen text-center bg-sky-600 rounded-md text-white px-10 absolute top-0 right-0 z-30`}
       >
         <button
           onClick={toggleNav}
-          className="flex justify-end h-[100px] items-center text-2xl hover:bg-transparent"
+          className="flex justify-end h-[100px] items-center text-2xl hover:bg-transparent transition-all duration-300"
         >
           {showNav ? <FaTimes /> : <FaBars />}
         </button>
@@ -142,7 +142,7 @@ function S_header() {
                 setShowNav(false);
               }}
             >
-              Counselling
+              Professionals
             </button>
           </li>
           <li>

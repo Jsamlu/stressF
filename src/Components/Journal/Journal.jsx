@@ -46,7 +46,7 @@ function Journal() {
     <>
       <div className="md:hidden"><S_header/></div>
       <div className="md:hidden h-[100px] w-full bg-blue-600"></div>
-      <div className=" bg-indigo-200 min-h-[80vh] p-5 pt-[100px]">
+      <div className=" bg-sky-200 min-h-[80vh] p-5 pt-[100px]">
         <div className="w-[80%] mx-auto bg-white p-6 rounded-md shadow-md">
           <h1 className="text-2xl font-bold mb-4">Journal App</h1>
 
@@ -60,7 +60,7 @@ function Journal() {
 
           <button
             onClick={addNote}
-            className="bg-blue-500 text-white px-4 py-2 rounded-md"
+            className="bg-blue-500 text-white px-4 py-2 rounded-md "
           >
             {editIndex !== null ? "Update Note" : "Add Note"}
           </button>
