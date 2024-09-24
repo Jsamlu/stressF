@@ -15,7 +15,7 @@ const Forum = () => {
     console.log(valArr);
   };
   return (
-    <div className="min-h-screen bg-indigo-200 ">
+    <div className="min-h-screen bg-sky-200 ">
       <div className="p-10 md:pt-3  pt-[80px]">
         <div className=" bg-white my-10 w-[95%] mx-auto px-[15%] py-[5%] rounded-xl">
           <h1 className="md:text-2xl text-lg font-bold text-blue-500">

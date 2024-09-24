@@ -44,7 +44,7 @@ const H_scroll = ({list}) => {
             <img loading="lazy"
               src={list.image}
               alt="qna.jpg"
-              className="h-full w-full "
+              className="h-full w-full rounded-2xl"
             />
             <div className="absolute flex text-xl text-center items-center opacity-[0%] hover:opacity-[75%] h-[300px] w-[350px] bg-slate-800 text-white text-egxt-center transform transition-all duration-500">
               {list.decs}
@@ -59,7 +59,7 @@ const H_scroll = ({list}) => {
             <img loading="lazy"
               src={list.image}
               alt="qna.jpg"
-              className="h-full w-full "
+              className="h-full w-full rounded-2xl"
             />
             <div className="absolute flex text-xl text-center items-center opacity-[0%] hover:opacity-[75%] h-[300px] w-[350px] bg-slate-800 text-white text-egxt-center transform transition-all duration-500">
               {list.decs}
@@ -74,7 +74,7 @@ const H_scroll = ({list}) => {
             <img loading="lazy"
               src={list.image}
               alt="qna.jpg"
-              className="h-full w-full "
+              className="h-full w-full rounded-2xl"
             />
             <div className="absolute flex text-xl text-center items-center opacity-[0%] hover:opacity-[75%] h-[300px] w-[350px] bg-slate-800 text-white text-egxt-center transform transition-all duration-500">
               {list.decs}

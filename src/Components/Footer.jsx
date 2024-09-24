@@ -35,7 +35,7 @@ export default function Footer() {
     //   label: "Journal",
     // },
     {
-      href: "/games",
+      href: "/maingame",
       label: "Games",
     },
   ];

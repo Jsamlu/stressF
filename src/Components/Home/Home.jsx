@@ -25,7 +25,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className=" min-h-screen bg-sky-100">
+    <div className=" min-h-screen bg-sky-200">
       <Hero></Hero>
       <hr className="p-1 bg-white" />
 

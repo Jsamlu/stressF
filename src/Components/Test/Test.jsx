@@ -7,7 +7,7 @@ import S_header from "../S_header";
 
 function Test() {
   return (
-    <div className="bg-indigo-200">
+    <div className="bg-sky-200">
       <div className="md:hidden"><S_header/></div>
       <div className="md:hidden h-[100px] w-full bg-blue-600"></div>
       <div className=" md:pt-10 pt-[50px] w-full h-full  ">
@@ -27,7 +27,7 @@ function Test() {
             <div className="mx-[1%] py-[10%]">
               <Link
                 to="/forum"
-                className="bg-teal-600 px-2 py-3 md:px-4 md:py-4 rounded-xl text-white  text-lg md:text-2xl hover:bg-teal-500 transition-all duration-100"
+                className="bg-teal-600 px-2 py-3 md:px-4 md:py-4  rounded-xl text-white  text-lg md:text-2xl hover:bg-teal-500 transition-all duration-100"
               >
                 Take Test
               </Link>
