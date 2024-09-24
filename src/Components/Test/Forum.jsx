@@ -5,7 +5,7 @@ import QList from "./QList";
 const Forum = () => {
   const dispval = () => {
     const InpVal = document.getElementsByName("ans");
-    const valArr = new Array;
+    const valArr = [0];
     for (let i = 0, j=0; i < InpVal.length; i++) {
       if (InpVal[i].checked) {
         valArr[j]=InpVal[i].value;
@@ -124,4 +124,4 @@ const Forum = () => {
     </div>
   );
 }
-export default Forum;
+export default { Forum };

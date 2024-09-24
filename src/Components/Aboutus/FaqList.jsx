@@ -51,6 +51,11 @@ const FaqList =[
         quest:`Can I access D-Stress on my phone?`,
         ans:`Yes, D-Stress is accessible through mobile devices, making it easy for students to manage stress and track habits on the go.`,
     },
+    {
+        id:11,
+        quest:`Can I get access to mental health helpline?`,
+        ans:`Yes, Call or text 988 or chat online to connect with a trained crisis counselor.`,
+    },
     
 ]
 

@@ -117,7 +117,7 @@ export default function Home() {
         <div className="">
           <h1 className="pb-10 mx-[45%] text-3xl font-semibold text-sky-800 underline underline-offset-[10px] decoration-2">Features</h1>
         </div>
-        <div className=" bg-sky-200 py-5">
+        <div className=" py-5">
           <H_scroll list={Feature_List} />
         </div>
       </div>

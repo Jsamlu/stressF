@@ -4,12 +4,18 @@ const ACT = [
     image: "/assets/med/img4.jpg",
     name: "Praticing Mindfullness",
     desc: "Mindfulness is the practice of gently focusing your awareness on the present moment over and over again.",
-    link: "#",
-    v_emd:"",
+    link: ["https://www.mindful.org/meditation/mindfulness-getting-started/","https://www.verywellmind.com/mindfulness-meditation-88369","https://www.mindful.org/mindfulness-how-to-do-it/","https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6557693/"],
+    v_emd:"mbjahb4r-m4",
     Simage:" img src",
-    ctg:"med",
+    ctg:"Meditation",
     lev:"-",
-
+    rev:"A systematic review on 58,592 adults from nonclinical samples showed that trait mindfulness was positively associated with confidence, job satisfaction, performance and interpersonal relations, and negatively associated with burnout and work withdrawal.",
+    howTO:[`Take a seat. Find a place to sit that feels calm and quiet to you.`,
+`Set a time limit. If you're just beginning, it can help to choose a short time, such as 5 or 10 minutes.`,
+`Notice your body.`,
+`Feel your breath.`,
+`Notice when your mind has wandered.`,
+`Be kind to your wandering mind.`],
   },
   {
     id: "2",
@@ -19,8 +25,9 @@ const ACT = [
     link: "#",
     v_emd:"",
     Simage:" img src",
-    ctg:"med",
+    ctg:"Meditation",
     lev:"-",
+    rev:"",
   },
   {
     id: "3",
@@ -30,8 +37,9 @@ const ACT = [
     link: "#",
     v_emd:"",
     Simage:" img src",
-    ctg:"med",
+    ctg:"Meditation",
     lev:"-",
+    rev:"",
   },
   {
     id: "4",
@@ -43,6 +51,7 @@ const ACT = [
     Simage:" img src",
     ctg:"Personal",
     lev:"-",
+    rev:"",
   },
   {
     id: "5",
@@ -54,6 +63,7 @@ const ACT = [
     Simage:" img src",
     ctg:"personal",
     lev:"-",
+    rev:"",
   },
   {
     id: "6",
@@ -65,6 +75,7 @@ const ACT = [
     Simage:" img src",
     ctg:"personal",
     lev:"-",
+    rev:"",
   },
   {
     id: "7",
@@ -76,6 +87,7 @@ const ACT = [
     Simage:" img src",
     ctg:"personal",
     lev:"-",
+    rev:"",
   },
   {
     id: "8",
@@ -87,6 +99,7 @@ const ACT = [
     Simage:" img src",
     ctg:"social",
     lev:"-",
+    rev:"",
   },
   {
     id: "9",
@@ -98,6 +111,7 @@ const ACT = [
     Simage:" img src",
     ctg:"social",
     lev:"-",
+    rev:"",
   },
   {
     id: "10",
@@ -109,6 +123,7 @@ const ACT = [
     Simage:" img src",
     ctg:"social",
     lev:"-",
+    rev:"",
   },
   {
     id: "11",
@@ -120,6 +135,7 @@ const ACT = [
     Simage:" img src",
     ctg:"social",
     lev:"-",
+    rev:"",
   },
 ];
 
