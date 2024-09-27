@@ -3,12 +3,13 @@ import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-route
 import Header from './Components/Header';
 
 import Home from './Components/Home/Home';
-import Test from './Components/Test/Test';
-import Forum from './Components/Test/Forum';
+import {Result} from './Components/Test';
+import {Test} from './Components/Test';
+import {Forum} from './Components/Test';
 import Resources from './Components/Resources/Resources'
 import Activities from './Components/Activities/Activities';
 import Login from './Components/Login/Login';
-import Community from './Components/Community/Community';
+import Community from './Components/Community/CommunityPage';
 import Aboutus from './Components/Aboutus/Aboutus';
 import Games from './Components/Games/Games';
 import Counselling from './Components/Counselling/Counselling';
@@ -41,6 +42,7 @@ function App() {
           <Route path="/" element={<Home/>} />
           <Route path="/test" element={<Test/>} />
           <Route path="/forum" element={<Forum/>} />
+          <Route path="/result" element={<Result/>} />
           <Route path="/resources" element={<Resources/>} />
           <Route path="/activities" element={<Activities/>} />
           <Route path="/activities/:id" element={<ActivityId/>} />

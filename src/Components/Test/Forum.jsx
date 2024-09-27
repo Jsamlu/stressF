@@ -2,10 +2,11 @@ import { Link } from "react-router-dom";
 import QList from "./QList";
 
 
+const valArr = [0];
+
 const Forum = () => {
   const dispval = () => {
     const InpVal = document.getElementsByName("ans");
-    const valArr = [0];
     for (let i = 0, j=0; i < InpVal.length; i++) {
       if (InpVal[i].checked) {
         valArr[j]=InpVal[i].value;
@@ -13,7 +14,9 @@ const Forum = () => {
       }
     }
     console.log(valArr);
+    localStorage.setItem("valArr", valArr);
   };
+
   return (
     <div className="min-h-screen bg-sky-200 ">
       <div className="p-10 md:pt-3  pt-[80px]">
@@ -113,7 +116,7 @@ const Forum = () => {
         <div className="mt-5 mr-5 mb-5">
         <button onClick={dispval}>here</button>
           <Link
-            to="/test"
+            to="/result"
             className="p-2 hover:bg-sky-500 bg-sky-600 text-white rounded-xl text-2xl"
           >
             End test
@@ -122,6 +125,7 @@ const Forum = () => {
         </div>
       </div>
     </div>
+
   );
 }
-export default Forum;
+export {Forum, valArr};

@@ -2,164 +2,166 @@ const QList = [
     {
         id:"1",
         
-        question:"How often do you feel overwhelmed(burdened/stressed to the point you're unable to focus) by the amount of study material you need to cover?",
+        question:`In the last month, how often have you been upset because of something that
+ happened unexpectedly?`,
         
-        an1:"Never: You always manage to stay on top of your studies without stress.",
+        an1:"Never: ",
         
-        an2:"Rarely: You occasionally feel overwhelmed but quickly catch up.",
+        an2:"Rarely: ",
         
-        an3:"Sometimes: You sometimes feel overwhelmed, especially before exams.",
+        an3:"Sometimes: ",
         
-        an4:"Often: You frequently struggle to keep up with your study load.",
+        an4:"Often: ",
         
-        an5:"Always: You constantly feel overwhelmed and behind in your studies.",
+        an5:"Always: ",
 
     },
 
     {
         id:"2",
         
-        question:"How often do you feel anxious about exams or deadlines?",
+        question:`In the last month, how often have you felt that you were unable to control the
+ important things in your life?`,
 
-        an1:"Never: Exams and deadlines don't cause you stress.",
+        an1:"Never: ",
         
-        an2:"Rarely: You feel a little anxious, but it’s manageable.",
+        an2:"Rarely: ",
         
-        an3:"Sometimes: You often worry about exams and deadlines.",
+        an3:"Sometimes: ",
         
-        an4:"Often: You frequently feel stressed when exams or deadlines approach.",
+        an4:"Often: ",
         
-        an5:"Always: You are always anxious about upcoming exams and deadlines.",
-
+        an5:"Always: ",
     },
 
     {
         id:"3",
         
-        question:"Do you struggle to balance your academic responsibilities with other activities like hobbies or social life?",
+        question:`In the last month, how often have you felt nervous and stressed?`,
 
-        an1:"Never: You easily balance academics and other activities.",
+        an1:"Never: ",
         
-        an2:"Rarely: You occasionally struggle, but it’s rare.",
+        an2:"Rarely: ",
         
-        an3:"Sometimes: You sometimes find it hard to balance both.",
+        an3:"Sometimes: ",
         
-        an4:"Often: You frequently struggle to maintain a balance.",
+        an4:"Often: ",
         
-        an5:"Always: You always find it difficult to manage both academics and other activities.",
-
+        an5:"Always: ",
     },
 
     {
         id:"4",
         
-        question:"How often do you feel you have too much to do and not enough time? ",
+        question:`In the last month, how often have you felt confident about your ability to handle
+ your personal problems?`,
 
-        an1:"Never: You always have enough time for everything.",
+        an1:"Never: ",
         
-        an2:"Rarely: You rarely feel pressed for time.",
+        an2:"Rarely: ",
         
-        an3:"Sometimes: You sometimes feel like you’re running out of time.",
+        an3:"Sometimes: ",
         
-        an4:"Often: You frequently feel you have too much to do.",
+        an4:"Often: ",
         
-        an5:"Always: You always feel overwhelmed by a lack of time.",
+        an5:"Always: ",
     },
     {
         id:"5",
         
-        question:"How often do you feel you have too much to do and not enough time? ",
+        question:`In the last month, how often have you felt that things were going your way?`,
 
-        an1:"Never: You always have enough time for everything.",
+        an1:"Never: ",
         
-        an2:"Rarely: You rarely feel pressed for time.",
+        an2:"Rarely: ",
         
-        an3:"Sometimes: You sometimes feel like you’re running out of time.",
+        an3:"Sometimes: ",
         
-        an4:"Often: You frequently feel you have too much to do.",
+        an4:"Often: ",
         
-        an5:"Always: You always feel overwhelmed by a lack of time.",
+        an5:"Always: ",
     },
     {
         id:"6",
         
-        question:"How often do you feel overwhelmed(burdened/stressed to the point you're unable to focus) by the amount of study material you need to cover?",
+        question:`In the last month, how often have you found that you could not cope with
+ all the things that you had to do?`,
         
-        an1:"Never: You always manage to stay on top of your studies without stress.",
+        an1:"Never: ",
         
-        an2:"Rarely: You occasionally feel overwhelmed but quickly catch up.",
+        an2:"Rarely: ",
         
-        an3:"Sometimes: You sometimes feel overwhelmed, especially before exams.",
+        an3:"Sometimes: ",
         
-        an4:"Often: You frequently struggle to keep up with your study load.",
+        an4:"Often: ",
         
-        an5:"Always: You constantly feel overwhelmed and behind in your studies.",
-
+        an5:"Always: ",
     },
 
     {
         id:"7",
         
-        question:"How often do you feel anxious about exams or deadlines?",
+        question:`In the last month, how often have you been able to control irritations in
+ your life?`,
 
-        an1:"Never: Exams and deadlines don't cause you stress.",
+        an1:"Never: ",
         
-        an2:"Rarely: You feel a little anxious, but it’s manageable.",
+        an2:"Rarely: ",
         
-        an3:"Sometimes: You often worry about exams and deadlines.",
+        an3:"Sometimes: ",
         
-        an4:"Often: You frequently feel stressed when exams or deadlines approach.",
+        an4:"Often: ",
         
-        an5:"Always: You are always anxious about upcoming exams and deadlines.",
-
+        an5:"Always: ",
     },
 
     {
         id:"8",
         
-        question:"Do you struggle to balance your academic responsibilities with other activities like hobbies or social life?",
+        question:` In the last month, how often have you felt that you were on top of things?`,
 
-        an1:"Never: You easily balance academics and other activities.",
+        an1:"Never: ",
         
-        an2:"Rarely: You occasionally struggle, but it’s rare.",
+        an2:"Rarely: ",
         
-        an3:"Sometimes: You sometimes find it hard to balance both.",
+        an3:"Sometimes: ",
         
-        an4:"Often: You frequently struggle to maintain a balance.",
+        an4:"Often: ",
         
-        an5:"Always: You always find it difficult to manage both academics and other activities.",
-
+        an5:"Always: ",
     },
 
     {
         id:"9",
         
-        question:"How often do you feel you have too much to do and not enough time? ",
+        question:` In the last month, how often have you been angered because of things that
+ happened that were outside of your control?`,
 
-        an1:"Never: You always have enough time for everything.",
+        an1:"Never: ",
         
-        an2:"Rarely: You rarely feel pressed for time.",
+        an2:"Rarely: ",
         
-        an3:"Sometimes: You sometimes feel like you’re running out of time.",
+        an3:"Sometimes: ",
         
-        an4:"Often: You frequently feel you have too much to do.",
+        an4:"Often: ",
         
-        an5:"Always: You always feel overwhelmed by a lack of time.",
+        an5:"Always: ",
     },
     {
         id:"10",
         
-        question:"How often do you feel you have too much to do and not enough time? ",
+        question:`In the last month, how often have you felt difficulties were piling up so high that
+ you could not overcome them?`,
 
-        an1:"Never: You always have enough time for everything.",
+        an1:"Never: ",
         
-        an2:"Rarely: You rarely feel pressed for time.",
+        an2:"Rarely: ",
         
-        an3:"Sometimes: You sometimes feel like you’re running out of time.",
+        an3:"Sometimes: ",
         
-        an4:"Often: You frequently feel you have too much to do.",
+        an4:"Often: ",
         
-        an5:"Always: You always feel overwhelmed by a lack of time.",
+        an5:"Always: ",
     },
 ];
 
