@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function Header() {
   const navlinks = [
-    { href: "/", label: "Home" },
+    { href: "/Dashboard", label: "Profile" },
     { href: "/test", label: "Test" },
     { href: "/resources", label: "Resources" },
     { href: "/activities", label: "Activities" },

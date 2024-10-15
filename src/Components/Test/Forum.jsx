@@ -116,7 +116,7 @@ const Forum = () => {
         <div className="mt-5 mr-5 mb-5">
         <button onClick={dispval}>here</button>
           <Link
-            to="/test"
+            to="/result"
             className="p-2 hover:bg-sky-500 bg-sky-600 text-white rounded-xl text-2xl"
           >
             End test

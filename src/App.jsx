@@ -21,6 +21,7 @@ import Scrap from './Components/scrap/scrap'
 import MainGame from './Components/Games/MainGame';
 import Prof_page from './Components/Counselling/Prof_page';
 import { ActivityId } from './Components/Activities/ActivityId';
+import { Dashboard } from './Components/Dashboard';
 
 function App() {
   const location = useLocation();
@@ -55,6 +56,8 @@ function App() {
           <Route path="/counselling" element={<Counselling/>} />
           <Route path="/Counselling/:id" element={<Prof_page/>} />
           <Route path="/maingame" element={<MainGame/>} />
+          <Route path="/dashboard" element={<Dashboard/>} />
+
 
           {/* ERROR page */}
           <Route path="*" element={<p>404 ERROR</p>} />
