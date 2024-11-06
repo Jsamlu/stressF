@@ -97,7 +97,7 @@ function S_header() {
           </Link>
           {/* login options */}
           <Link
-            to="/login"
+            to="/profile"
             className=" hover:text-sky-700 transition-all duration-300"
           >
             <FaUserCircle />

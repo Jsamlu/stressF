@@ -9,7 +9,7 @@ function Hero() {
     <>
       <div className="">
         <img
-          src={"/assets2/bg_live.gif"}
+          src={"/assets2/bg3.jpeg"}
           className="h-screen w-screen object-cover"
           alt=""
         />

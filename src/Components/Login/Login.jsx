@@ -1,10 +1,18 @@
 import "./login.css";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Sfooter from "../Sfooter";
 import S_header from "../S_header";
 import { Link } from "react-router-dom";
 
+//context
+import { login_context } from "../Context/login/login_context";
+
 const Login = () => {
+
+  //useccontext
+  const [showProfile, setShowProfile ]= useContext(login_context);
+
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -62,7 +70,9 @@ const Login = () => {
                 />
               </div>
               <button
-
+                onClick={() => {
+                  setShowProfile(!showProfile);
+                }}
                 className="mt-5 p-5 rounded-xl bg-[#4ea1f9] text-white transition-all duration-400"
                 type="submit"
               >
