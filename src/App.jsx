@@ -35,7 +35,7 @@ import { Dashboard, Profile } from "./Components/Profile";
 
 
 //games
-import { ConnectTheDots, StressBallBounce } from "./Components/Games";
+import { ConnectTheDots, StressBallBounce, MazeGame, StarryBackground, WordSearchGame } from "./Components/Games";
 
 
 function App() {
@@ -84,8 +84,11 @@ function App() {
               <Route path="/profile" element={<Profile />} />
 
               {/*games */}
+              <Route path="/stressballbounce" element={<StressBallBounce />} />
+              <Route path="/wordsearchgame" element={<WordSearchGame />} />
+              <Route path="/mazegame" element={<MazeGame />} />
               <Route path="/connectthedots" element={<ConnectTheDots />} />
-              <Route path="/StressBallBounce" element={<StressBallBounce />} />
+              <Route path="/starrybackground" element={<StarryBackground />} />
                
 
               {/* ERROR page */}

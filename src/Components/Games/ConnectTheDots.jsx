@@ -1,54 +1,62 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
+import StarryBackground from "./StarryBackground";
+import "./ConnectTheDots.css";
 
 const ConnectTheDots = () => {
-  // Define multiple shapes (each with different numbers of dots)
-  const shapes = [
-    [
-      { x: 100, y: 100 },  // Dot 1
-      { x: 200, y: 50 },   // Dot 2
-      { x: 300, y: 100 },  // Dot 3
-      { x: 250, y: 200 },  // Dot 4
-      { x: 150, y: 200 },  // Dot 5
-    ],
-    [
-      { x: 50, y: 50 },    // Dot 1
-      { x: 150, y: 100 },  // Dot 2
-      { x: 250, y: 50 },   // Dot 3
-      { x: 200, y: 200 },  // Dot 4
-      { x: 100, y: 250 },  // Dot 5
-      { x: 300, y: 250 },  // Dot 6
-      { x: 350, y: 100 },  // Dot 7
-    ],
-    [
-      { x: 100, y: 50 },   // Dot 1
-      { x: 200, y: 100 },  // Dot 2
-      { x: 300, y: 50 },   // Dot 3
-      { x: 350, y: 150 },  // Dot 4
-      { x: 250, y: 200 },  // Dot 5
-      { x: 150, y: 150 },  // Dot 6
-      { x: 200, y: 250 },  // Dot 7
-      { x: 300, y: 250 },  // Dot 8
-    ]
+  const constellations = [
+    {
+      name: "Orion",
+      description: "Orion, 'The Hunter', is one of the most recognizable constellations in the night sky.",
+      dots: [
+        { x: 100, y: 100 },
+        { x: 150, y: 200 },
+        { x: 200, y: 100 },
+        { x: 300, y: 150 },
+        { x: 250, y: 250 },
+      ],
+    },
+    {
+      name: "Big Dipper",
+      description: "The Big Dipper is part of the Ursa Major constellation, known for its distinct ladle shape.",
+      dots: [
+        { x: 50, y: 150 },
+        { x: 100, y: 100 },
+        { x: 150, y: 50 },
+        { x: 250, y: 100 },
+        { x: 300, y: 200 },
+        { x: 200, y: 250 },
+        { x: 100, y: 250 },
+      ],
+    },
+    {
+      name: "Cassiopeia",
+      description: "Cassiopeia is a distinctive W-shaped constellation visible in the northern sky.",
+      dots: [
+        { x: 100, y: 50 },
+        { x: 150, y: 100 },
+        { x: 200, y: 50 },
+        { x: 300, y: 100 },
+        { x: 250, y: 200 },
+        { x: 150, y: 200 },
+      ],
+    },
   ];
 
-  const [currentShapeIndex, setCurrentShapeIndex] = useState(0);
+  const [currentConstellationIndex, setCurrentConstellationIndex] = useState(0);
   const [clickedDots, setClickedDots] = useState([]);
   const [gameComplete, setGameComplete] = useState(false);
 
-  // Function to handle dot click
   const handleDotClick = (dotIndex) => {
-    // Allow clicking dots only in the correct order
     if (clickedDots.length === dotIndex) {
       setClickedDots([...clickedDots, dotIndex]);
     }
   };
 
-  // Function to draw lines between dots
   const drawLines = () => {
     const lines = [];
     for (let i = 1; i < clickedDots.length; i++) {
-      const startDot = currentShape[clickedDots[i - 1]];
-      const endDot = currentShape[clickedDots[i]];
+      const startDot = currentConstellation.dots[clickedDots[i - 1]];
+      const endDot = currentConstellation.dots[clickedDots[i]];
       lines.push(
         <line
           key={`line-${i}`}
@@ -56,31 +64,29 @@ const ConnectTheDots = () => {
           y1={startDot.y}
           x2={endDot.x}
           y2={endDot.y}
-          stroke="black"
+          stroke="white"
           strokeWidth="2"
+          className="glowing-line"
         />
       );
     }
     return lines;
   };
 
-  // Get current shape's dots
-  const currentShape = shapes[currentShapeIndex];
+  const currentConstellation = constellations[currentConstellationIndex];
 
-  // Check if the game is complete
   useEffect(() => {
-    if (clickedDots.length === currentShape.length) {
+    if (clickedDots.length === currentConstellation.dots.length) {
       setGameComplete(true);
     }
-  }, [clickedDots, currentShape]);
+  }, [clickedDots, currentConstellation]);
 
-  // Reset the game or move to the next shape
   const resetGame = () => {
     if (gameComplete) {
-      if (currentShapeIndex < shapes.length - 1) {
-        setCurrentShapeIndex(currentShapeIndex + 1);
+      if (currentConstellationIndex < constellations.length - 1) {
+        setCurrentConstellationIndex(currentConstellationIndex + 1);
       } else {
-        setCurrentShapeIndex(0); // Restart from the first shape if all are completed
+        setCurrentConstellationIndex(0);
       }
     }
     setClickedDots([]);
@@ -88,35 +94,40 @@ const ConnectTheDots = () => {
   };
 
   return (
-    <div style={{ textAlign: 'center' }}>
-      <h2>Connect the Dots</h2>
-      <p>Click the dots in order!</p>
-      <svg width="400" height="400" style={{ border: '1px solid #000', margin: '0 auto' }}>
-        {/* Draw lines between clicked dots */}
-        {drawLines()}
+    <div className="connect-the-dots">
+      <StarryBackground />
+      <div className="game-content">
+        <h2>Connect the Dots: Constellations</h2>
+        <p>Click the dots in order to form the constellation!</p>
+        <svg
+          width="400"
+          height="400"
+          className="night-sky"
+        >
+          {drawLines()}
+          {currentConstellation.dots.map((dot, index) => (
+            <circle
+              key={index}
+              cx={dot.x}
+              cy={dot.y}
+              r={10}
+              fill={clickedDots.includes(index) ? "#FFD700" : "white"}
+              onClick={() => handleDotClick(index)}
+              style={{ cursor: "pointer" }}
+            />
+          ))}
+        </svg>
 
-        {/* Draw the dots */}
-        {currentShape.map((dot, index) => (
-          <circle
-            key={index}
-            cx={dot.x}
-            cy={dot.y}
-            r={10}
-            fill={clickedDots.includes(index) ? 'blue' : 'red'}
-            onClick={() => handleDotClick(index)}
-            style={{ cursor: 'pointer' }}
-          />
-        ))}
-      </svg>
-
-      {gameComplete && (
-        <div>
-          <h3>Congratulations! You completed the shape.</h3>
-          <button onClick={resetGame} style={{ padding: '10px 20px', marginTop: '20px' }}>
-            Next Shape
-          </button>
-        </div>
-      )}
+        {gameComplete && (
+          <div className="info sparkle">
+            <h3>Congratulations! You completed {currentConstellation.name}!</h3>
+            <p>{currentConstellation.description}</p>
+            <button className="next-button" onClick={resetGame}>
+              Next Constellation
+            </button>
+          </div>
+        )}
+      </div>
     </div>
   );
 };

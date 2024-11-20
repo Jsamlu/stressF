@@ -1,0 +1,153 @@
+
+
+.connect-the-dots {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: white;
+    /* background-color: #000; */
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .night-sky {
+    border: 1px solid white;
+    /* background: rgba(0, 0, 0, 0.7); */
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+  }
+  
+  /* Starry Background */
+  .starry-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; /* Ensure it is behind other elements */
+    background-color: #0f0e0e !important; /* Make sure it has a solid black background */
+  }
+  
+
+  .star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle 3s infinite ease-in-out;
+  }
+  
+  
+  .starry-background .star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle 3s infinite ease-in-out;
+  }
+  
+  @keyframes twinkle {
+    0%, 100% {
+      opacity: 0.3;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.5);
+    }
+  }
+  
+  /* .galaxy {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.5) 10%, transparent 70%);
+    border-radius: 50%;
+    animation: rotate 20s infinite linear;
+    filter: blur(3px);
+    opacity: 0.6;
+    z-index: 10;
+    transform: translate(-50%, -50%);
+  } */
+  
+  @keyframes rotate {
+    0% {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+  
+  .shooting-star {
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    width: 2px;
+    height: 100px;
+    background: linear-gradient(to bottom, white, transparent);
+    animation: shooting 4s infinite ease-out;
+  }
+  
+  @keyframes shooting {
+    0% {
+      opacity: 0;
+      transform: translate(-50%, -50%);
+    }
+    50% {
+      opacity: 1;
+      transform: translate(100%, 100%);
+    }
+    100% {
+      opacity: 0;
+      transform: translate(200%, 200%);
+    }
+  }
+  
+  .glowing-line {
+    stroke: white;
+    stroke-width: 3;
+    filter: drop-shadow(0 0 6px white);
+  }
+  
+  .sparkle {
+    animation: sparkleEffect 1s ease-out forwards;
+  }
+  
+  @keyframes sparkleEffect {
+    0% {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  .next-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-top: 20px;
+    background-color: #1E90FF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .next-button:hover {
+    background-color: #4682B4;
+  }
+
+  /* .game-content {
+    background-color: rgba(255, 255, 255, 0.8); 
+    z-index: 1; 
+   */
+  

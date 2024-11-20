@@ -1,12 +1,18 @@
 import MainGame from "./MainGame";
 import Games from "./Games";
-import ConnectTheDots from "./ConnectTheDots";
 import StressBallBounce from "./StressBallBounce";
+import ConnectTheDots from "./ConnectTheDots";
+import MazeGame from "./MazeGame";
+import StarryBackground from "./StarryBackground";
+import WordSearchGame from "./WordSearchGame";
 
 
 export{
     MainGame,
     Games,
-    ConnectTheDots,
     StressBallBounce,
+    WordSearchGame,
+    MazeGame,
+    StarryBackground,
+    ConnectTheDots,
 }
