@@ -33,6 +33,11 @@ import Prof_page from "./Components/Counselling/Prof_page";
 import { ActivityId } from "./Components/Activities/ActivityId";
 import { Dashboard, Profile } from "./Components/Profile";
 
+
+//games
+import { ConnectTheDots, StressBallBounce } from "./Components/Games";
+
+
 function App() {
   const location = useLocation();
   const isHomePage = location.pathname === "/";
@@ -40,7 +45,7 @@ function App() {
   const isSignin = location.pathname === "/signin";
   const isforumPage = location.pathname === "/forum";
 
-  const [ showProfile, setShowProfile ] = useState(false);
+  const [ showProfile, setShowProfile ] = useState(true);
   
     return (
     <login_context.Provider value={[showProfile, setShowProfile]}>
@@ -77,6 +82,11 @@ function App() {
               <Route path="/maingame" element={<MainGame />} />
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/profile" element={<Profile />} />
+
+              {/*games */}
+              <Route path="/connectthedots" element={<ConnectTheDots />} />
+              <Route path="/StressBallBounce" element={<StressBallBounce />} />
+               
 
               {/* ERROR page */}
               <Route path="*" element={<p>404 ERROR</p>} />

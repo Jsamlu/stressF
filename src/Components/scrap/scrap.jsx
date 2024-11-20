@@ -1,108 +1,92 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useState, useEffect } from "react";
 
-
-const InfiniteHorizontalScroll = (list) => {
-  const scrollContainer = useRef(null);
-  const [isHovered, setIsHovered] = useState(false);
+const CatchTheFallingStress = () => {
+  const [objects, setObjects] = useState([]);
+  const [basketPosition, setBasketPosition] = useState(250);
+  const [score, setScore] = useState(0);
+  const [gameOver, setGameOver] = useState(false);
 
   useEffect(() => {
-    const container = scrollContainer.current;
+    if (gameOver) return;
 
-    if (!container) return;
+    const interval = setInterval(() => {
+      setObjects((prev) =>
+        prev.map((object) => ({
+          ...object,
+          y: object.y + 5,
+        }))
+      );
+    }, 50);
 
-    let scrollSpeed = 1;
-    let animationFrameId;
+    return () => clearInterval(interval);
+  }, [gameOver]);
 
-    const scroll = () => {
-      if (!isHovered) {
-        container.scrollLeft += scrollSpeed;
-        if (container.scrollLeft >= container.scrollWidth - container.clientWidth) {
-          container.scrollLeft = 0;
-        }
+  useEffect(() => {
+    const newObjectInterval = setInterval(() => {
+      if (gameOver) return;
+      setObjects((prev) => [
+        ...prev,
+        {
+          id: Math.random(),
+          x: Math.random() * 480, // Random horizontal position
+          y: 0, // Start at the top
+          size: 30 + Math.random() * 20,
+        },
+      ]);
+    }, 1500);
+
+    return () => clearInterval(newObjectInterval);
+  }, [gameOver]);
+
+  useEffect(() => {
+    objects.forEach((object) => {
+      if (object.y > 400) {
+        setGameOver(true);
       }
-      animationFrameId = requestAnimationFrame(scroll);
-    };
-
-    animationFrameId = requestAnimationFrame(scroll);
-
-    return () => cancelAnimationFrame(animationFrameId);
-  }, [isHovered]);
-
-  const scrollLeft = () => {
-    if (scrollContainer.current) {
-      scrollContainer.current.scrollBy({ left: -scrollContainer.current.clientWidth / 5, behavior: 'smooth' });
-    }
-  };
-
-  const scrollRight = () => {
-    if (scrollContainer.current) {
-      scrollContainer.current.scrollBy({ left: scrollContainer.current.clientWidth / 5, behavior: 'smooth' });
-    }
-  };
+      if (
+        object.y > 350 &&
+        object.x >= basketPosition - 30 &&
+        object.x <= basketPosition + 30
+      ) {
+        setScore(score + 1);
+        setObjects((prev) => prev.filter((o) => o.id !== object.id));
+      }
+    });
+  }, [score,objects, basketPosition]);
 
   return (
-    <div className="relative w-full overflow-hidden">
-      {/* Horizontal Scrollable Container */}
+    <div style={{ position: "relative", height: "400px", overflow: "hidden" }}>
+      <h3>Score: {score}</h3>
+      {gameOver && <div>Game Over! Final Score: {score}</div>}
       <div
-        ref={scrollContainer}
-        className="flex space-x-4 items-center overflow-x-scroll no-scrollbar"
-        style={{ whiteSpace: 'nowrap' }}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
-        {list.map((list) => (
-          <div className="">
-          <div className="rounded-xl  flex relative object-cover h-[300px] w-[350px]">
-            <div className=" backdrop-blur-0 hover:backdrop-blur-lg"></div>
-            <img loading="lazy"
-              src={list.image}
-              alt="qna.jpg"
-              className="h-full w-full hover:bg-blue-500/50 transform hover:scale-[110%] transition-all duration-300"
-            />
-            <div className="absolute  opacity-[0%] hover:opacity-[50%] h-[300px] w-[350px] bg-blue-800 text-white text-4xl text-center transform transition-all duration-300">helllllllllo</div>
-          </div>
-        </div>
-        ))}{Feature_List.map((list) => (
-          <div className="">
-          <div className="rounded-xl  flex relative object-cover h-[300px] w-[350px]">
-            <div className=" backdrop-blur-0 hover:backdrop-blur-lg"></div>
-            <img loading="lazy"
-              src={list.image}
-              alt="qna.jpg"
-              className="h-full w-full hover:bg-blue-500/50 transform hover:scale-[110%] transition-all duration-300"
-            />
-            <div className="absolute  opacity-[0%] hover:opacity-[50%] h-[300px] w-[350px] bg-blue-800 text-white text-4xl text-center transform transition-all duration-300">helllllllllo</div>
-          </div>
-        </div>
-        ))}{Feature_List.map((list) => (
-          <div className="">
-          <div className="rounded-xl  flex relative object-cover h-[300px] w-[350px]">
-            <div className=" backdrop-blur-0 hover:backdrop-blur-lg"></div>
-            <img loading="lazy"
-              src={list.image}
-              alt="qna.jpg"
-              className="h-full w-full hover:bg-blue-500/50 transform hover:scale-[110%] transition-all duration-300"
-            />
-            <div className="absolute  opacity-[0%] hover:opacity-[50%] h-[300px] w-[350px] bg-blue-800 text-white text-4xl text-center transform transition-all duration-300">helllllllllo</div>
-          </div>
-        </div>
-        ))}{Feature_List.map((list) => (
-          <div className="">
-          <div className="rounded-xl  flex relative object-cover h-[300px] w-[350px]">
-            <div className=" backdrop-blur-0 hover:backdrop-blur-lg"></div>
-            <img loading="lazy"
-              src={list.image}
-              alt="qna.jpg"
-              className="h-full w-full hover:bg-blue-500/50 transform hover:scale-[110%] transition-all duration-300"
-            />
-            <div className="absolute  opacity-[0%] hover:opacity-[50%] h-[300px] w-[350px] bg-blue-800 text-white text-4xl text-center transform transition-all duration-300">helllllllllo</div>
-          </div>
-        </div>
-        ))}
-      </div>
-
+        style={{
+          width: "60px",
+          height: "20px",
+          backgroundColor: "orange",
+          position: "absolute",
+          bottom: "0",
+          left: `${basketPosition}px`,
+          cursor: "pointer",
+        }}
+        onMouseMove={(e) => setBasketPosition(e.clientX - 30)}
+      />
+      {objects.map((object) => (
+        <div
+          key={object.id}
+          style={{
+            width: `${object.size}px`,
+            height: `${object.size}px`,
+            backgroundColor: "skyblue",
+            position: "absolute",
+            top: `${object.y}px`,
+            left: `${object.x}px`,
+            borderRadius: "50%",
+            transition: "transform 0.1s",
+          }}
+        ></div>
+      ))}
     </div>
   );
 };
 
-export default InfiniteHorizontalScroll;
+export default CatchTheFallingStress;
