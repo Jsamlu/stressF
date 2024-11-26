@@ -23,7 +23,7 @@ function Hero() {
               <br />
               it’s where stress fades away.
             </h2>
-            <p className="typing-effect font-light font-serif mt-7 md:mt-5 lg:text-3xl md:xl sm:text-xl text-lg text-left text-slate-700 ds">
+            <p className=" font-light font-serif mt-7 md:mt-5 lg:text-3xl md:xl sm:text-xl text-lg text-left text-slate-700 ds">
               Hey there! We know that being a student can sometimes feel
               overwhelming.
               <br /> Whether it's juggling assignments, exams, or just everyday
