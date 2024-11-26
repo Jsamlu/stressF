@@ -1,96 +1,149 @@
-import React, { useState, useEffect } from "react";
-import Sfooter from "../Sfooter";
-import S_header from "../S_header";
+import React, { useState } from "react";
 
-function Journal() {
+const JournalApp = () => {
   const [notes, setNotes] = useState([]);
-  const [noteInput, setNoteInput] = useState("");
-  const [editIndex, setEditIndex] = useState(null);
+  const [currentNote, setCurrentNote] = useState("");
+  const [editMode, setEditMode] = useState({ isEditing: false, index: null });
 
-  useEffect(() => {
-    const storedNotes = JSON.parse(localStorage.getItem("notes"));
-    if (storedNotes) {
-      setNotes(storedNotes);
-    }
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem("notes", JSON.stringify(notes));
-  }, [notes]);
-
-  const addNote = () => {
-    if (noteInput.trim() === "") return;
-    if (editIndex !== null) {
-      const updatedNotes = notes.map((note, index) =>
-        index === editIndex ? noteInput : note
-      );
+  const handleAddNote = () => {
+    if (editMode.isEditing) {
+      const updatedNotes = [...notes];
+      updatedNotes[editMode.index] = currentNote;
       setNotes(updatedNotes);
-      setEditIndex(null);
+      setEditMode({ isEditing: false, index: null });
     } else {
-      setNotes([...notes, noteInput]);
+      setNotes([...notes, currentNote]);
     }
-    setNoteInput("");
+    setCurrentNote("");
   };
 
-  const editNote = (index) => {
-    setNoteInput(notes[index]);
-    setEditIndex(index);
+  const handleEditNote = (index) => {
+    setCurrentNote(notes[index]);
+    setEditMode({ isEditing: true, index });
   };
 
-  const removeNote = (index) => {
+  const handleRemoveNote = (index) => {
     const updatedNotes = notes.filter((_, i) => i !== index);
     setNotes(updatedNotes);
   };
 
   return (
-    <>
-      <div className="md:hidden"><S_header/></div>
-      <div className="md:hidden h-[100px] w-full bg-blue-600"></div>
-      <div className=" bg-sky-200 min-h-[80vh] p-5 pt-[100px]">
-        <div className="w-[80%] mx-auto bg-white p-6 rounded-md shadow-md">
-          <h1 className="text-2xl font-bold mb-4">Journal App</h1>
-
-          <textarea
-            value={noteInput}
-            onChange={(e) => setNoteInput(e.target.value)}
-            placeholder="Write your note here..."
-            className="w-full p-2 border rounded-md mb-4"
-            rows="4"
-          />
-
-          <button
-            onClick={addNote}
-            className="bg-blue-500 text-white px-4 py-2 rounded-md "
-          >
-            {editIndex !== null ? "Update Note" : "Add Note"}
-          </button>
-
-          <div className="mt-6">
-            {notes.map((note, index) => (
-              <div key={index} className="border p-4 rounded-md bg-gray-50">
-                <p className="p-2 text-lg mb-2">{note}</p>
-                <div className="flex justify-between">
-                  <button
-                    onClick={() => editNote(index)}
-                    className="bg-yellow-500 text-white px-3 py-1 rounded-md"
-                  >
-                    Edit
-                  </button>
-                  <button
-                    onClick={() => removeNote(index)}
-                    className="bg-red-500 text-white px-3 py-1 rounded-md"
-                  >
-                    Remove
-                  </button>
-                </div>
-              </div>
-            ))}
+    <div style={styles.container} className="min-w-full min-h-screen">
+      <h2 style={styles.heading}>Journal App</h2>
+      <textarea
+        placeholder="Write your note here..."
+        value={currentNote}
+        onChange={(e) => setCurrentNote(e.target.value)}
+        style={styles.textarea}
+      ></textarea>
+      <button
+        onClick={handleAddNote}
+        style={styles.addButton}
+        disabled={!currentNote.trim()}
+      >
+        {editMode.isEditing ? "Update Note" : "Add Note"}
+      </button>
+      <div style={styles.notesContainer}>
+        {notes.map((note, index) => (
+          <div key={index} style={styles.note}>
+            <p>{note}</p>
+            <div style={styles.actions}>
+              <button
+                onClick={() => handleEditNote(index)}
+                style={styles.editButton}
+              >
+                Edit
+              </button>
+              <button
+                onClick={() => handleRemoveNote(index)}
+                style={styles.removeButton}
+              >
+                Remove
+              </button>
+            </div>
           </div>
-        </div>
+        ))}
       </div>
-      <Sfooter />
-    </>
+    </div>
   );
-}
+};
 
-export default Journal;
+const styles = {
+  container: {
+    backgroundImage: `url('https://images.pexels.com/photos/10526896/pexels-photo-10526896.jpeg')`,
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center",
+    padding: "20px",
+    borderRadius: "10px",
+    width: "400px",
+    margin: "0 auto",
+  },
+  heading: {
+    textAlign: "center",
+    marginBottom: "15px",
+    fontFamily: "'Caveat', cursive",
+    fontSize: "2em",
+    color: "#2c3e50",
+    textShadow: "1px 1px 2px rgba(0, 0, 0, 0.3)",
+  },
+  textarea: {
+    width: "100%",
+    height: "80px",
+    padding: "10px",
+    fontSize: "16px",
+    marginBottom: "10px",
+    backgroundColor: "transparent",
+    border: "none",
+    outline: "none",
+    fontFamily: "'Caveat', cursive",
+    color: "#2c3e50",
+    boxShadow: "inset 0 0 0 1px rgba(44, 62, 80, 0.4)", // Subtle guideline
+  },
+  addButton: {
+    width: "100%",
+    padding: "10px",
+    backgroundColor: "transparent",
+    color: "#2c3e50",
+    fontSize: "16px",
+    border: "1px solid #2c3e50",
+    borderRadius: "5px",
+    cursor: "pointer",
+    boxShadow: "none",
+  },
+  notesContainer: {
+    marginTop: "20px",
+  },
+  note: {
+    backgroundColor: "transparent", // Fully transparent
+    border: "none",
+    marginBottom: "10px",
+    fontFamily: "'Caveat', cursive",
+    fontSize: "16px",
+    color: "#2c3e50",
+    textShadow: "1px 1px 2px rgba(255, 255, 255, 0.6)",
+  },
+  actions: {
+    display: "flex",
+    gap: "10px",
+    justifyContent: "flex-end",
+  },
+  editButton: {
+    padding: "5px 10px",
+    backgroundColor: "transparent",
+    color: "#2c3e50",
+    border: "1px solid #2c3e50",
+    borderRadius: "5px",
+    cursor: "pointer",
+  },
+  removeButton: {
+    padding: "5px 10px",
+    backgroundColor: "transparent",
+    color: "#2c3e50",
+    border: "1px solid #2c3e50",
+    borderRadius: "5px",
+    cursor: "pointer",
+  },
+};
+
+export default JournalApp;

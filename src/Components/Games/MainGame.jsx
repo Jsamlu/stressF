@@ -3,10 +3,10 @@ import S_header from "../S_header";
 import Sfooter from "../Sfooter";
 export default function MainGame() {
   const gamelist = [
-    { href: "/stressballbounce", link: "" },
-    { href: "/wordsearchgame", link: "" },
-    { href: "/mazegame", link: "" },
-    { href: "/connectthedots", link: "" },
+    { href: "/stressballbounce", img: "/assets/games/game5.jpg" },
+    { href: "/wordsearchgame", img: "/assets/games/words.jpeg" },
+    { href: "/mazegame", img: "/assets/games/maze.jpeg" },
+    { href: "/connectthedots", img: "/assets/games/connectdots.jpeg" },
   ];
 
   return (
@@ -22,7 +22,7 @@ export default function MainGame() {
             return (
               <Link to={gamelist.href}>
                 <div className="bg-white h-[200px] overflow-hidden object-cover">
-                  <img src="/assets/games/game5.jpg" alt="game 5" />
+                  <img src={gamelist.img} alt="game 5" className="h-full w-full" />
                 </div>
               </Link>
             );

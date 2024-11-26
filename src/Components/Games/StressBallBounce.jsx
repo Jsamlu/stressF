@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import Sfooter from '../Sfooter';
 const StressBallBounce = () => {
   const [basketPosition, setBasketPosition] = useState(200);
   const [fallingBlocks, setFallingBlocks] = useState([]);
@@ -98,8 +98,8 @@ const StressBallBounce = () => {
     }
   }, [fallingBlocks, basketPosition]);
 
-  return (
-    <div
+  return (<>
+    <div className="bg-purple-600 min-w-full min-h-[75vh]"
       style={{
         position: "relative",
         height: "500px",
@@ -156,6 +156,8 @@ const StressBallBounce = () => {
         <p>Time: {gameTime}s</p>
       </div>
     </div>
+    <Sfooter/>
+    </>
   );
 };
 

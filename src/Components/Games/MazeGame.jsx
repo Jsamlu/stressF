@@ -1,4 +1,5 @@
 import React, { useState, useEffect }  from 'react';
+import Sfooter from '../Sfooter';
 
 // Predefined maze templates of increasing difficulty
 const mazeTemplates = [
@@ -137,9 +138,9 @@ const MazeGame = () => {
         });
     };
 
-    return (
-        <div style={{ textAlign: 'center' }}>
-            <h2>Maze Game - Level {mazeLevel + 1}</h2>
+    return (<>
+        <div style={{ textAlign: 'center' }} className='min-h-[75vh] w-full flex flex-col items-center justify-center bg-pink-300'>
+            <h2 className='text-4xl text-white'>Maze Game - Level {mazeLevel + 1}</h2>
             {gameOver ? (
                 <div>
                     <h3>Congratulations! You solved the maze!</h3>
@@ -155,7 +156,10 @@ const MazeGame = () => {
                     <div style={{ margin: '20px' }}>{renderMaze()}</div>
                 </>
             )}
+            
         </div>
+        <Sfooter/>
+        </>
     );
 };
 

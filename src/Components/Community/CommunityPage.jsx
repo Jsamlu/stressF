@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const CommunityPage = () => {
-  // Example data for events with timings
+  // Example data for events
   const [events, setEvents] = useState([
     {
       id: 1,
@@ -11,8 +11,9 @@ const CommunityPage = () => {
       org: "GreenEarth NGO",
       address: "123 Green Street, Cityville",
       comments: [],
-      maxComments: 20,
-      registeredUsers: []
+      pinnedComment: null,
+      image: null, // New field for image
+      registeredUsers: [],
     },
     {
       id: 2,
@@ -22,32 +23,38 @@ const CommunityPage = () => {
       org: "Healthcare Center ABC",
       address: "456 Wellness Ave, Healthtown",
       comments: [],
-      maxComments: 20,
-      registeredUsers: []
-    }
+      pinnedComment: null,
+      image: null,
+      registeredUsers: [],
+    },
   ]);
 
   const [newComment, setNewComment] = useState("");
   const [userName, setUserName] = useState("");
-  const [registrationData, setRegistrationData] = useState({
-    name: "",
-    age: "",
-    contactNumber: "",
-    email: "",
+  const [selectedEventId, setSelectedEventId] = useState(null);
+  const [newEvent, setNewEvent] = useState({
+    title: "",
+    date: "",
+    time: "",
+    org: "",
     address: "",
-    university: "",
-    fees: ""
+    image: null,
   });
   const [isRegistering, setIsRegistering] = useState(false);
-  const [selectedEventId, setSelectedEventId] = useState(null);
 
-  // Function to handle adding a comment
+  // Handle adding a comment
   const handleCommentSubmit = (e, eventId) => {
     e.preventDefault();
     setEvents((prevEvents) =>
       prevEvents.map((event) =>
-        event.id === eventId && event.comments.length < event.maxComments
-          ? { ...event, comments: [...event.comments, { user: userName, text: newComment }] }
+        event.id === eventId
+          ? {
+              ...event,
+              comments: [
+                ...event.comments,
+                { user: userName, text: newComment },
+              ],
+            }
           : event
       )
     );
@@ -55,36 +62,69 @@ const CommunityPage = () => {
     setUserName("");
   };
 
-  // Function to handle user registration for an event
+  // Handle registering for an event
   const handleRegister = (eventId) => {
     setSelectedEventId(eventId);
     setIsRegistering(true);
   };
 
-  const handleRegistrationSubmit = (e) => {
+  // Handle adding a new event
+  const handleAddEvent = (e) => {
     e.preventDefault();
+    setEvents((prevEvents) => [
+      ...prevEvents,
+      {
+        ...newEvent,
+        id: prevEvents.length + 1,
+        comments: [],
+        pinnedComment: null,
+        registeredUsers: [],
+      },
+    ]);
+    setNewEvent({
+      title: "",
+      date: "",
+      time: "",
+      org: "",
+      address: "",
+      image: null,
+    });
+  };
+
+  // Handle pinning a comment
+  const handlePinComment = (eventId, commentIndex) => {
     setEvents((prevEvents) =>
       prevEvents.map((event) =>
-        event.id === selectedEventId
-          ? { ...event, registeredUsers: [...event.registeredUsers, registrationData.name] }
+        event.id === eventId
+          ? {
+              ...event,
+              pinnedComment: event.comments[commentIndex],
+            }
           : event
       )
     );
-    setRegistrationData({
-      name: "",
-      age: "",
-      contactNumber: "",
-      email: "",
-      address: "",
-      university: "",
-      fees: ""
-    });
-    setIsRegistering(false);
+  };
+
+  // Handle image upload
+  const handleImageUpload = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setNewEvent((prevEvent) => ({
+          ...prevEvent,
+          image: reader.result,
+        }));
+      };
+      reader.readAsDataURL(file);
+    }
   };
 
   return (
     <div className="p-6 bg-gray-50 min-h-screen">
-      <h1 className="text-4xl font-bold text-center text-indigo-600 mb-8">Community Page</h1>
+      <h1 className="text-4xl font-bold text-center text-indigo-600 mb-8">
+        Community Page
+      </h1>
 
       {/* Event Section */}
       <section className="mb-12">
@@ -94,7 +134,8 @@ const CommunityPage = () => {
             <li key={event.id} className="bg-white p-6 rounded-lg shadow-md">
               <h3 className="text-lg font-bold">{event.title}</h3>
               <p>
-                <strong>Date:</strong> {event.date} <strong>Time:</strong> {event.time}
+                <strong>Date:</strong> {event.date} <strong>Time:</strong>{" "}
+                {event.time}
               </p>
               <p>
                 <strong>Organization:</strong> {event.org}
@@ -102,6 +143,15 @@ const CommunityPage = () => {
               <p>
                 <strong>Location:</strong> {event.address}
               </p>
+
+              {/* Event Image */}
+              {event.image && (
+                <img
+                  src={event.image}
+                  alt="Event"
+                  className="mt-4 w-full h-48 object-cover rounded-lg"
+                />
+              )}
 
               {/* Register for Event */}
               <button
@@ -119,131 +169,127 @@ const CommunityPage = () => {
               <div className="mt-6">
                 <h4 className="font-semibold text-gray-800">Comments:</h4>
                 <ul className="space-y-2 mt-4">
-                  {event.comments.map((comment, index) => (
+                  {event.pinnedComment && (
+                    <li className="bg-yellow-100 p-2 rounded">
+                      <strong>Pinned:</strong> {event.pinnedComment.text}
+                    </li>
+                  )}
+                  {event.comments.slice(0, 10).map((comment, index) => (
                     <li key={index} className="bg-gray-100 p-2 rounded">
                       <strong>{comment.user}:</strong> {comment.text}
+                      <button
+                        className="text-indigo-600 ml-4"
+                        onClick={() => handlePinComment(event.id, index)}
+                      >
+                        Pin Comment
+                      </button>
                     </li>
                   ))}
                 </ul>
 
-                {event.comments.length < event.maxComments ? (
-                  <form
-                    className="mt-4"
-                    onSubmit={(e) => handleCommentSubmit(e, event.id)}
+                {/* Add Comment */}
+                <form
+                  className="mt-4"
+                  onSubmit={(e) => handleCommentSubmit(e, event.id)}
+                >
+                  <input
+                    type="text"
+                    placeholder="Add a comment"
+                    value={newComment}
+                    onChange={(e) => setNewComment(e.target.value)}
+                    className="px-3 py-2 border border-gray-300 rounded-lg w-full mb-2"
+                    required
+                  />
+                  <input
+                    type="text"
+                    placeholder="Your name"
+                    value={userName}
+                    onChange={(e) => setUserName(e.target.value)}
+                    className="px-3 py-2 border border-gray-300 rounded-lg w-full mb-2"
+                    required
+                  />
+                  <button
+                    type="submit"
+                    className="bg-indigo-600 text-white px-4 py-2 rounded-lg shadow hover:bg-indigo-700"
                   >
-                    <input
-                      type="text"
-                      placeholder="Your name"
-                      className="px-3 py-2 border border-gray-300 rounded-lg w-full mb-2"
-                      value={userName}
-                      onChange={(e) => setUserName(e.target.value)}
-                      required
-                    />
-                    <input
-                      type="text"
-                      placeholder="Add a comment..."
-                      className="px-3 py-2 border border-gray-300 rounded-lg w-full mb-2"
-                      value={newComment}
-                      onChange={(e) => setNewComment(e.target.value)}
-                      required
-                    />
-                    <button
-                      type="submit"
-                      className="bg-indigo-600 text-white px-4 py-2 rounded-lg shadow hover:bg-indigo-700"
-                    >
-                      Submit Comment
-                    </button>
-                  </form>
-                ) : (
-                  <p className="text-red-500 mt-4">Maximum comments reached.</p>
-                )}
+                    Submit Comment
+                  </button>
+                </form>
               </div>
             </li>
           ))}
         </ul>
       </section>
 
-      {/* Registration Form */}
-      {isRegistering && (
-        <div className="fixed inset-0 flex items-center justify-center bg-gray-500 bg-opacity-75">
-          <div className="bg-white p-6 rounded-lg shadow-lg w-1/3">
-            <h2 className="text-2xl font-bold mb-4">Registration Form</h2>
-            <form onSubmit={handleRegistrationSubmit}>
-              <input
-                type="text"
-                placeholder="Name"
-                className="px-3 py-2 border border-gray-300 rounded-lg w-full mb-2"
-                value={registrationData.name}
-                onChange={(e) => setRegistrationData({ ...registrationData, name: e.target.value })}
-                required
-              />
-              <input
-                type="number"
-                placeholder="Age"
-                className="px-3 py-2 border border-gray-300 rounded-lg w-full mb-2"
-                value={registrationData.age}
-                onChange={(e) => setRegistrationData({ ...registrationData, age: e.target.value })}
-                required
-              />
-              <input
-                type="text"
-                placeholder="Contact Number"
-                className="px-3 py-2 border border-gray-300 rounded-lg w-full mb-2"
-                value={registrationData.contactNumber}
-                onChange={(e) => setRegistrationData({ ...registrationData, contactNumber: e.target.value })}
-                required
-              />
-              <input
-                type="email"
-                placeholder="Email"
-                className="px-3 py-2 border border-gray-300 rounded-lg w-full mb-2"
-                value={registrationData.email}
-                onChange={(e) => setRegistrationData({ ...registrationData, email: e.target.value })}
-                required
-              />
-              <input
-                type="text"
-                placeholder="Address"
-                className="px-3 py-2 border border-gray-300 rounded-lg w-full mb-2"
-                value={registrationData.address}
-                onChange={(e) => setRegistrationData({ ...registrationData, address: e.target.value })}
-                required
-              />
-              <input
-                type="text"
-                placeholder="University/College Name"
-                className="px-3 py-2 border border-gray-300 rounded-lg w-full mb-2"
-                value={registrationData.university}
-                onChange={(e) => setRegistrationData({ ...registrationData, university: e.target.value })}
-                required
-              />
-              <input
-                type="text"
-                placeholder="Registration Fees (if applicable)"
-                className="px-3 py-2 border border-gray-300 rounded-lg w-full mb-2"
-                value={registrationData.fees}
-                onChange={(e) => setRegistrationData({ ...registrationData, fees: e.target.value })}
-              />
-              <button
-                type="submit"
-                className="bg-indigo-600 text-white px-4 py-2 rounded-lg shadow hover:bg-indigo-700"
-              >
-                Submit Registration
-              </button>
-              <button
-                type="button"
-                className="bg-gray-400 text-white px-4 py-2 rounded-lg shadow hover:bg-gray-500 mt-2"
-                onClick={() => setIsRegistering(false)}
-              >
-                Cancel
-
-             </button>
-            </form>
-            </div>
-            </div>
-      )}
-      </div>
-      )}
-    
+      {/* Add Event Section */}
+      <section className="mb-12">
+        <h2 className="text-2xl font-semibold text-gray-800 mb-4">Add Event</h2>
+        <form onSubmit={handleAddEvent}>
+          <input
+            type="text"
+            placeholder="Event Title"
+            className="px-3 py-2 border border-gray-300 rounded-lg w-full mb-2"
+            value={newEvent.title}
+            onChange={(e) =>
+              setNewEvent({ ...newEvent, title: e.target.value })
+            }
+            required
+          />
+          <input
+            type="text"
+            placeholder="Event Date"
+            className="px-3 py-2 border border-gray-300 rounded-lg w-full mb-2"
+            value={newEvent.date}
+            onChange={(e) =>
+              setNewEvent({ ...newEvent, date: e.target.value })
+            }
+            required
+          />
+          <input
+            type="text"
+            placeholder="Event Time"
+            className="px-3 py-2 border border-gray-300 rounded-lg w-full mb-2"
+            value={newEvent.time}
+            onChange={(e) =>
+              setNewEvent({ ...newEvent, time: e.target.value })
+            }
+            required
+          />
+          <input
+            type="text"
+            placeholder="Organization"
+            className="px-3 py-2 border border-gray-300 rounded-lg w-full mb-2"
+            value={newEvent.org}
+            onChange={(e) =>
+              setNewEvent({ ...newEvent, org: e.target.value })
+            }
+            required
+          />
+          <input
+            type="text"
+            placeholder="Address"
+            className="px-3 py-2 border border-gray-300 rounded-lg w-full mb-2"
+            value={newEvent.address}
+            onChange={(e) =>
+              setNewEvent({ ...newEvent, address: e.target.value })
+            }
+            required
+          />
+          <input
+            type="file"
+            className="px-3 py-2 border border-gray-300 rounded-lg w-full mb-2"
+            onChange={handleImageUpload}
+          />
+          <button
+            type="submit"
+            className="bg-indigo-600 text-white px-4 py-2 rounded-lg shadow hover:bg-indigo-700"
+          >
+            Add Event
+          </button>
+        </form>
+      </section>
+    </div>
+  );
+};
 
 export default CommunityPage;

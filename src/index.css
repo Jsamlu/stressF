@@ -129,3 +129,35 @@ header.scrolled{
   white-space:wrap; 
 }
 
+
+
+.typing-effect {
+  white-space: nowrap;
+  overflow: hidden;
+  /* border-right: 3px solid rgb(12, 74, 110); */
+  animation: typing 1.5s steps(40, end), blink 1s step-end infinite;
+  animation-fill-mode: forwards; /* Ensures the text stays visible */
+}
+
+/* Typing Animation Keyframes */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%; /* Full text revealed */
+  }
+}
+
+/* Blinking Cursor Keyframes */
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+/* Stop Blinking Cursor After Typing Completes */
+.typing-effect.finished {
+  animation: none; /* Stops the animation */
+  border-right: none; /* Removes the cursor */
+}
