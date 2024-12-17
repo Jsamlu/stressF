@@ -5,27 +5,17 @@ import { useState } from "react";
 const valArr = [0];
 
 const Forum = () => {
-  const dispval = () => {
-    const InpVal = document.getElementsByName("ans");
-    for (let i = 0, j = 0; i < InpVal.length; i++) {
-      if (InpVal[i].checked) {
-        valArr[j] = InpVal[i].value;
-        j++;
-      }
-    }
-    console.log(valArr);
-    localStorage.setItem("valArr", valArr);
-  };
+  
 
   let [Index, setIndex] = useState(0);
   let [Question, setQuestion] = useState(QList[Index]);
 
-  function handelNext () {
+  function handelNext() {
     if (Index < QList.length - 1) {
       setIndex(Index + 1);
       setQuestion(QList[Index]);
-    } 
-  } 
+    }
+  }
 
   const handlePrevious = () => {
     if (Index > 0) {
@@ -64,7 +54,7 @@ const Forum = () => {
         </div>
       </div>
 
-      {/* Forun starting */}
+      {/* Forum starting */}
 
       <div className=" px-[15%] py-[5%]">
         <div className="mb-5 p-10 bg-white rounded-xl">
@@ -75,83 +65,49 @@ const Forum = () => {
             </p>
             <div className="p-4 mt-5">
               <ul className="flex flex-col gap-y-3">
-                <li className="flex p-3 bg-sky-200 rounded-xl">
-                  <input
-                    className="w-[20px] h-[20px] self-center mr-5"
-                    type="radio"
-                    name="ans"
-                    value="1"
-                  />
-                  <p className="md:text-lg text-xs text-sky-800">
-                    {Question.an1}
-                  </p>
-                </li>
-
-                <li className="flex p-3 bg-sky-200 rounded-xl">
-                  <input
-                    className="w-[20px] h-[20px] self-center mr-5"
-                    type="radio"
-                    name="ans"
-                    value="2"
-                  ></input>
-                  <p className="md:text-lg text-xs text-sky-800">
-                    {Question.an2}
-                  </p>
-                </li>
-
-                <li className="flex p-3 bg-sky-200 rounded-xl">
-                  <input
-                    className="w-[20px] h-[20px] self-center mr-5"
-                    type="radio"
-                    name="ans"
-                    value="3"
-                  ></input>
-                  <p className="md:text-lg text-xs text-sky-800">
-                    {Question.an3}
-                  </p>
-                </li>
-
-                <li className="flex p-3 bg-sky-200 rounded-xl">
-                  <input
-                    className="w-[20px] h-[20px] self-center mr-5"
-                    type="radio"
-                    name="ans"
-                    value="4"
-                  ></input>
-                  <p className="md:text-lg text-xs text-sky-800">
-                    {Question.an4}
-                  </p>
-                </li>
-
-                <li className="flex p-3 bg-sky-200 rounded-xl">
-                  <input
-                    className="w-[20px] h-[20px] self-center mr-5"
-                    type="radio"
-                    name="ans"
-                    value="5"
-                  ></input>
-                  <p className="md:text-lg text-xs text-sky-800">
-                    {Question.an5}
-                  </p>
-                </li>
+                {Question.options.map((options, index) => {
+                  return (
+                    <li className="flex p-3 bg-sky-200 rounded-xl">
+                      <input
+                        className="w-[20px] h-[20px] self-center mr-5"
+                        type="radio"
+                        name="ans"
+                        value={index+1}
+                      />
+                      <p className="md:text-lg text-xs text-sky-800">
+                        {options}
+                      </p>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
+
+            {/*page handle buttons */}
+
             <div className="flex w-[70%] mx-auto py-5 justify-between ">
-              <button className="bg-sky-600 text-white w-[30%] py-3 px-3" onClick={handlePrevious} type="button" >
+              <button
+                className="bg-sky-600 text-white w-[30%] py-3 px-3"
+                onClick={handlePrevious}
+                type="button"
+              >
                 Previous
               </button>
-              <button className="bg-sky-600 text-white w-[30%] py-3 px-3" onClick={handelNext} type="button">
+              <button
+                className="bg-sky-600 text-white w-[30%] py-3 px-3"
+                onClick={handelNext}
+                type="button"
+              >
                 Next
               </button>
             </div>
             <p className="text-center text-xl py-3  text-sky-500">{`${
               Index + 1
-            } out of N`}</p>
+            } out of 10`}</p>
           </form>
         </div>
 
         <div className="mt-5 mr-5 mb-5">
-          <button onClick={dispval} type="button">here</button>
           <Link
             to="/result"
             className="p-2 hover:bg-sky-500 bg-sky-600 text-white rounded-xl text-2xl"
