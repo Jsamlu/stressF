@@ -1,20 +1,37 @@
 import { Link } from "react-router-dom";
 import QList from "./QList";
-
+import { useState } from "react";
 
 const valArr = [0];
 
 const Forum = () => {
   const dispval = () => {
     const InpVal = document.getElementsByName("ans");
-    for (let i = 0, j=0; i < InpVal.length; i++) {
+    for (let i = 0, j = 0; i < InpVal.length; i++) {
       if (InpVal[i].checked) {
-        valArr[j]=InpVal[i].value;
+        valArr[j] = InpVal[i].value;
         j++;
       }
     }
     console.log(valArr);
     localStorage.setItem("valArr", valArr);
+  };
+
+  let [Index, setIndex] = useState(0);
+  let [Question, setQuestion] = useState(QList[Index]);
+
+  function handelNext () {
+    if (Index < QList.length - 1) {
+      setIndex(Index + 1);
+      setQuestion(QList[Index]);
+    } 
+  } 
+
+  const handlePrevious = () => {
+    if (Index > 0) {
+      setIndex(Index - 1);
+      setQuestion(QList[Index]);
+    }
   };
 
   return (
@@ -46,86 +63,104 @@ const Forum = () => {
           </ul>
         </div>
       </div>
+
+      {/* Forun starting */}
+
       <div className=" px-[15%] py-[5%]">
-        {QList.map((QList) => {
-          return (
-            <div className="mb-5 p-10 bg-white rounded-xl">
-              <form>
-                <p className="md:text-2xl text-sm text-blue-500">
-                  {QList.id}.&nbsp;
-                  {QList.question}
-                </p>
-                <div className="p-4 mt-5">
-                  <ul className="flex flex-col gap-y-3">
-                    <li className="flex p-3 bg-sky-200 rounded-xl">
-                      <input
-                        className="w-[20px] h-[20px] self-center mr-5"
-                        type="radio"
-                        name="ans"
-                        value="1"
-                      />
-                      <p className="md:text-lg text-xs">{QList.an1}</p>
-                    </li>
+        <div className="mb-5 p-10 bg-white rounded-xl">
+          <form>
+            <p className="md:text-2xl text-sm text-blue-500">
+              {Index + 1}.&nbsp;
+              {Question.question}
+            </p>
+            <div className="p-4 mt-5">
+              <ul className="flex flex-col gap-y-3">
+                <li className="flex p-3 bg-sky-200 rounded-xl">
+                  <input
+                    className="w-[20px] h-[20px] self-center mr-5"
+                    type="radio"
+                    name="ans"
+                    value="1"
+                  />
+                  <p className="md:text-lg text-xs text-sky-800">
+                    {Question.an1}
+                  </p>
+                </li>
 
-                    <li className="flex p-3 bg-sky-200 rounded-xl">
-                      <input
-                        className="w-[20px] h-[20px] self-center mr-5"
-                        type="radio"
-                        name="ans"
-                        value="2"
-                      ></input>
-                      <p className="md:text-lg text-xs">{QList.an2}</p>
-                    </li>
+                <li className="flex p-3 bg-sky-200 rounded-xl">
+                  <input
+                    className="w-[20px] h-[20px] self-center mr-5"
+                    type="radio"
+                    name="ans"
+                    value="2"
+                  ></input>
+                  <p className="md:text-lg text-xs text-sky-800">
+                    {Question.an2}
+                  </p>
+                </li>
 
-                    <li className="flex p-3 bg-sky-200 rounded-xl">
-                      <input
-                        className="w-[20px] h-[20px] self-center mr-5"
-                        type="radio"
-                        name="ans"
-                        value="3"
-                      ></input>
-                      <p className="md:text-lg text-xs">{QList.an3}</p>
-                    </li>
+                <li className="flex p-3 bg-sky-200 rounded-xl">
+                  <input
+                    className="w-[20px] h-[20px] self-center mr-5"
+                    type="radio"
+                    name="ans"
+                    value="3"
+                  ></input>
+                  <p className="md:text-lg text-xs text-sky-800">
+                    {Question.an3}
+                  </p>
+                </li>
 
-                    <li className="flex p-3 bg-sky-200 rounded-xl">
-                      <input
-                        className="w-[20px] h-[20px] self-center mr-5"
-                        type="radio"
-                        name="ans"
-                        value="4"
-                      ></input>
-                      <p className="md:text-lg text-xs">{QList.an4}</p>
-                    </li>
+                <li className="flex p-3 bg-sky-200 rounded-xl">
+                  <input
+                    className="w-[20px] h-[20px] self-center mr-5"
+                    type="radio"
+                    name="ans"
+                    value="4"
+                  ></input>
+                  <p className="md:text-lg text-xs text-sky-800">
+                    {Question.an4}
+                  </p>
+                </li>
 
-                    <li className="flex p-3 bg-sky-200 rounded-xl">
-                      <input
-                        className="w-[20px] h-[20px] self-center mr-5"
-                        type="radio"
-                        name="ans"
-                        value="5"
-                      ></input>
-                      <p className="md:text-lg text-xs">{QList.an5}</p>
-                    </li>
-                  </ul>
-                </div>
-              </form>
+                <li className="flex p-3 bg-sky-200 rounded-xl">
+                  <input
+                    className="w-[20px] h-[20px] self-center mr-5"
+                    type="radio"
+                    name="ans"
+                    value="5"
+                  ></input>
+                  <p className="md:text-lg text-xs text-sky-800">
+                    {Question.an5}
+                  </p>
+                </li>
+              </ul>
             </div>
-          );
-        })}
+            <div className="flex w-[70%] mx-auto py-5 justify-between ">
+              <button className="bg-sky-600 text-white w-[30%] py-3 px-3" onClick={handlePrevious} type="button" >
+                Previous
+              </button>
+              <button className="bg-sky-600 text-white w-[30%] py-3 px-3" onClick={handelNext} type="button">
+                Next
+              </button>
+            </div>
+            <p className="text-center text-xl py-3  text-sky-500">{`${
+              Index + 1
+            } out of N`}</p>
+          </form>
+        </div>
 
         <div className="mt-5 mr-5 mb-5">
-        <button onClick={dispval}>here</button>
+          <button onClick={dispval} type="button">here</button>
           <Link
             to="/result"
             className="p-2 hover:bg-sky-500 bg-sky-600 text-white rounded-xl text-2xl"
           >
             End test
           </Link>
-          
         </div>
       </div>
     </div>
-
   );
-}
-export {Forum, valArr};
+};
+export { Forum, valArr };
