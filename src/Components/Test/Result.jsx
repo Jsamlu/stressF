@@ -1,64 +1,31 @@
-// import { useState } from "react";
-// import { valArr } from ".";
-
-// const data = ["0", "3", "1", "4", "2", "2", "4", "1", "3", "2"];
-// // console.log(valArr);
-// localStorage.setItem("data", valArr);
-
-// export default function Result() {
-//     const w = 80;
-//     const [barfill, setbarfill]=useState(0);
-
-//     const fill = () =>{
-
-//     }
-//     fill();
-//     const handel2 = () =>{
-//       setbarfill(0);
-//     }
-//     const handel1 = () =>{
-//       setbarfill(barfill + 20);
-//     }
-
-//     const getcolor = () =>{
-//       if(barfill < 40){
-//         return "#02e821";
-//       }else if(barfill < 60){
-//         return "#8ce802";
-//       }
-//       else if(barfill< 70){
-//         return "#e8ab02";
-//       }
-//       else{
-//         return "#e82502";
-//       }
-
-//     }
-//     const col = getcolor();
-//     console.log(col);
-//   return (
-//     <div className="min-h-screen  bg-sky-200 flex justify-center items-center">
-//       <div id="container" className=" bg-white w-[80%] mx-auto  py-10 rounded-xl">
-//         <div id="bar" className="w-[80%] h-[40px] bg-gray-300 mx-auto rounded-full">
-//             <div id="fill" className={`w-[${barfill}%] h-full bg-[${col}] rounded-full transition-all duration-1000 ease-out`}></div>
-//         </div>
-//         <button onClick={handel1}>+20</button>
-//         <button onClick={handel2}>reset</button>
-//       </div>
-//     </div>
-//   );
-// }
-
-// src/StressResult.js
 import React from "react";
+import { useContext } from "react";
+import { AnswerContext } from "../Context/test/AnswerContext";
 
-const Result = ({ value = -40 }) => {
+
+
+
+//{/ value = -40 }
+const Result = () => {
   // Clamp the stressValue between 1 and 100
   // const value = Math.min(Math.max(stressValue, 1), 100);
 
-  if (value >= 50) {
-    value = 50;
+  const { answers } = useContext(AnswerContext); // Access answers from context
+  
+  // if (value >= 50) {
+  //   value = 50;
+  // }
+
+  function Answers (){
+    console.log(answers);
+    let res = 0
+    answers.forEach(element => {
+      res += element;
+    });
+    return res;
   }
+  let value = Answers;
+
 
   // Calculate the angle for the pointer (0 to 180 degrees)
   const angle = (value / 100) * 180;

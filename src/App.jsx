@@ -1,5 +1,5 @@
-import React from "react";
-import { useState } from "react";
+// import React, { useContext } from "react";
+// import { useState } from "react";
 import {
   BrowserRouter as Router,
   Route,
@@ -24,7 +24,8 @@ import Signin from "./Components/Login/Signin";
 import Journal from "./Components/Journal/Journal";
 
 //contexts
-import { login_context } from "./Components/Context/login/login_context";
+// import { login_context } from "./Components/Context/login/login_context";
+import { AnswerProvider } from "./Components/Context/test/AnswerContext";
 
 // scrap
 import Scrap from "./Components/scrap/scrap";
@@ -45,10 +46,13 @@ function App() {
   const isSignin = location.pathname === "/signin";
   const isforumPage = location.pathname === "/forum";
 
-  const [ showProfile, setShowProfile ] = useState(true);
+  // const { showProfile, setShowProfile } = useContext(login_context);
+  // console.log(showProfile)
   
+let showProfile = true
+
     return (
-    <login_context.Provider value={[showProfile, setShowProfile]}>
+      <AnswerProvider>
       <div className="flex">
         {!(isHomePage || isforumPage) && (
           <div className="md:w-[18%] hidden md:flex">
@@ -100,7 +104,7 @@ function App() {
           )}
         </div>
       </div>
-    </login_context.Provider>
+      </AnswerProvider>
   );
 }
 
