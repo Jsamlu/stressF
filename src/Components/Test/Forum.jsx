@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import QList from "./QList";
 import { useState } from "react";
+import { useContext } from "react";
+import { AnswerContext } from "../Context/test/AnswerContext";
 
 const valArr = [0];
 
@@ -9,12 +11,23 @@ const Forum = () => {
 
   let [Index, setIndex] = useState(0);
   let [Question, setQuestion] = useState(QList[Index]);
+  const { answers, setAnswers } = useContext(AnswerContext); // Access context // Array to store numeric answers
 
+  
+  // Update answer when user selects an option
+  const handleAnswerChange = (value) => {
+    const newAnswers = [...answers];
+    newAnswers[Index] = value; // Update the current question's answer
+    setAnswers(newAnswers);
+  };
+  
+  //previous & next button hande function
   function handelNext() {
     if (Index < QList.length - 1) {
       setIndex(Index + 1);
       setQuestion(QList[Index]);
     }
+    
   }
 
   const handlePrevious = () => {
@@ -23,6 +36,8 @@ const Forum = () => {
       setQuestion(QList[Index]);
     }
   };
+
+  
 
   return (
     <div className="min-h-screen bg-sky-200 ">
@@ -73,6 +88,7 @@ const Forum = () => {
                         type="radio"
                         name="ans"
                         value={index+1}
+                        onChange={() => handleAnswerChange(index+1)}
                       />
                       <p className="md:text-lg text-xs text-sky-800">
                         {options}
@@ -95,7 +111,10 @@ const Forum = () => {
               </button>
               <button
                 className="bg-sky-600 text-white w-[30%] py-3 px-3"
-                onClick={handelNext}
+                onClick={() =>{
+                  handelNext();
+                  console.log(answers);
+                } }
                 type="button"
               >
                 Next
