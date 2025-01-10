@@ -12,15 +12,21 @@ import Home from "./Components/Home/Home";
 import { Result } from "./Components/Test";
 import { Test } from "./Components/Test";
 import { Forum } from "./Components/Test";
+import TakeTest from "./Components/Test/TakeTest";
 import Resources from "./Components/Resources/Resources";
 import Activities from "./Components/Activities/Activities";
 import Login from "./Components/Login/Login";
+import UserLogin from "./Components/Login/LoginUser";
+import ProfessionalLogin from "./Components/Login/LoginProfessional";
 import Community from "./Components/Community/CommunityPage";
 import Aboutus from "./Components/Aboutus/Aboutus";
 import Games from "./Components/Games/Games";
 import Counselling from "./Components/Counselling/Counselling";
+// import ProfessionalCard from "./Components/Counselling/ProfessionalCard";
 import ScrollToTop from "./Components/ScrollToTop";
-import Signin from "./Components/Login/Signin";
+import Register from "./Components/Login/Register";
+import UserRegister from "./Components/Login/RegisterUser";
+import ProfessionalRegister from "./Components/Login/RegisterProfessional";
 import Journal from "./Components/Journal/Journal";
 
 //contexts
@@ -48,7 +54,7 @@ function App() {
   const location = useLocation();
   const isHomePage = location.pathname === "/";
   const isLogin = location.pathname === "/login";
-  const isSignin = location.pathname === "/signin";
+  const isRegister = location.pathname === "/register";
   const isforumPage = location.pathname === "/forum";
 
   // const { showProfile, setShowProfile } = useContext(login_context);
@@ -65,6 +71,7 @@ function App() {
               <Header />
             </div>
           )}
+
 
           <div
             className={`${
