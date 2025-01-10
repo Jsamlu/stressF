@@ -28,6 +28,7 @@ import Register from "./Components/Login/Register";
 import UserRegister from "./Components/Login/RegisterUser";
 import ProfessionalRegister from "./Components/Login/RegisterProfessional";
 import Journal from "./Components/Journal/Journal";
+import Signin from "./Components/Login/Signin";
 
 //contexts
 // import { login_context } from "./Components/Context/login/login_context";
