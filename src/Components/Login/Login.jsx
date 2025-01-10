@@ -9,8 +9,9 @@ import { login_context } from "../Context/login/login_context";
 
 const Login = () => {
 
-  //useccontext
-  const [showProfile, setShowProfile ]= useContext(login_context);
+  //use context
+
+  let {user , setUser} = useContext(login_context); 
 
 
   const [email, setEmail] = useState("");
@@ -19,6 +20,8 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setUser({email, password});
+    
 
     // Simple validation
     if (!email || !password) {
@@ -37,6 +40,8 @@ const Login = () => {
     setError("");
   };
 
+
+  
   return (
     <>
       <div className="md:hidden"><S_header/></div>
@@ -71,7 +76,7 @@ const Login = () => {
               </div>
               <button
                 onClick={() => {
-                  setShowProfile(!showProfile);
+                  handleSubmit()
                 }}
                 className="mt-5 p-5 rounded-xl bg-[#4ea1f9] text-white transition-all duration-400"
                 type="submit"
