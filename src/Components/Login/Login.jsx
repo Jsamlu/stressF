@@ -1,42 +1,95 @@
-import React from 'react';
+import "./login.css";
+import React, { useState, useContext } from "react";
+import Sfooter from "../Sfooter";
+import S_header from "../S_header";
 import { Link } from "react-router-dom";
-import { useNavigate } from 'react-router-dom';
+
+//context
+import { login_context } from "../Context/login/login_context";
 
 const Login = () => {
-  const navigate = useNavigate();
+
+  //use context
+
+  let {user , setUser} = useContext(login_context); 
 
 
-  const handleUserLogin = () => {
-    navigate('/login-user');
-  }
-  
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
-  const handleProfessionalLogin = () => {
-    navigate('/login-professional');
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setUser({email, password});
+    
+
+    // Simple validation
+    if (!email || !password) {
+      setError("Both fields are required");
+      return;
+    }
+
+    // Here you would typically handle authentication
+    // For now, we just log the credentials
+    console.log("Email:", email);
+    console.log("Password:", password);
+
+    // Clear the form and error message
+    setEmail("");
+    setPassword("");
+    setError("");
   };
 
 
   
   return (
-    <div className="card-container h-screen flex items-center bg-gradient-to-br from-sky-600 to-teal-600">
-      <div className="mx-auto card  bg-white p-6 rounded-lg shadow-lg w-full max-w-md text-center">
-        <h2 className="text-2xl font-bold mb-4">Choose Login</h2>
-        <button
-          onClick={handleUserLogin}
-          className="w-full bg-blue-500 text-white py-2 px-4 rounded mb-4"
-        >
-          User Login
-        </button>
-        <button
-          onClick={handleProfessionalLogin}
-          className="w-full bg-green-500 text-white py-2 px-4 rounded"
-        >
-          Professional Login
-        </button>
-        <p className="mx-[5%] mt-4">Don't have an account? &nbsp;,<br/> <Link to="/register" className="hover:text-teal-700 text-teal-300 hover:underline">Register</Link></p>
-
+    <>
+      <div className="md:hidden"><S_header/></div>
+      <div className="md:hidden h-[100px] w-full bg-blue-600"></div>
+      <div className="bg-indigo-200 h-full w-full cont ">
+        <div className="">
+          <div className="login-container  bg-white">
+            <h2>Login</h2>
+            {error && <p className="error">{error}</p>}
+            <form onSubmit={handleSubmit}>
+              <div className="form-group mt-10">
+                <label htmlFor="email">Email:</label>
+                <input
+                  type="email"
+                  id="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  className="bg-gray-200"
+                />
+              </div>
+              <div className="form-group mt-5">
+                <label htmlFor="password">Password:</label>
+                <input
+                  type="password"
+                  id="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                  className="bg-gray-200"
+                />
+              </div>
+              <button
+                onClick={() => {
+                  handleSubmit()
+                }}
+                className="mt-5 p-5 rounded-xl bg-[#4ea1f9] text-white transition-all duration-400"
+                type="submit"
+              >
+                Login
+              </button>
+              <p className="mx-[5%] mt-4">Register as New&nbsp; <Link to="/signin" className="hover:text-blue-800 text-blue-500">Sign-In</Link></p>
+            </form>
+          </div>
+        </div>
       </div>
-    </div>
+      <Sfooter />
+    </>
   );
 };
 
