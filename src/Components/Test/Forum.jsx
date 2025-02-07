@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import QList from "./QList";
 import { useState } from "react";
-import { useContext } from "react";
-import { AnswerContext } from "../Context/test/AnswerContext";
+//import { useContext } from "react";
+//import { AnswerContext } from "../Context/test/AnswerContext";
 
 const valArr = [0];
 
@@ -11,7 +11,7 @@ const Forum = () => {
 
   let [Index, setIndex] = useState(0);
   let [Question, setQuestion] = useState(QList[Index]);
-  const { answers, setAnswers } = useContext(AnswerContext); // Access context // Array to store numeric answers
+ // const { answers, setAnswers } = useContext(AnswerContext); // Access context // Array to store numeric answers
 
   
   // Update answer when user selects an option

@@ -1,6 +1,6 @@
 import React from "react";
-import { useContext } from "react";
-import { AnswerContext } from "../Context/test/AnswerContext";
+//import { useContext } from "react";
+//import { AnswerContext } from "../Context/test/AnswerContext";
 
 
 
@@ -10,22 +10,22 @@ const Result = () => {
   // Clamp the stressValue between 1 and 100
   // const value = Math.min(Math.max(stressValue, 1), 100);
 
-  const { answers } = useContext(AnswerContext); // Access answers from context
+  //const { answers } = useContext(AnswerContext); // Access answers from context
   
   // if (value >= 50) {
   //   value = 50;
   // }
 
-  function Answers (){
-    console.log(answers);
-    let res = 0
-    answers.forEach(element => {
-      res += element;
-    });
-    return res;
-  }
-  let value = Answers;
-
+  // function Answers (){
+  //   console.log(answers);
+  //   let res = 0
+  //   answers.forEach(element => {
+  //     res += element;
+  //   });
+  //   return res;
+  // }
+  // let value = Answers;
+  let value = -40;
 
   // Calculate the angle for the pointer (0 to 180 degrees)
   const angle = (value / 100) * 180;

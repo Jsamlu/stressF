@@ -4,13 +4,38 @@ import SearchBar from "../SearchBar";
 import S_header from "../S_header";
 import { Link } from "react-router-dom";
 
+//user appointments
+import { useState } from "react";
+
 export default function Counselling() {
+  const [Name, setName] = useState("");
+  const [showForm, setShowForm] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    address: "",
+    contact: "",
+    email: "",
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Form Data:", formData);
+    setFormData({ name: "", address: "", contact: "", email: "" }); // Clear form
+    setShowForm(false); // Hide form after submission
+  };
+
   return (
     <div className="bg-sky-100 w-full">
       <div className="md:hidden">
         <S_header />
       </div>
-      <div className="md:hidden h-[100px] w-full bg-blue-600"></div>
+
+      {/* <div className="md:hidden h-[100px] w-full bg-blue-600"></div> */}
       <div className="flex justify-between">
         <h1 className="pl-10 pt-10 mb-5 text-3xl font-bold text-[#0f444c]">
           Counselling Services
@@ -79,8 +104,18 @@ export default function Counselling() {
                 </div>
 
                 <div className=" px-6 py-4 mx-auto">
-                  <Link className="w-[20%] text-xl text-center absolute bottom-6 left-10  text-sky-500 hover:text-sky-700 font-bold py-2 px-2 rounded-full focus:outline-none" to={`${CList.id}`}>Visit</Link>
+                  <Link
+                    className="w-[20%] text-xl text-center absolute bottom-6 left-10  text-sky-500 hover:text-sky-700 font-bold py-2 px-2 rounded-full focus:outline-none"
+                    to={`${CList.id}`}
+                  >
+                    Visit
+                  </Link>
+
                   <button
+                    onClick={() => {
+                      setShowForm(true);
+                      setName(CList.name);
+                    }}
                     className={`w-[40%] absolute bottom-5 right-10 ${
                       CList.availability === "available"
                         ? "bg-blue-500 hover:bg-blue-700"
@@ -90,43 +125,129 @@ export default function Counselling() {
                   >
                     Book Appointment
                   </button>
+
+                  {/* <Link  
+                  to={`${CList.id}`}
+                className={`w-[40%] absolute bottom-5 right-10 ${
+                      CList.availability === "available"
+                        ? "bg-blue-500 hover:bg-blue-700"
+                        : "bg-gray-500 cursor-not-allowed"
+                    } text-white font-bold py-2 px-4 rounded-xl focus:outline-none`}
+                    disabled={CList.availability !== "available"}>
+                      Book Appointment
+                </Link> */}
                 </div>
               </div>
-              // <div className="grid md:grid-cols-3 gap-5 bg-white rounded-xl w-[500px] h-[250px] p-2 ">
-              //   <div>
-              //     <div className="h-[150px] bg-cover bg-no-repeat rounded-3xl">
-              //         <img src={CList.image} alt="img" className="rounded-3xl"/>
-              //     </div>
-              //     <div className="h-10 ">
-              //       <p className="p-1 text-center bg-blue-300 text-lg text-blue-500 font-semibold rounded-xl mt-7 hover:bg-blue-100 transition-all duration-300">
-              //         visit
-              //       </p>
-              //     </div>
-              //   </div>
-              //   <div className=" col-span-2 rounded-xl p-2 pt-2">
-              //     <h1 className="font-semibold text-xl text-sky-900">
-              //       {CList.name}
-              //     </h1>
-              //     <p className="m-1 text-lg font-thin">{CList.exp}</p>
-              //     <p className="m-1 text-sm text-sky-800">{CList.addr}</p>
-              //     <p className="m-1 text-sm font-medium text-sky-800">₹ {CList.fees} fees</p>
-              //     <div className="flex gap-1 mt-2 justify-between">
-              //       <div className="rounded-xl h-[30px] w-[50px] bg-green-400 text-white text-center ">
-              //         <p>91%</p>
-              //       </div>
-              //       <div className=" grid gap-0.5">
-              //         <p className=" p-1 text-center border-2 border-indigo-600 bg-white text-sm text-blue-400 font-medium rounded-xl h-[40px] w-[150px]">
-              //           Available today
-              //         </p>
-              //         <p className=" p-1 text-center bg-blue-500 text-white font-semibold rounded-xl h-[40px] w-[150px] hover:bg-blue-300 hover:text-blue-500 transition-all duration-300">
-              //           Book meeting
-              //         </p>
-              //       </div>
-              //     </div>
-              //   </div>
-              // </div>
             );
           })}
+        </div>
+        <div>
+          {/*for User appointment */}
+          {showForm && (
+            <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50">
+              <div className="bg-white p-6 rounded shadow-lg w-96 ">
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <h2 className="text-xl font-semibold text-gray-700">
+                    Fill in Your Details
+                  </h2>
+
+                  <div>
+                    <div>
+                      <p>Consultant : {Name}</p>
+                    </div>
+
+                    <label
+                      htmlFor="name"
+                      className="block text-sm font-medium text-gray-600"
+                    >
+                      Name:
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <label
+                      htmlFor="address"
+                      className="block text-sm font-medium text-gray-600"
+                    >
+                      Address:
+                    </label>
+                    <input
+                      type="text"
+                      id="address"
+                      name="address"
+                      value={formData.address}
+                      onChange={handleInputChange}
+                      className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <label
+                      htmlFor="contact"
+                      className="block text-sm font-medium text-gray-600"
+                    >
+                      Contact No:
+                    </label>
+                    <input
+                      type="text"
+                      id="contact"
+                      name="contact"
+                      value={formData.contact}
+                      onChange={handleInputChange}
+                      className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-medium text-gray-600"
+                    >
+                      Email:
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                      required
+                    />
+                  </div>
+
+                  <div className="flex justify-between items-center">
+                    <button
+                      type="submit"
+                      className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600"
+                    >
+                      Submit
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setShowForm(false);
+                      }}
+                      className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          )}
         </div>
       </div>
       <Sfooter />
