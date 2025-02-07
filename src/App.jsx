@@ -24,9 +24,8 @@ import Signin from "./Components/Login/Signin";
 import Journal from "./Components/Journal/Journal";
 
 //Doctors 
-import { DoctorProfile, DoctorDashboard } from "./Components/Profile";
-// import Dhome from "./Components/Home/Doctor/Dhome";  
-import DoctorHeader from "./Components/DoctorHeader";
+import { DoctorProfile, DoctorDashboard } from "./Components/Profile";  
+import DoctorHeader from "./Components/DoctorHeader.jsx";
 import { DoctorAppointments, PendingAppointments, AcceptedAppointments } from "./Components/Appointments"; 
 
 //contexts
