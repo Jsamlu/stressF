@@ -25,7 +25,7 @@ import Journal from "./Components/Journal/Journal";
 
 //Doctors 
 import { DoctorProfile, DoctorDashboard } from "./Components/Profile";  
-import DoctorHeader from "./Components/DoctorHeader.jsx";
+import DoctorHeader from "./Components/DoctorHeader";
 import { DoctorAppointments, PendingAppointments, AcceptedAppointments } from "./Components/Appointments"; 
 
 //contexts
