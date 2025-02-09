@@ -27,9 +27,9 @@ function AcceptedAppointments() {
       <div>
         {Appointmentlist.map((ap) => {
           return(
-            <div className='w-[75%] my-5 bg-white h-[60px] rounded-xl flex justify-between items-center py-2 px-5'>
+            <div className='w-[75%] my-1  text-sky-900 hover:text-white transition-all duration-150 hover:bg-blue-500 bg-white h-[60px] rounded-xl flex justify-between items-center py-2 px-5 hover:scale-105'>
               <div>
-                <p className='font-semibold text-sky-900'>{ap.name}</p>
+                <p className='font-semibold'>{ap.name}</p>
               </div>
               <div>
                 <p>{ap.date} | {ap.time}</p>

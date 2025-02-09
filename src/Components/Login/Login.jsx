@@ -1,17 +1,16 @@
 import "./login.css";
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import Sfooter from "../Sfooter";
 import S_header from "../S_header";
 import { Link } from "react-router-dom";
 
 //context
-import { login_context } from "../Context/login/login_context";
 
 const Login = () => {
 
   //use context
 
-  let {user , setUser} = useContext(login_context); 
+ 
 
 
   const [email, setEmail] = useState("");
@@ -20,7 +19,6 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setUser({email, password});
     
 
     // Simple validation
