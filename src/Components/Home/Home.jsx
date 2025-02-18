@@ -4,9 +4,10 @@ import React, { useState, useEffect } from "react";
 import Header from "../Header.jsx";
 import Footer from "../Footer.jsx";
 import Aim from "./Aim.jsx";
-import H_scroll from "./H_scroll.jsx";
+// import H_scroll from "./H_scroll.jsx";
 
 import Feature_List from "./Feature_List.jsx";
+import Report from "./reports.jsx";
 // import { Report } from "../Report/Report.jsx";
 
 export default function Home() {
@@ -25,7 +26,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className=" min-h-screen bg-sky-200">
+    <div className=" min-h-screen bg-gradient-to-b from-sky-200 via-sky-600 to-green-500">
       <Hero></Hero>
       <hr className="p-1 bg-white" />
 
@@ -51,13 +52,40 @@ export default function Home() {
       <div
         className={` ${
           showHeader ? "md:ms-[17%]" : " ms-0"
-        } py-10 mx-auto transition-all duration-700 ease-in-out overflow-hidden md:block hidden `}
+        } pt-10 mx-auto transition-all duration-700 ease-in-out overflow-hidden md:block hidden `}
       >
         <div className="">
-          <h1 className="pb-10 mx-[45%] text-3xl font-semibold text-sky-800 underline underline-offset-[10px] decoration-2">Features</h1>
+          <h1 className="pb-10 mx-[45%] text-3xl font-semibold text-sky-100 underline underline-offset-[10px] decoration-2">
+            Features
+          </h1>
         </div>
-        <div className=" py-5">
-          <H_scroll list={Feature_List} />
+
+        <div className="grid grid-cols-3 gap-y-5 gap-x-0 ml-[60px]">
+          {/* <H_scroll list={Feature_List} /> */}
+          {Feature_List.map((fl) => {
+            return (
+              <div className="h-[250px] w-[300px] bg-gradient-to-br from-sky-100 to-transparent flex flex-col rounded-3xl">
+                <div>
+                  <div className="rounded-xl  flex relative object-cover h-[150px] w-[300px] mx-auto transform hover:scale-[95%] scale-90 transition-all duration-500">
+                    <img
+                      loading="lazy"
+                      src={fl.image}
+                      alt="qna.jpg"
+                      className="h-full w-full rounded-2xl"
+                    />
+                  </div>
+                </div>
+                <p className="text-center align-bottom text-white text-xl font-sans font-semibold">
+                  {fl.label}
+                </p>
+              </div>
+            );
+          })}
+        </div>
+
+
+        <div className="md:w-[100%] mt-[16px] pb-0 mb-0 pt-20 flex justify-center">
+          <Report />
         </div>
       </div>
       <Footer />
