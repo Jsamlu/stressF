@@ -1,6 +1,5 @@
 import React from "react";
-//import { useContext } from "react";
-//import { AnswerContext } from "../Context/test/AnswerContext";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -26,6 +25,11 @@ const Result = () => {
   // }
   // let value = Answers;
   let value = -40;
+
+  //use navigate
+  const nav = useNavigate();
+
+
 
   // Calculate the angle for the pointer (0 to 180 degrees)
   const angle = (value / 100) * 180;
@@ -165,7 +169,10 @@ const Result = () => {
           </div>
           <hr className="h-[5px] bg-sky-900 w-[80%] my-5"></hr>
           <div > 
-          <div className="grid grid-cols-3 my-10">
+            {/*this is recomendation tab */}
+          <div className="grid grid-cols-3 my-10" onClick={()=>{
+            nav("/activities");
+          }}>
               <div className="col-span-2 grid grid-cols-2 gap-4">
                 <div className="flex gap-x-5 bg-white shadow-xl rounded-xl p-2">
                   <div className=" w-[30%] h-[100px] overflow-hidden rounded-full">

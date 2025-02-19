@@ -60,15 +60,15 @@ export default function Home() {
           </h1>
         </div>
 
-        <div className="grid grid-cols-3 gap-y-5 gap-x-0 ml-[60px]">
+        <div className=" max-w-[75%] grid grid-cols-3 gap-y-5 ml-[80px] ">
           {/* <H_scroll list={Feature_List} /> */}
           {Feature_List.map((fl) => {
             return (
-              <div className="h-[250px] w-[300px] bg-gradient-to-br from-sky-100 to-transparent flex flex-col rounded-3xl">
+              <div className=" h-[250px] w-[300px] bg-gradient-to-br from-sky-300 via-blue-300 to-transparent flex flex-col rounded-3xl">
                 <div>
                   <div className="rounded-xl  flex relative object-cover h-[150px] w-[300px] mx-auto transform hover:scale-[95%] scale-90 transition-all duration-500">
                     <img
-                      loading="lazy"
+                      
                       src={fl.image}
                       alt="qna.jpg"
                       className="h-full w-full rounded-2xl"
@@ -84,7 +84,7 @@ export default function Home() {
         </div>
 
 
-        <div className="md:w-[100%] mt-[16px] pb-0 mb-0 pt-20 flex justify-center">
+        <div loading="lazy" className="md:w-[100%] mt-[16px] pb-0 mb-0 pt-20 flex justify-center">
           <Report />
         </div>
       </div>

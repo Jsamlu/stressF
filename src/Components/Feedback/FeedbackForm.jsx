@@ -71,8 +71,8 @@ const FeedbackForm = () => {
   };
 
   return (
-    <div className="container p-6 max-w-full mx-auto bg-gray-50">
-      <h2 className="text-2xl font-semibold text-center mb-6">Feedback Form</h2>
+    <div className="container p-6 max-w-full mx-auto bg-gradient-to-br from-blue-400 to-green-600">
+      <h2 className="text-2xl font-semibold text-sky-100 text-center mb-6">Feedback Form</h2>
 
       {!formSubmitted ? (
         <form onSubmit={handleSubmit} className="space-y-6">

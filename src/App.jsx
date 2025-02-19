@@ -27,6 +27,7 @@ import Counselling from "./Components/Counselling/Counselling";
 import ScrollToTop from "./Components/ScrollToTop";
 import Signin from "./Components/Login/Signin";
 import Journal from "./Components/Journal/Journal";
+import FeedbackForm from "./Components/Feedback/FeedbackForm";
 
 //Doctors 
 import { DoctorProfile, DoctorDashboard } from "./Components/Profile";  
@@ -102,6 +103,7 @@ function App() {
               <Route path="/community" element={<Community />} />
               <Route path="/journal" element={<Journal />} />
               <Route path="/about_us" element={<Aboutus />} />
+              <Route path="/feedbackform" element={<FeedbackForm />} />
 
               <Route path="/counselling" element={<Counselling />} />
               <Route path="/Counselling/:id" element={<Prof_page />} />

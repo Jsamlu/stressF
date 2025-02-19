@@ -25,12 +25,6 @@ const Feature_List =[
     },
     {
         id:5,
-        label:`Chatbot`,
-        decs:`If the condition does not get better even after continuous evaluating, recommendations to some professionals can be made available.`,
-        image:"/assets/chatbot.jpg",
-    },
-    {
-        id:6,
         label:`Games`,
         decs:`If the condition does not get better even after continuous evaluating, recommendations to some professionals can be made available.`,
         image:"/assets/self/self3.jpg",

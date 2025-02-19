@@ -7,7 +7,7 @@ import { Dashboard } from ".";
 function Profile() {
 
 
-  return <div className="h-[70vh]">{ true ? <Dashboard /> : <Login />}</div>;
+  return <div className="h-[70vh]">{ false ? <Dashboard /> : <Login />}</div>;
 }
 
 export default Profile;

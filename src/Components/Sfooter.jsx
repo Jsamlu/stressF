@@ -56,7 +56,7 @@ export default function Footer() {
             <div>
               <h1 className="md:text-xl text-lg">Contact Us</h1>
               <div className="p-3 pr-5 text-sm flex space-x-5">
-                 <Link to="#" className="md:text-sm text-xs underline underline-offset-0 hover:underline-offset-[10px] hover:decoration-sky-400 decoration-transparent hover:text-sky-400 transition-all duration-300">Contact</Link> 
+                 <Link to="/feedbackform" className="md:text-sm text-xs underline underline-offset-0 hover:underline-offset-[10px] hover:decoration-sky-400 decoration-transparent hover:text-sky-400 transition-all duration-300">Feedback</Link> 
                  <Link to='/about_us' className="md:text-sm text-xs underline underline-offset-0 hover:underline-offset-[10px] hover:decoration-sky-400 decoration-transparent hover:text-sky-400 transition-all duration-300">About us</Link>
               </div>
             </div>
