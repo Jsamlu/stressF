@@ -7,8 +7,8 @@ import Aim from "./Aim.jsx";
 // import H_scroll from "./H_scroll.jsx";
 
 import Feature_List from "./Feature_List.jsx";
-import Report from "./reports.jsx";
-// import { Report } from "../Report/Report.jsx";
+import Report from "./Reports.jsx";
+
 
 export default function Home() {
   const [showHeader, setShowHeader] = useState(false);
