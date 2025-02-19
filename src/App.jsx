@@ -1,10 +1,5 @@
-
-import React from "react";
-
-
-
+// import React, { useContext } from "react";
 import { useState } from "react";
-
 import {
   BrowserRouter as Router,
   Route,
@@ -29,8 +24,8 @@ import Community from "./Components/Community/CommunityPage";
 import Aboutus from "./Components/Aboutus/Aboutus";
 import Games from "./Components/Games/Games";
 import Counselling from "./Components/Counselling/Counselling";
-// import ProfessionalCard from "./Components/Counselling/ProfessionalCard";
 import ScrollToTop from "./Components/ScrollToTop";
+import Signin from "./Components/Login/Signin";
 import Journal from "./Components/Journal/Journal";
 
 //Doctors 
@@ -38,18 +33,23 @@ import { DoctorProfile, DoctorDashboard } from "./Components/Profile";
 import DoctorHeader from "./Components/DoctorHeader";
 import { DoctorAppointments, PendingAppointments, AcceptedAppointments } from "./Components/Appointments"; 
 
+//contexts
 
 // scrap
 import Scrap from "./Components/scrap/scrap";
 import MainGame from "./Components/Games/MainGame";
 import Prof_page from "./Components/Counselling/Prof_page";
 import { ActivityId } from "./Components/Activities/ActivityId";
- import { Dashboard, Profile } from "./Components/Profile";
-
+import { Dashboard, Profile } from "./Components/Profile";
 
 //games
-import { ConnectTheDots, StressBallBounce, MazeGame, StarryBackground, WordSearchGame } from "./Components/Games";
-
+import {
+  ConnectTheDots,
+  StressBallBounce,
+  MazeGame,
+  StarryBackground,
+  WordSearchGame,
+} from "./Components/Games";
 
 
 
@@ -60,9 +60,9 @@ function App() {
   const location = useLocation();
   const isHomePage = location.pathname === "/";
   const isLogin = location.pathname === "/login";
+  const isSignin = location.pathname === "/signin";
   const isRegister = location.pathname === "/register";
   const isforumPage = location.pathname === "/forum";
-
 
   let showProfile = true;
 
@@ -70,7 +70,6 @@ function App() {
   return (
     <>
     {role === "U"?
-
       <div className="flex">
         {!(isHomePage || isforumPage) && (
           <div className="md:w-[18%] hidden md:flex">
@@ -84,9 +83,7 @@ function App() {
           }${isforumPage ? " md:w-full " : "md:flex-grow md:w-[80%]"} `}
         >
           {/* Links */}
-
-          {isHomePage || showProfile || isSignin || isLogin ? (
-
+          {isHomePage || showProfile || isSignin || isLogin || isRegister  ? (
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/test" element={<Test />} />
@@ -95,20 +92,13 @@ function App() {
               <Route path="/resources" element={<Resources />} />
               <Route path="/activities" element={<Activities />} />
               <Route path="/activities/:id" element={<ActivityId />} />
-
-            
-              
+              <Route path="/login" element={<Login />} />
+              <Route path="/signin" element={<Signin />} />
               <Route path="/login-user" element={<UserLogin />} />
               <Route path="/login-professional" element={<ProfessionalLogin />} />
               <Route path="/register" element={<Register />} />
               <Route path="/register-user" element={<UserRegister />} />
               <Route path="/register-professional" element={<ProfessionalRegister />} />
-            
-             
-              
-
-              <Route path="/login" element={<Login />} />
-              <Route path="/signin" element={<Signin />} />
               <Route path="/community" element={<Community />} />
               <Route path="/journal" element={<Journal />} />
               <Route path="/about_us" element={<Aboutus />} />
@@ -122,7 +112,6 @@ function App() {
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/profile" element={<Profile />} />
 
-
               {/*games */}
               <Route path="/stressballbounce" element={<StressBallBounce />} />
               <Route path="/wordsearchgame" element={<WordSearchGame />} />
@@ -130,13 +119,11 @@ function App() {
               <Route path="/connectthedots" element={<ConnectTheDots />} />
               <Route path="/starrybackground" element={<StarryBackground />} />
 
-
               {/* ERROR page */}
               <Route path="*" element={<p>404 ERROR</p>} />
               <Route path="/scrap" element={<Scrap />} />
             </Routes>
           ) : (
-
             <Profile />
           )}
         </div>
@@ -185,7 +172,6 @@ function App() {
 
     }
     </>
-
   );
 }
 
