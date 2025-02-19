@@ -22,7 +22,7 @@ import Counselling from "./Components/Counselling/Counselling";
 import ScrollToTop from "./Components/ScrollToTop";
 import Signin from "./Components/Login/Signin";
 import Journal from "./Components/Journal/Journal";
-import Signin from "./Components/Login/Signin";
+
 
 //contexts
 // import { login_context } from "./Components/Context/login/login_context";
