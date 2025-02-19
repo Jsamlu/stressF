@@ -12,7 +12,6 @@ import Home from "./Components/Home/Home";
 import { Result } from "./Components/Test";
 import { Test } from "./Components/Test";
 import { Forum } from "./Components/Test";
-import TakeTest from "./Components/Test/TakeTest";
 import Resources from "./Components/Resources/Resources";
 import Activities from "./Components/Activities/Activities";
 import Login from "./Components/Login/Login";
@@ -73,7 +72,6 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/test" element={<Test />} />
-              <Route path="/take-test" element={<TakeTest />} />
               <Route path="/forum" element={<Forum />} />
               <Route path="/result" element={<Result />} />
               <Route path="/resources" element={<Resources />} />
