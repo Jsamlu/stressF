@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+
 import {
   BrowserRouter as Router,
   Route,
@@ -31,7 +31,7 @@ import Journal from "./Components/Journal/Journal";
 import Signin from "./Components/Login/Signin";
 
 //contexts
-import { login_context } from "./Components/Context/login/login_context";
+
 
 // scrap
 import Scrap from "./Components/scrap/scrap";
@@ -79,7 +79,9 @@ function App() {
               <Route path="/resources" element={<Resources />} />
               <Route path="/activities" element={<Activities />} />
               <Route path="/activities/:id" element={<ActivityId />} />
+              <Route path="/profile" element={<Profile />} />
               <Route path="/login" element={<Login />} />
+              <Route path="/signin" element={<Signin />} />
               <Route path="/login-user" element={<UserLogin />} />
               <Route path="/login-professional" element={<ProfessionalLogin />} />
               <Route path="/register" element={<Register />} />
