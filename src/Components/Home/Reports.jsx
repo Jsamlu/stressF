@@ -1,5 +1,5 @@
 import React from "react";
-import Counter from "./counter";
+import Counter from "./Counter";
 const Reports = () => {
   return (
     <div className="h-[300px] w-full bg-white grid grid-cols-2 items-center px-20">
