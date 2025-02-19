@@ -1,14 +1,9 @@
 import { Link } from "react-router-dom";
 
-export default function Header() {
+export default function DoctorHeader() {
   const navlinks = [
-    { href: "/profile", label: "Profile" },
-    { href: "/test", label: "Test" },
-    { href: "/resources", label: "Resources" },
-    { href: "/activities", label: "Activities" },
-    { href: "/maingame", label: "Games" },
-    { href: "/counselling", label: "Professionals" },
-    { href: "/about_us", label: "About us" },
+    { href: "/", label: "Profile" },
+    { href: "/doc_appointments", label: "Appointments" },
   ];
   return (
     <div className="border-r shadow-sm fixed top-0 left-0 bottom-0 rounded-xl h-screen w-[18%] flex-col bg-white hidden md:flex">

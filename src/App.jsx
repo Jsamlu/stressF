@@ -1,4 +1,9 @@
+
 import React from "react";
+
+
+
+import { useState } from "react";
 
 import {
   BrowserRouter as Router,
@@ -27,9 +32,11 @@ import Counselling from "./Components/Counselling/Counselling";
 // import ProfessionalCard from "./Components/Counselling/ProfessionalCard";
 import ScrollToTop from "./Components/ScrollToTop";
 import Journal from "./Components/Journal/Journal";
-import Signin from "./Components/Login/Signin";
 
-//contexts
+//Doctors 
+import { DoctorProfile, DoctorDashboard } from "./Components/Profile";  
+import DoctorHeader from "./Components/DoctorHeader";
+import { DoctorAppointments, PendingAppointments, AcceptedAppointments } from "./Components/Appointments"; 
 
 
 // scrap
@@ -44,6 +51,11 @@ import { ActivityId } from "./Components/Activities/ActivityId";
 import { ConnectTheDots, StressBallBounce, MazeGame, StarryBackground, WordSearchGame } from "./Components/Games";
 
 
+
+
+
+
+
 function App() {
   const location = useLocation();
   const isHomePage = location.pathname === "/";
@@ -51,10 +63,14 @@ function App() {
   const isRegister = location.pathname === "/register";
   const isforumPage = location.pathname === "/forum";
 
-  // const [ showProfile, setShowProfile ] = useState(true);
-  
-    return (
-    // <login_context.Provider value={[showProfile, setShowProfile]}>
+
+  let showProfile = true;
+
+  const [role, setRole] = useState("U");                            
+  return (
+    <>
+    {role === "U"?
+
       <div className="flex">
         {!(isHomePage || isforumPage) && (
           <div className="md:w-[18%] hidden md:flex">
@@ -68,7 +84,9 @@ function App() {
           }${isforumPage ? " md:w-full " : "md:flex-grow md:w-[80%]"} `}
         >
           {/* Links */}
-          {isHomePage  || isRegister || isLogin ? (
+
+          {isHomePage || showProfile || isSignin || isLogin ? (
+
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/test" element={<Test />} />
@@ -77,24 +95,33 @@ function App() {
               <Route path="/resources" element={<Resources />} />
               <Route path="/activities" element={<Activities />} />
               <Route path="/activities/:id" element={<ActivityId />} />
-              <Route path="/profile" element={<Profile />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/signin" element={<Signin />} />
+
+            
+              
               <Route path="/login-user" element={<UserLogin />} />
               <Route path="/login-professional" element={<ProfessionalLogin />} />
               <Route path="/register" element={<Register />} />
               <Route path="/register-user" element={<UserRegister />} />
               <Route path="/register-professional" element={<ProfessionalRegister />} />
+            
+             
+              
+
+              <Route path="/login" element={<Login />} />
+              <Route path="/signin" element={<Signin />} />
               <Route path="/community" element={<Community />} />
               <Route path="/journal" element={<Journal />} />
               <Route path="/about_us" element={<Aboutus />} />
-              <Route path="/games" element={<Games />} />
+
               <Route path="/counselling" element={<Counselling />} />
-              {/* <Route path="/professional-card" element={<ProfessionalCard />} /> */}
               <Route path="/Counselling/:id" element={<Prof_page />} />
+              
+
+              <Route path="/games" element={<Games />} />
               <Route path="/maingame" element={<MainGame />} />
               <Route path="/dashboard" element={<Dashboard />} />
-              {/* <Route path="/profile" element={<Login />} /> */}
+              <Route path="/profile" element={<Profile />} />
+
 
               {/*games */}
               <Route path="/stressballbounce" element={<StressBallBounce />} />
@@ -102,18 +129,63 @@ function App() {
               <Route path="/mazegame" element={<MazeGame />} />
               <Route path="/connectthedots" element={<ConnectTheDots />} />
               <Route path="/starrybackground" element={<StarryBackground />} />
-               
+
 
               {/* ERROR page */}
               <Route path="*" element={<p>404 ERROR</p>} />
               <Route path="/scrap" element={<Scrap />} />
             </Routes>
           ) : (
-            <Login/>
+
+            <Profile />
           )}
         </div>
       </div>
-    // </login_context.Provider>
+      //else state
+      : role === "D"?
+      <div className="flex">
+        
+          <div className="md:w-[18%] hidden md:flex">
+            <DoctorHeader/>
+          </div>
+
+        <div
+          className="md:flex-grow md:w-[80%]"
+        >
+          {/* Links */}
+          {isHomePage || showProfile || isSignin || isLogin ? (
+            <Routes>
+              {/* <Route path="/" element={<Dhome />} /> */}
+              <Route path="/doc_appointments" element={<DoctorAppointments/>} />
+              <Route path="/acpt_appointments" element={<AcceptedAppointments/>} />
+              <Route path="/pend_appointments" element={<PendingAppointments/>} />
+              
+
+              
+              <Route path="/dashboard" element={<DoctorDashboard/>} />
+              <Route path="/" element={<DoctorProfile />} />
+
+              {/*games */}
+              <Route path="/stressballbounce" element={<StressBallBounce />} />
+              <Route path="/wordsearchgame" element={<WordSearchGame />} />
+              <Route path="/mazegame" element={<MazeGame />} />
+              <Route path="/connectthedots" element={<ConnectTheDots />} />
+              <Route path="/starrybackground" element={<StarryBackground />} />
+
+              {/* ERROR page */}
+              <Route path="*" element={<p>404 ERROR</p>} />
+              <Route path="/scrap" element={<Scrap />} />
+            </Routes>
+          ) : (
+            <Profile />
+          )}
+        </div>
+      </div> :
+      <p>page not specified</p>
+
+    }
+    </>
+
   );
 }
 

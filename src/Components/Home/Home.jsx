@@ -4,10 +4,11 @@ import React, { useState, useEffect } from "react";
 import Header from "../Header.jsx";
 import Footer from "../Footer.jsx";
 import Aim from "./Aim.jsx";
-import H_scroll from "./H_scroll.jsx";
+// import H_scroll from "./H_scroll.jsx";
 
 import Feature_List from "./Feature_List.jsx";
-import { Report } from "../Report/Report.jsx";
+import Report from "./Reports.jsx";
+
 
 export default function Home() {
   const [showHeader, setShowHeader] = useState(false);
@@ -25,7 +26,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className=" min-h-screen bg-sky-200">
+    <div className=" min-h-screen bg-gradient-to-b from-sky-200 via-sky-600 to-green-500">
       <Hero></Hero>
       <hr className="p-1 bg-white" />
 
@@ -38,9 +39,6 @@ export default function Home() {
       >
         <Header />
       </div>
-      {/* */
-      /*width lg:w-[950px] sm:w-[450px] md:w-[700px] w-[300px]*/}
-
       <div
         className={` ${
           showHeader ? "md:ms-[17%]" : " ms-0"
@@ -51,74 +49,43 @@ export default function Home() {
 
       <hr className="hidden md:block p-1 bg-white" />
 
-      {/* <div className="bg-white md:mt-10 grid grid-cols-2 md:mx-0 mx-auto  gap-1  items-center rounded-xl shadow-[0_35px_60px_-15px_rgba(0,0,0,0.2)] md:h-[300px] w-10/12 h-[200px] ">
-          <div className="rounded-tl-xl rounded-bl-xl h-full w-full object-cover overflow-hidden">
-          <img
-          src="/assets/qna.jpg"
-          alt="QnA"
-          className="h-full w-full transform hover:scale-[110%] transition-all duration-300 rounded-tl-xl rounded-bl-xl"
-          />
-          </div>
-          
-          <div className="pl-10 pr-10 pt-5 pb-5 lg:pl-10 lg:pr-10 lg:pt-10">
-          <h1 className="text-[15px] sm:text-lg md:text-xl  text-purple-900 font-bold">
-          Stress Analysis
-          </h1>
-          <p className="text-[7px] sm:text-xs md:text-sm text-balance lg:text-xl text-gray-500 mt-2 md:mt-5">
-          Our platform provides an easy-to-use questionnaire that analyzes
-          your stress levels
-          </p>
-          </div>
-          </div>
-          <div className="bg-white mt-10 grid grid-cols-2  gap-1 md:mx-0 mx-auto items-center rounded-xl shadow-[0_35px_60px_-15px_rgba(0,0,0,0.2)] md:h-[300px] h-[200px] w-10/12">
-          <div className="pl-10 pr-10 pt-5 pb-5 lg:pl-10 lg:pr-10 lg:pt-10">
-            <h1 className="text-[15px] sm:text-lg md:text-xl  text-purple-900 font-bold">
-            Activities
-            </h1>
-            <p className="text-[7px] sm:text-xs md:text-sm text-balance lg:text-xl text-gray-500 mt-2 md:mt-5">
-            Our platform offers personalized activity suggestions to help you
-            de-stress. From mindfulness exercises to light physical
-            activities, we have something for everyone.
-            </p>
-            </div>
-            <div className="h-full w-full object-cover overflow-hidden rounded-tr-xl rounded-br-xl ">
-            <img
-            src="/assets/social/soc1.jpg"
-            alt="game"
-            className="h-full w-full transform hover:scale-[110%] transition-all duration-300 rounded-tr-xl rounded-br-xl"
-            />
-            </div>
-            </div>
-            
-            <div className="bg-white mt-10 grid grid-cols-2  gap-1 md:mx-0 mx-auto items-center rounded-xl shadow-[0_35px_60px_-15px_rgba(0,0,0,0.2)] md:h-[300px] h-[200px] w-10/12  mb-10">
-            <div className=" h-full w-full object-cover overflow-hidden rounded-tl-xl rounded-bl-xl">
-            <img
-            src="/assets/counselling.jpg"
-            alt="counselling"
-            className="h-full w-full transform hover:scale-[110%] transition-all duration-300 rounded-tl-xl rounded-bl-xl"
-            />
-            </div>
-            <div className="pl-10 pr-10 pt-5 pb-5 lg:pl-10 lg:pr-10 lg:pt-10">
-            <h1 className="text-[15px] sm::text-lg md:text-xl  text-purple-900 font-bold ">
-            Counselling
-            </h1>
-            <p className="text-[7px] sm:text-xs md:text-sm text-balance lg:text-xl text-gray-500 mt-2 md:mt-5">
-            If the condition does not get better even after continuous
-            evaluating, recommendations to some professionals can be made
-            available.
-            </p>
-            </div>
-            </div> */}
       <div
         className={` ${
           showHeader ? "md:ms-[17%]" : " ms-0"
-        } py-10 mx-auto transition-all duration-700 ease-in-out overflow-hidden md:block hidden `}
+        } pt-10 mx-auto transition-all duration-700 ease-in-out overflow-hidden md:block hidden `}
       >
         <div className="">
-          <h1 className="pb-10 mx-[45%] text-3xl font-semibold text-sky-800 underline underline-offset-[10px] decoration-2">Features</h1>
+          <h1 className="pb-10 mx-[45%] text-3xl font-semibold text-sky-100 underline underline-offset-[10px] decoration-2">
+            Features
+          </h1>
         </div>
-        <div className=" py-5">
-          <H_scroll list={Feature_List} />
+
+        <div className="grid grid-cols-3 gap-y-5 gap-x-0 ml-[60px]">
+          {/* <H_scroll list={Feature_List} /> */}
+          {Feature_List.map((fl) => {
+            return (
+              <div className="h-[250px] w-[300px] bg-gradient-to-br from-sky-100 to-transparent flex flex-col rounded-3xl">
+                <div>
+                  <div className="rounded-xl  flex relative object-cover h-[150px] w-[300px] mx-auto transform hover:scale-[95%] scale-90 transition-all duration-500">
+                    <img
+                      loading="lazy"
+                      src={fl.image}
+                      alt="qna.jpg"
+                      className="h-full w-full rounded-2xl"
+                    />
+                  </div>
+                </div>
+                <p className="text-center align-bottom text-white text-xl font-sans font-semibold">
+                  {fl.label}
+                </p>
+              </div>
+            );
+          })}
+        </div>
+
+
+        <div className="md:w-[100%] mt-[16px] pb-0 mb-0 pt-20 flex justify-center">
+          <Report />
         </div>
       </div>
       <Footer />

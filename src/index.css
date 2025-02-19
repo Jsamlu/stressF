@@ -139,6 +139,14 @@ header.scrolled{
   animation-fill-mode: forwards; /* Ensures the text stays visible */
 }
 
+.typing-effect2{
+  white-space: nowrap;
+  overflow: hidden;
+  /* border-right: 3px solid rgb(12, 74, 110); */
+  animation: typing 1.5s steps(40, end), blink 1s step-start infinite;
+  animation-fill-mode:backwards; /* Ensures the text stays visible */
+}
+
 /* Typing Animation Keyframes */
 @keyframes typing {
   from {
