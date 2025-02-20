@@ -16,11 +16,11 @@ const Result = ({n} ) => {
   
 
 
-
+  var temp=0
   // Calculate the angle for the pointer (0 to 180 degrees)
   const angle = (value / 100) * 180;
   if (value <= -50) {
-    var temp= 0;
+    temp= 0;
   } else if (value <= -25 && value >= -50) {
     temp = 25;
   } else if (value <= 0 && value >= -25) {

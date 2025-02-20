@@ -15,7 +15,7 @@ const Feature_List =[
         id:3,
         label:`Counselling`,
         decs:`If the condition does not get better even after continuous evaluating, recommendations to some professionals can be made available.`,
-        image:"/assets/counselling.jpg",
+        image:"/assets2/people/counselling.png",
     },
     {
         id:4,
@@ -27,7 +27,7 @@ const Feature_List =[
         id:5,
         label:`Games`,
         decs:`Games are not just a way to escape reality but also to refress mind and have relif from stress `,
-        image:"/assets/self/self3.jpg",
+        image:"/assets2/people/games.png",
     },
 ]
 
