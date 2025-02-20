@@ -15,7 +15,7 @@ function Hero() {
         />
       </div>
       <S_header></S_header>
-      <div className="p-8 pt-[150px] md:pt-[100px] absolute top-0 w-screen h-screen items-center backdrop-blur-[1px] max-w-full">
+      <div className="p-8 pt-[150px] md:pt-[100px] absolute top-0 w-screen h-screen items-center backdrop-blur-[5px] max-w-full">
         <div className="z-10">
           <div className="text-balck pl-7">
             <h2 className="typing-effect font-serif sm:text-4xl md:mt-5 lg:text-7xl md:text-4xl text-2xl font-bold text-left text-sky-50 ">
@@ -28,7 +28,7 @@ function Hero() {
               text-sky-900
               ds
             */}
-            <p className="  font-serif mt-7 md:mt-5 lg:text-3xl md:xl sm:text-xl text-lg text-left text-purple-200 ">
+            <p className="  font-serif mt-7 md:mt-5 lg:text-3xl md:xl sm:text-xl text-lg text-left text-purple-100 ">
               Hey there! We know that being a student can sometimes feel
               overwhelming.
               <br /> Whether it's juggling assignments, exams, or just everyday
