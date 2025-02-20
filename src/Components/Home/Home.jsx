@@ -8,10 +8,12 @@ import Aim from "./Aim.jsx";
 
 import Feature_List from "./Feature_List.jsx";
 import Report from "./Reports.jsx";
+import { useNavigate } from "react-router-dom";
 
 
 export default function Home() {
   const [showHeader, setShowHeader] = useState(false);
+  const nav = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -64,9 +66,11 @@ export default function Home() {
           {/* <H_scroll list={Feature_List} /> */}
           {Feature_List.map((fl) => {
             return (
-              <div className=" h-[250px] w-[300px] bg-gradient-to-br from-sky-300 via-blue-300 to-transparent flex flex-col rounded-3xl">
+              <div className=" h-[250px] w-[300px] bg-gradient-to-br from-sky-300 via-blue-300 to-transparent flex flex-col rounded-3xl" onClick={()=>{
+                nav(fl.link);
+              }}>
                 <div>
-                  <div className="rounded-xl  flex relative object-cover h-[150px] w-[300px] mx-auto transform hover:scale-[95%] scale-90 transition-all duration-500">
+                  <div className="rounded-xl  flex relative object-cover h-[180px] w-[300px] mx-auto transform hover:scale-[95%] scale-90 transition-all duration-500">
                     <img
                       
                       src={fl.image}
