@@ -16,7 +16,7 @@ function Hero() {
       </div>
       {/* */}
       <S_header></S_header>
-      <div className="p-8 pt-[150px] md:pt-[100px] absolute top-0 w-screen h-screen items-center backdrop-blur-[5px] max-w-full">
+      <div className="p-8 pt-[150px] md:pt-[100px] absolute top-0 w-screen h-screen items-center backdrop-blur-[100px] max-w-full">
         <div className="z-10">
           <div className="text-balck pl-7">
             <h2 className="typing-effect font-serif sm:text-4xl md:mt-5 lg:text-7xl md:text-4xl text-2xl font-bold text-left text-sky-50 ">
