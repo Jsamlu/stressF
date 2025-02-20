@@ -9,21 +9,26 @@ function Hero() {
     <>
       <div className="h-screen w-screen">
         <img
-          src={"/assets2/bg-4.jpeg"}
+          src={"/assets2/people/jaybg.png"}
           className="h-full w-full object-cover"
           alt=""
         />
       </div>
       <S_header></S_header>
-      <div className="p-8 pt-[150px] md:pt-[100px] absolute top-0 w-screen h-screen items-center backdrop-blur-[3px] max-w-full">
+      <div className="p-8 pt-[150px] md:pt-[100px] absolute top-0 w-screen h-screen items-center backdrop-blur-[1px] max-w-full">
         <div className="z-10">
           <div className="text-balck pl-7">
-            <h2 className="typing-effect font-serif sm:text-4xl md:mt-5 lg:text-7xl md:text-4xl text-2xl font-bold text-left text-sky-900 ds">
+            <h2 className="typing-effect font-serif sm:text-4xl md:mt-5 lg:text-7xl md:text-4xl text-2xl font-bold text-left text-sky-50 ">
               Find peace in the present moment;
               <br />
               it’s where stress fades away.
             </h2>
-            <p className="  font-serif mt-7 md:mt-5 lg:text-3xl md:xl sm:text-xl text-lg text-left text-slate-700 ds">
+            {/*
+              text-slate-700
+              text-sky-900
+              ds
+            */}
+            <p className="  font-serif mt-7 md:mt-5 lg:text-3xl md:xl sm:text-xl text-lg text-left text-purple-200 ">
               Hey there! We know that being a student can sometimes feel
               overwhelming.
               <br /> Whether it's juggling assignments, exams, or just everyday
@@ -40,8 +45,8 @@ function Hero() {
               </Link>
               {/* <Link to="/Resources" className="text-2xl pt-2 pb-2 pr-3 pl-3 hover:pt-2 hover:pb-2 hover:pr-3 hover:pl-3 Tdelay hover:bg-white hover:rounded-3xl hover:text-green-900 hover:font-bold font-bold">Learn More</Link> */}
             </div>
-            <div className="absolute right-0 bottom-[40px] w-[500px] opacity-80">
-              <img src="/assets2/people/calm.png" alt="calm" className="h-full w-full"/>
+            <div className="absolute right-[100px] bottom-[80px] w-[300px] opacity-80">
+              <img src="/assets2/people/medditate.png" alt="calm" className="h-full w-full"/>
             </div>
           </div>
         </div>

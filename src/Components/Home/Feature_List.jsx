@@ -3,13 +3,13 @@ const Feature_List =[
         id:1,
         label:`Stress Analysis`,
         decs:`Our platform provides an easy-to-use questionnaire that analyzes your stress levels`,
-        image:"/assets/qna.jpg",
+        image:"/assets2/people/test.png",
     },
     {
         id:2,
         label:`Activities`,
         decs:`Our platform offers personalized activity suggestions to help you de-stress. From mindfulness exercises to light physical activities, we have something for everyone.`,
-        image:"/assets/social/soc1.jpg",
+        image:"/assets2/people/activity.png",
     },
     {
         id:3,
@@ -21,12 +21,12 @@ const Feature_List =[
         id:4,
         label:`Community`,
         decs:`If the condition does not get better even after continuous evaluating, recommendations to some professionals can be made available.`,
-        image:"/assets/community.jpg",
+        image:"/assets2/people/community.png",
     },
     {
         id:5,
         label:`Games`,
-        decs:`If the condition does not get better even after continuous evaluating, recommendations to some professionals can be made available.`,
+        decs:`Games are not just a way to escape reality but also to refress mind and have relif from stress `,
         image:"/assets/self/self3.jpg",
     },
 ]

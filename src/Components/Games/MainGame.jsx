@@ -15,19 +15,24 @@ export default function MainGame() {
         <S_header />
       </div>
       <div className="md:hidden h-[100px] bg-blue-600"></div>
-      <div className="bg-indigo-300 min-h-screen min-w-screen">
-        <h1 className="px-20 pt-10 text-2xl md:text-4xl">Games</h1>
-        <div className="w-[85%] mx-auto pt-[100px] grid md:grid-cols-3 gap-x-5 gap-y-5">
+      <div className="bg-gradient-to-br from-blue-700 via-sky-500 to-green-600 min-h-[70vh] min-w-screen py-10">
+        <h1 className="px-10 py-10 text-2xl md:text-4xl text-sky-200 font-semibold">Games</h1>
+        <i className="px-10 md:text-xl font-thin text-sky-200" >"Games are not just an <b>escape;</b> they’re a <b>reset</b> button for the mind."</i>
+        <hr className=" w-[65%] mx-10 my-5 p-0.5 rounded-full bg-white "></hr>
+        <div className="md:w-[70%] px-10 py-10 grid md:grid-cols-3 gap-y-5">
           {gamelist.map((gamelist) => {
             return (
               <Link to={gamelist.href}>
-                <div className="bg-white h-[200px] overflow-hidden object-cover">
+                <div className="bg-white h-[150px] w-[250px] overflow-hidden object-cover rounded-3xl hover:scale-[105%] transition-all duration-300">
                   <img src={gamelist.img} alt="game 5" className="h-full w-full" />
+                  
                 </div>
               </Link>
             );
           })}
         </div>
+        <hr className=" w-[65%] mx-10 mt-5 p-0.5 rounded-full bg-white "></hr>
+
       </div>
       <Sfooter />
     </div>

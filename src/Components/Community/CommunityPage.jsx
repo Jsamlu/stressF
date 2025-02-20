@@ -143,12 +143,12 @@ const CommunityPage = () => {
   };
 
   return (
-    <div className="p-6 bg-gray-50 min-h-screen flex flex-col items-center">
-      <h1 className="text-4xl font-bold text-center text-indigo-600 mb-8">Community Page</h1>
+    <div className="p-6 bg-gray-50 min-h-screen flex flex-col items-center bg-gradient-to-br from-blue-600 via-sky-500 to-green-500 ">
+      <h1 className="text-4xl font-bold text-center text-indigo-200 mb-8">Community Page</h1>
 
       {/* Event Section */}
       <section className="mb-12 w-full max-w-3xl">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-4 text-center">Upcoming Events</h2>
+        <h2 className="text-2xl font-semibold text-gray-50 mb-4 text-center">Upcoming Events</h2>
         <ul className="space-y-6">
           {events.map((event) => (
             <li key={event.id} className="bg-white p-6 rounded-lg shadow-md border border-gray-300">
