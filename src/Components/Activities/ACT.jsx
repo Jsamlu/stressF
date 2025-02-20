@@ -5,7 +5,7 @@ const ACT = [
     name: "Praticing Mindfullness",
     desc: "Mindfulness is the practice of gently focusing your awareness on the present moment over and over again.",
     link: ["https://www.mindful.org/meditation/mindfulness-getting-started/","https://www.verywellmind.com/mindfulness-meditation-88369","https://www.mindful.org/mindfulness-how-to-do-it/","https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6557693/"],
-    v_emd:"mbjahb4r-m4",
+    v_emd:"oYdrMpnE93s",
     Simage:" img src",
     ctg:"Meditation",
     lev:"-",
