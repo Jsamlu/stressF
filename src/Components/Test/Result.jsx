@@ -5,37 +5,22 @@ import { useNavigate } from "react-router-dom";
 
 
 //{/ value = -40 }
-const Result = () => {
-  // Clamp the stressValue between 1 and 100
-  // const value = Math.min(Math.max(stressValue, 1), 100);
+const Result = ({n} ) => {
+  n=n*2;
+  console.log(n);
 
-  //const { answers } = useContext(AnswerContext); // Access answers from context
-  
-  // if (value >= 50) {
-  //   value = 50;
-  // }
-
-  // function Answers (){
-  //   console.log(answers);
-  //   let res = 0
-  //   answers.forEach(element => {
-  //     res += element;
-  //   });
-  //   return res;
-  // }
-  // let value = Answers;
-  let value = -40;
+  let value =n-50;
 
   //use navigate
   const nav = useNavigate();
+  
 
 
 
   // Calculate the angle for the pointer (0 to 180 degrees)
   const angle = (value / 100) * 180;
-  let temp = 0;
   if (value <= -50) {
-    temp = 0;
+    var temp= 0;
   } else if (value <= -25 && value >= -50) {
     temp = 25;
   } else if (value <= 0 && value >= -25) {
@@ -143,14 +128,7 @@ const Result = () => {
             const y = radius * Math.sin(rad) *1.5;
             return (
               <div
-              // key={index}
-              // className="absolute text-sm font-semibold text-gray-700 dark:text-gray-300"
-              // style={{
-              //   left: `calc(50% + ${x}px)`,
-              //   top: `calc(98% - ${y}px)`, // Adjust for semi-circle
-              //   transform: "translate(-50%, 0%)",
-              //   whiteSpace: "nowrap",
-              // }}
+              
               >
                 {/* {level.label} */}
               </div>

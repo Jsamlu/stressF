@@ -14,6 +14,7 @@ function Hero() {
           alt=""
         />
       </div>
+      {/* */}
       <S_header></S_header>
       <div className="p-8 pt-[150px] md:pt-[100px] absolute top-0 w-screen h-screen items-center backdrop-blur-[5px] max-w-full">
         <div className="z-10">
