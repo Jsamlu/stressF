@@ -1,26 +1,45 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
-export default function Counter({ n=n }) {
+const Counter = ({ n=100 }) => {
   const [count, setCount] = useState(0);
+  const counterRef = useRef(null);
+  const [startCounting, setStartCounting] = useState(false);
 
   useEffect(() => {
-    if (n <= 0) return;
-    const duration = 2000; // 2 seconds
-    const intervalTime = duration / n;
-    let current = 0;
-    
-    const interval = setInterval(() => {
-      current += 1;
-      setCount(current);
-      if (current >= n) clearInterval(interval);
-    }, intervalTime);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setStartCounting(true);
+        }
+      },
+      { threshold: 0.5 }
+    );
 
-    return () => clearInterval(interval);
-  }, [n]);
+    if (counterRef.current) {
+      observer.observe(counterRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (startCounting && count < n) {
+      const interval = setInterval(() => {
+        setCount((prev) => (prev < n ? prev + 1 : n));
+      }, 120);
+
+      return () => clearInterval(interval);
+    }
+  }, [startCounting, count, n]);
 
   return (
-    <div>
-      <div className="text-8xl font-bold text-blue-600">{count}</div>
+    <div
+      ref={counterRef}
+      className="text-5xl font-extrabold text-blue-500 bg-gray-100 p-6 rounded-lg shadow-lg text-center"
+    >
+      {count}
     </div>
   );
-}
+};
+
+export default Counter;

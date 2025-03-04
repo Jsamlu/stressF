@@ -150,3 +150,6 @@ const Forum = () => {
   );
 };
 export { Forum, valArr };
+
+
+// here while calling of Handle next Function at final Question handle next show store that data in DB
