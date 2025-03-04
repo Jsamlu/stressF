@@ -20,10 +20,14 @@ const Forum = () => {
 
   //previous & next button hande function
   function handelNext() {
+    if (Index === QList.length-1){
+      setShowRes(true);
+    }
     if (Index < QList.length - 1) {
       setIndex(Index + 1);
       setQuestion(QList[Index]);
     }
+
   }
 
   const handlePrevious = () => {
@@ -70,7 +74,8 @@ const Forum = () => {
       {/* Forum starting */}
 
       <div className=" px-[15%] py-[5%]">
-        <div className="mb-5 p-10 bg-white rounded-xl">
+        {!showRes ?
+          <div className="mb-5 p-10 bg-white rounded-xl">
           <form>
             <p className="md:text-2xl text-sm text-blue-500">
               {Index + 1}.&nbsp;
@@ -108,6 +113,7 @@ const Forum = () => {
                 Previous
               </button>
               <button
+                id="next"
                 className="bg-sky-600 text-white w-[30%] py-3 px-3"
                 onClick={() => {
                   handelNext();
@@ -115,7 +121,7 @@ const Forum = () => {
                 }}
                 type="button"
               >
-                Next
+                {Index === QList.length-1 ? "Submit" :  "Next"}
               </button>
             </div>
             <p className="text-center text-xl py-3  text-sky-500">{`${
@@ -124,7 +130,10 @@ const Forum = () => {
           </form>
         </div>
 
-        <div className="mt-5 mr-5 mb-5">
+         : <div>
+          <Result n={getSumOfAnswers()} /></div>}
+        
+        {/* <div className="mt-5 mr-5 mb-5">
           <Link
             className="p-2 hover:bg-sky-500 bg-sky-600 text-white rounded-xl text-2xl"
             onClick={(e) => {
@@ -134,10 +143,8 @@ const Forum = () => {
           >
             End test
           </Link>
-        </div>
-        {showRes ? <div>
-          <Result n={getSumOfAnswers()} />
-        </div>:<p></p>}
+        </div> */}
+        
       </div>
     </div>
   );
