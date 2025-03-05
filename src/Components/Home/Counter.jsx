@@ -35,7 +35,7 @@ const Counter = ({ n=100 }) => {
   return (
     <div
       ref={counterRef}
-      className="text-5xl font-extrabold text-blue-500 bg-gray-100 p-6 rounded-lg shadow-lg text-center"
+      className="text-5xl font-extrabold text-blue-500 p-6 text-left"
     >
       {count}
     </div>

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import S_header from "../S_header";
 
 // import Sidebar from '../Sidebar';
+import Reveal from "../Animation/Reveal";
 
 function Hero() {
   return (
@@ -29,14 +30,16 @@ function Hero() {
               text-sky-900
               ds
             */}
-            <p className="  font-serif mt-7 md:mt-5 lg:text-3xl md:xl sm:text-xl text-lg text-left text-purple-100 ">
-              Hey there! We know that being a student can sometimes feel
-              overwhelming.
-              <br /> Whether it's juggling assignments, exams, or just everyday
-              challenges,
-              <br />  Stress can sneak up on you.
-              that’s where D-stress comes in!
-            </p>
+            
+              <p className="  font-serif mt-7 md:mt-5 lg:text-3xl md:xl sm:text-xl text-lg text-left text-purple-100 ">
+                Hey there! We know that being a student can sometimes feel
+                overwhelming.
+                <br /> Whether it's juggling assignments, exams, or just
+                everyday challenges,
+                <br /> Stress can sneak up on you. that’s where D-stress comes
+                in!
+              </p>
+            
             <div className=" mx-10 my-10  md:my-5 flex items-center justify-start   ">
               <Link
                 to="/test"
@@ -47,7 +50,11 @@ function Hero() {
               {/* <Link to="/Resources" className="text-2xl pt-2 pb-2 pr-3 pl-3 hover:pt-2 hover:pb-2 hover:pr-3 hover:pl-3 Tdelay hover:bg-white hover:rounded-3xl hover:text-green-900 hover:font-bold font-bold">Learn More</Link> */}
             </div>
             <div className="absolute right-[100px] bottom-[80px] w-[300px] opacity-80">
-              <img src="/assets2/people/medditate.png" alt="calm" className="h-full w-full"/>
+              <img
+                src="/assets2/people/medditate.png"
+                alt="calm"
+                className="h-full w-full"
+              />
             </div>
           </div>
         </div>
