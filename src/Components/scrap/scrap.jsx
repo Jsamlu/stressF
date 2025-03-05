@@ -1,7 +1,9 @@
 import React from 'react'
 
-export const scrap = () => {
+ const Scrap = () => {
   return (
     <div>scrap</div>
   )
 }
+
+export default Scrap;
