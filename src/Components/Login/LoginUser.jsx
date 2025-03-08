@@ -1,24 +1,36 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { setLogin } from "../Store/Features/Login/logSclice";
 
 const LoginUser = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [showPopup, setShowPopup] = useState(false); 
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [showPopup, setShowPopup] = useState(false);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    try {
+      dispatch(setLogin("U")); // Dispatch Redux action to update state
+      console.log("Role set to User");
+      navigate("/profile")
+    } catch (error) {
+      console.error("Error setting role:", error);
+    }
+    
+    // here this is a dispatch which is used by Redux for state
     if (!email || !password) {
-      alert('Please fill in both email and password');
+      alert("Please fill in both email and password");
       return;
     }
 
     try {
-      const response = await fetch('http://localhost:8080/api/user/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+      const response = await fetch("http://localhost:8080/api/user/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
       });
 
@@ -26,17 +38,17 @@ const LoginUser = () => {
         const contentType = response.headers.get("content-type");
         if (contentType && contentType.includes("application/json")) {
           const data = await response.json();
-          console.log('User Login successful:', data);
+          console.log("User Login successful:", data);
         } else {
-          const message = await response.text();  // Handle plain text response
+          const message = await response.text(); // Handle plain text response
           console.log(message);
         }
-        navigate('/test');
+        navigate("/test");
       } else {
-        alert('User Login failed. Check credentials.');
+        alert("User Login failed. Check credentials.");
       }
     } catch (error) {
-      console.error('Error during user login:', error);
+      console.error("Error during user login:", error);
     }
   };
 

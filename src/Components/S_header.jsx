@@ -32,43 +32,44 @@ function S_header() {
             <img src="/assets2/Logo.png" alt="logo" />
           </Link>
         </div>
-        <nav className="items-center  mr-0 pr-7 pl-7 text-2xl hidden lg:flex justify-end transform ease-in-out gap-10">
+        <nav className="items-center  mr-0 pr-7 pl-7 text-2xl hidden lg:flex justify-end transform ease-in-out gap-10 font-semibold">
           <Link
             to="/test"
-            className="  hover:text-sky-700 underline underline-offset-0 hover:underline-offset-[10px] decoration-transparent hover:decoration-sky-700 transition-all duration-300"
+            className="  hover:text-cyan-400 underline underline-offset-0 hover:underline-offset-[10px] decoration-transparent hover:decoration-cyan-400 transition-all duration-300"
           >
             Test
           </Link>
           <Link
             to="/resources"
-            className="  hover:text-sky-700 underline underline-offset-0 hover:underline-offset-[10px] decoration-transparent hover:decoration-sky-700 transition-all duration-300"
+            className="  hover:text-cyan-400 underline underline-offset-0 hover:underline-offset-[10px] decoration-transparent hover:decoration-cyan-400 transition-all duration-300"
           >
             Resources
           </Link>
           <Link
             to="/activities"
-            className="  hover:text-sky-700 underline underline-offset-0 hover:underline-offset-[10px] decoration-transparent hover:decoration-sky-700 transition-all duration-300"
+            className="  hover:text-cyan-400 underline underline-offset-0 hover:underline-offset-[10px] decoration-transparent hover:decoration-cyan-400 transition-all duration-300"
           >
             Activities
           </Link>
           <Link
             to="/counselling"
-            className="  hover:text-sky-700 underline underline-offset-0 hover:underline-offset-[10px] decoration-transparent hover:decoration-sky-700 transition-all duration-300"
+            className="  hover:text-cyan-400 underline underline-offset-0 hover:underline-offset-[10px] decoration-transparent hover:decoration-cyan-400 transition-all duration-300"
           >
             Counselling
           </Link>
           <Link
             to="/community"
-            className="  hover:text-sky-700 underline underline-offset-0 hover:underline-offset-[10px] decoration-transparent hover:decoration-sky-700 transition-all duration-300"
+            className="  hover:text-cyan-400 underline underline-offset-0 hover:underline-offset-[10px] decoration-transparent hover:decoration-cyan-400 transition-all duration-300"
           >
             Community
           </Link>
           <Link
             to="/maingame"
-            className="  hover:text-sky-700 underline underline-offset-0 hover:underline-offset-[10px] decoration-transparent hover:decoration-sky-700 transition-all duration-300"
+            className="  hover:text-cyan-400 underline underline-offset-0 hover:underline-offset-[10px] decoration-transparent hover:decoration-sky-700 transition-all duration-300"
           >
             Games
           </Link>
+          
         </nav>
         <div className="md:hidden px-5">
           {/* mobile nav */}
