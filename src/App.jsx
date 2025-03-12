@@ -64,11 +64,14 @@ import LoginProfessional from "./Components/Login/LoginProfessional";
 function App() {
   const location = useLocation();
   const isHomePage = location.pathname === "/";
-  const isLogin = location.pathname === "/login";
-  const isRegister = location.pathname === "/register";
   const isforumPage = location.pathname === "/forum";
 
-  let showProfile = true;
+  const isProfile = location.pathname === "/profile";
+  const isLogin_U = location.pathname === "/login-user";
+  const isTest = location.pathname === "/test";
+  const isRegister_U = location.pathname === "/register-user";
+  const isRegister = location.pathname === "/register";
+  const isAboutUs = location.pathname === "/about_us";
 
   const role = useSelector((state) => state.role) ?? "U";
   console.log(role);
@@ -84,65 +87,43 @@ function App() {
           )}
 
           <div
-            className={`${
-              isHomePage ? " md:w-full " : "md:flex-grow md:w-[80%]"
-            }${isforumPage ? " md:w-full " : "md:flex-grow md:w-[80%]"} `}
+            className={isHomePage || isforumPage ? " md:w-full " : "md:flex-grow md:w-[82%] ml-auto"} 
           >
             {/* Links */}
-            {isHomePage || showProfile || isSignin || isLogin || isRegister ? (
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/test" element={<Test />} />
-                <Route path="/forum" element={<Forum />} />
-                <Route path="/result" element={<Result />} />
-                <Route path="/resources" element={<Resources />} />
-                <Route path="/activities" element={<Activities />} />
-                <Route path="/activities/:id" element={<ActivityId />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/login-user" element={<UserLogin />} />
-                <Route
-                  path="/login-professional"
-                  element={<ProfessionalLogin />}
-                />
-                <Route path="/register" element={<Register />} />
-                <Route path="/register-user" element={<UserRegister />} />
-                <Route
-                  path="/register-professional"
-                  element={<ProfessionalRegister />}
-                />
-                <Route path="/community" element={<Community />} />
-                <Route path="/journal" element={<Journal />} />
-                <Route path="/about_us" element={<Aboutus />} />
-                <Route path="/feedbackform" element={<FeedbackForm />} />
 
-                <Route path="/counselling" element={<Counselling />} />
-                <Route path="/Counselling/:id" element={<Prof_page />} />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/test" element={<Test />} />
+              <Route path="/forum" element={<Forum />} />
+              <Route path="/result" element={<Result />} />
+              <Route path="/resources" element={<Resources />} />
+              <Route path="/activities" element={<Activities />} />
+              <Route path="/activities/:id" element={<ActivityId />} />
 
-                <Route path="/games" element={<Games />} />
-                <Route path="/maingame" element={<MainGame />} />
-                <Route path="/dashboard" element={<Dashboard />} />
-                <Route path="/profile" element={<Profile />} />
+              <Route path="/community" element={<Community />} />
+              <Route path="/journal" element={<Journal />} />
+              <Route path="/about_us" element={<Aboutus />} />
+              <Route path="/feedbackform" element={<FeedbackForm />} />
 
-                {/*games */}
-                <Route
-                  path="/stressballbounce"
-                  element={<StressBallBounce />}
-                />
-                <Route path="/wordsearchgame" element={<WordSearchGame />} />
-                <Route path="/mazegame" element={<MazeGame />} />
-                <Route path="/connectthedots" element={<ConnectTheDots />} />
-                <Route
-                  path="/starrybackground"
-                  element={<StarryBackground />}
-                />
+              <Route path="/counselling" element={<Counselling />} />
+              <Route path="/Counselling/:id" element={<Prof_page />} />
 
-                {/* ERROR page */}
-                <Route path="*" element={<p>404 ERROR</p>} />
-                <Route path="/scrap" element={<Scrap />} />
-              </Routes>
-            ) : (
-              <Profile />
-            )}
+              <Route path="/games" element={<Games />} />
+              <Route path="/maingame" element={<MainGame />} />
+              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/profile" element={<Profile />} />
+
+              {/*games */}
+              <Route path="/stressballbounce" element={<StressBallBounce />} />
+              <Route path="/wordsearchgame" element={<WordSearchGame />} />
+              <Route path="/mazegame" element={<MazeGame />} />
+              <Route path="/connectthedots" element={<ConnectTheDots />} />
+              <Route path="/starrybackground" element={<StarryBackground />} />
+
+              {/* ERROR page */}
+              <Route path="*" element={<p>404 ERROR</p>} />
+              <Route path="/scrap" element={<Scrap />} />
+            </Routes>
           </div>
         </div>
       ) : //else state
@@ -203,17 +184,43 @@ function App() {
               <Header />
             </div>
           )}
-          <Routes>
-            <Route path="/" element={<Home/>}/>
-            <Route path="/login" element={<Login/>}/>
-            <Route path="/login-user" element={<LoginUser/>}/>
-            <Route path="/login-professional" element={<LoginProfessional/>}/>
-            <Route path="/profile" element={<Profile/>}/>
-            
-            
+          <div
+            className={isHomePage || isforumPage ? " md:w-full " : "md:flex-grow md:w-[82%] ml-auto"} 
+          >
+            {isHomePage ||
+            isLogin_U ||
+            isProfile ||
+            isRegister ||
+            isRegister_U ||
+            isTest ||
+            isforumPage||
+            isAboutUs ? (
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/login-user" element={<LoginUser />} />
+                <Route
+                  path="/login-professional"
+                  element={<LoginProfessional />}
+                />
+                <Route path="/profile" element={<Profile />} />
 
+                <Route path="/test" element={<Test />} />
+                <Route path="/forum" element={<Forum />} />
 
-          </Routes>
+                <Route path="/register" element={<Register />} />
+                <Route path="/register-user" element={<UserRegister />} />
+                <Route
+                  path="/register-professional"
+                  element={<ProfessionalRegister />}
+                />
+                <Route path="/about_us" element={<Aboutus />} />
+
+              </Routes>
+            ) : (
+              <Profile />
+            )}
+          </div>
         </div>
       ) : (
         <p>page not specified</p>

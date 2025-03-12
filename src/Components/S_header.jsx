@@ -29,7 +29,7 @@ function S_header() {
       >
         <div className="flex items-center gap-x-5 flex-1">
           <Link to="/" className=" md:w-[200px] w-[150px]">
-            <img src="/assets2/Logo.png" alt="logo" />
+            <img src="/assets2/newLogoW.png" alt="logo" />
           </Link>
         </div>
         <nav className="items-center  mr-0 pr-7 pl-7 text-2xl hidden lg:flex justify-end transform ease-in-out gap-10 font-semibold">

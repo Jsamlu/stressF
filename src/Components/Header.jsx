@@ -12,13 +12,13 @@ export default function Header() {
   ];
   return (
     <div className="border-r shadow-sm fixed top-0 left-0 bottom-0 rounded-xl h-screen w-[18%] flex-col bg-white hidden md:flex">
-      <div className="mt-10 mb-10 text-center">
-        <Link to="/" className="flex justify-center">
-          <img src="/assets2/Logo2.png" alt="logo" className=" w-[180px]" />
+      <div className="mb-10 text-center h-[100px]">
+        <Link to="/" className="flex  items-center ">
+          <img src="/assets2/newLogo.png" alt="logo" className=" h-full w-full " />
         </Link>
       </div>
 
-      <div className=" lg:px-10 px-6 py-10 h-full w-full bg-gradient-to-br from-sky-200 to-sky-600  lg:text-2xl md:text-lg text-left ">
+      <div className=" lg:px-10 px-6 py-10 h-full w-full bg-gradient-to-br from-indigo-200 to-indigo-600  lg:text-2xl md:text-lg text-left ">
         <div className="flex flex-col text-center">
           {navlinks.map((navlink) => {
             return (

@@ -30,7 +30,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className=" min-h-screen bg-gradient-to-b from-sky-200 via-sky-600 to-green-500">
+    <div className=" min-h-screen bg-gradient-to-b from-indigo-800 via-indigo-600 to-blue-900">
       <Hero></Hero>
       <hr className="p-1 bg-white" />
 
@@ -72,13 +72,13 @@ export default function Home() {
             return (
               <Reveal>
                 <div
-                  className=" h-[250px] w-[300px] bg-gradient-to-br from-sky-300 via-blue-300 to-transparent flex flex-col rounded-3xl transform hover:scale-[95%]  transition-all duration-500"
+                  className=" h-[250px] w-[300px] bg-gradient-to-br from-indigo-300 to-transparent flex flex-col rounded-3xl transform hover:scale-[95%]  transition-all duration-500"
                   onClick={() => {
                     nav(fl.link);
                   }}
                 >
                   <div>
-                    <div className="rounded-xl  flex relative object-cover h-[180px] w-[300px] mx-auto transform hover:scale-[95%] scale-90 transition-all duration-500">
+                    <div className="rounded-xl  flex relative object-cover h-[180px] w-[300px] mx-auto transform scale-90 ">
                       <img
                         src={fl.image}
                         alt="qna.jpg"

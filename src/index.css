@@ -177,13 +177,15 @@ header.scrolled{
 
 /* on view elements*/
 
+/* slide up */
+
 .reveal {
   opacity: 0;
-  transform: translateX(-50px);
+  transform: translatey(50px);
   transition: opacity 1s ease-in, transform 0.8s ease-in;
 }
 
 .reveal.visible {
   opacity: 1;
-  transform: translateX(0);
+  transform: translatey(0);
 }
