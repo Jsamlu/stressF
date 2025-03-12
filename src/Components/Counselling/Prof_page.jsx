@@ -14,8 +14,8 @@ export default function Prof_page() {
   return (
     <div>
       <div className="md:hidden"><S_header/></div>
-      <div className="md:hidden h-[100px] w-full bg-blue-600"></div>
-      <div className="px-10 py-10 bg-sky-200 min-h-screen">
+      <div className="md:hidden h-[100px] w-full bg-gradient-to-br from-indigo-400 to-indigo-900"></div>
+      <div className="px-10 py-10 bg-indigo-400 min-h-screen">
         <div className="p-5 rounded-xl bg-white ">
           {/* desktop display */}
           <div className="grid grid-cols-4 w-[100%] h-[100%]">
@@ -69,7 +69,7 @@ export default function Prof_page() {
               </p>
             </div>
             {/* desc */}
-            <div className="px-10 pt-4 bg-gradient-to-br from-sky-100 to-sky-300 col-span-4 rounded-2xl">
+            <div className="px-10 pt-4 bg-gradient-to-br from-indigo-100 to-indigo-300 col-span-4 rounded-2xl">
                 <h1 className="font-serif text-3xl text-sky-800">Description:</h1>
               <p className="pt-5 pb-10 font-serif text-2xl text-sky-800">{prof.desc}</p>
             </div>

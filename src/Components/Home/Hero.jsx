@@ -43,7 +43,7 @@ function Hero() {
             <div className=" mx-10 my-10  md:my-5 flex items-center justify-start   ">
               <Link
                 to="/test"
-                className="font-mono text-white text-xl md:mt-5 md:text-3xl font-semibold lg:px-4 lg:py-3 px-3 py-2 mb-1  text-center  bg-teal-500 hover:bg-teal-700 hover:translate-y-3 hover:shadow-xl hover:shadow-cyan-300  rounded-full transition-all duration-100"
+                className="font-mono text-white text-xl md:mt-5 md:text-3xl font-semibold lg:px-4 lg:py-3 px-3 py-2 mb-1  text-center  bg-indigo-700 hover:bg-indigo-900 hover:translate-y-3 hover:shadow-xl hover:shadow-cyan-300 hover:text-cyan-100 rounded-full transition-all duration-100"
               >
                 Get Started
               </Link>

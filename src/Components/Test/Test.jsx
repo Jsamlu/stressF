@@ -7,7 +7,7 @@ import S_header from "../S_header";
 
 function Test() {
   return (
-    <div className="bg-sky-200">
+    <div className="bg-gradient-to-br from-blue-300 via-indigo-500 to-purple-300">
       <div className="md:hidden"><S_header/></div>
       <div className="md:hidden h-[100px] w-full bg-blue-600"></div>
       <div className=" md:pt-10 pt-[50px] w-full h-full  ">

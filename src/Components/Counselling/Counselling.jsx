@@ -30,7 +30,7 @@ export default function Counselling() {
   };
 
   return (
-    <div className="bg-sky-100 w-full">
+    <div className="bg-indigo-300 w-full">
       <div className="md:hidden">
         <S_header />
       </div>

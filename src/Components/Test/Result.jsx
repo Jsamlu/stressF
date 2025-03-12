@@ -61,7 +61,7 @@ const Result = ({n} ) => {
   const currentLevel = getStressLevel(value);
 
   return (
-    <div className="min-h-screen w-full bg-sky-200 flex flex-col justify-center items-center">
+    <div className="min-h-screen w-full  flex flex-col justify-center items-center">
       <div className=" h-[20%] w-[80%] bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow-lg my-5">
         <div className="my-5">
           <ul className="flex space-x-5">

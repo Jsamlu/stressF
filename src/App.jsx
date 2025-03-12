@@ -73,6 +73,12 @@ function App() {
   const isRegister = location.pathname === "/register";
   const isAboutUs = location.pathname === "/about_us";
 
+
+
+
+  //scrap
+  const isScrap = location.pathname === "/scrap";
+
   const role = useSelector((state) => state.role) ?? "U";
   console.log(role);
 
@@ -194,7 +200,7 @@ function App() {
             isRegister_U ||
             isTest ||
             isforumPage||
-            isAboutUs ? (
+            isAboutUs || isScrap ? (
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/login" element={<Login />} />
@@ -215,6 +221,8 @@ function App() {
                   element={<ProfessionalRegister />}
                 />
                 <Route path="/about_us" element={<Aboutus />} />
+              <Route path="/scrap" element={<Scrap />} />
+
 
               </Routes>
             ) : (

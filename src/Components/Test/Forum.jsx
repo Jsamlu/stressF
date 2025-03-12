@@ -42,7 +42,7 @@ const Forum = () => {
   };
 
   return (
-    <div className="min-h-screen bg-sky-200 ">
+    <div className="min-h-screen bg-gradient-to-br from-green-300 via-cyan-500 to-indigo-400 ">
       <div className="p-10 md:pt-3  pt-[80px]">
         <div className=" bg-white my-10 w-[95%] mx-auto px-[15%] py-[5%] rounded-xl">
           <h1 className="md:text-2xl text-lg font-bold text-blue-500">
@@ -106,7 +106,7 @@ const Forum = () => {
 
             <div className="flex w-[70%] mx-auto py-5 justify-between ">
               <button
-                className="bg-sky-600 text-white w-[30%] py-3 px-3"
+                className="bg-cyan-500  hover:bg-cyan-400 hover:scale-105 font-semibold text-white w-[30%] py-3 px-3 rounded-full transition-all duration-100" 
                 onClick={handlePrevious}
                 type="button"
               >
@@ -114,17 +114,17 @@ const Forum = () => {
               </button>
               <button
                 id="next"
-                className="bg-sky-600 text-white w-[30%] py-3 px-3"
+                className="bg-cyan-500  hover:bg-cyan-400 hover:scale-105 font-semibold text-white w-[30%] py-3 px-3 rounded-full transition-all duration-100"
                 onClick={() => {
                   handelNext();
-                  console.log(answers);
+                  console.log(answers); 
                 }}
                 type="button"
               >
                 {Index === QList.length-1 ? "Submit" :  "Next"}
               </button>
             </div>
-            <p className="text-center text-xl py-3  text-sky-500">{`${
+            <p className="text-center text-xl py-3 font-bold text-sky-500">{`${
               Index + 1
             } out of 10`}</p>
           </form>
