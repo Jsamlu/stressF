@@ -3,13 +3,12 @@ import Sfooter from "../../Sfooter";
 
 import React from "react";
 import CList from "@/Components/Counselling/CList";
-import { DoctorAppointments } from "@/Components/Appointments";
 
 function DoctorDashboard() {
   return (
     <>
       <DoctorHeader />
-      <div className=" h-full bg-sky-200 py-10">
+      <div className=" h-full bg-sky-200 py-3">
         <div className="md:h-[40%] w-[95%] px-5 rounded-xl mx-auto bg-gray-100 shadow-lg">
           <div className="flex gap-x-5 w-full h-full ">
             <div className=" rounded-full w-[19%] h-[60%] self-center ">
@@ -28,7 +27,6 @@ function DoctorDashboard() {
             </div>
           </div>
         </div>
-      <DoctorAppointments/>
       </div>
       <Sfooter />
     </>

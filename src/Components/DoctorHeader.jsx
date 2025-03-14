@@ -4,6 +4,8 @@ export default function DoctorHeader() {
   const navlinks = [
     { href: "/", label: "Profile" },
     { href: "/doc_appointments", label: "Appointments" },
+    { href: "/community", label: "Community" },
+
   ];
   return (
     <div className="border-r shadow-sm fixed top-0 left-0 bottom-0 rounded-xl h-screen w-[18%] flex-col bg-white hidden md:flex">
@@ -13,7 +15,7 @@ export default function DoctorHeader() {
         </Link>
       </div>
 
-      <div className=" lg:px-10 px-6 py-10 h-full w-full bg-gradient-to-br from-sky-200 to-sky-600  lg:text-2xl md:text-lg text-left ">
+      <div className="lg:px-10 px-6 py-10 h-full w-full bg-gradient-to-br from-indigo-200 to-indigo-600  lg:text-2xl md:text-lg text-left ">
         <div className="flex flex-col text-center">
           {navlinks.map((navlink) => {
             return (

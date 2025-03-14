@@ -10,7 +10,7 @@ const Login = () => {
   };
 
   const handleProfessionalLogin = () => {
-    navigate('/profile');
+    navigate('/login-professional');
   };
 
   return (

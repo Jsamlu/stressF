@@ -66,13 +66,16 @@ function App() {
   const isHomePage = location.pathname === "/";
   const isforumPage = location.pathname === "/forum";
 
+  //user
   const isProfile = location.pathname === "/profile";
   const isLogin_U = location.pathname === "/login-user";
   const isTest = location.pathname === "/test";
   const isRegister_U = location.pathname === "/register-user";
   const isRegister = location.pathname === "/register";
   const isAboutUs = location.pathname === "/about_us";
-
+  //Doctor 
+  const isLogin_D = location.pathname === "/login-professional";
+  const isRegister_D = location.pathname === "/register-professional";
 
 
 
@@ -93,7 +96,11 @@ function App() {
           )}
 
           <div
-            className={isHomePage || isforumPage ? " md:w-full " : "md:flex-grow md:w-[82%] ml-auto"} 
+            className={
+              isHomePage || isforumPage
+                ? " md:w-full "
+                : "md:flex-grow md:w-[82%] ml-auto"
+            }
           >
             {/* Links */}
 
@@ -141,7 +148,7 @@ function App() {
 
           <div className="md:flex-grow md:w-[80%]">
             {/* Links */}
-            {isHomePage || showProfile || isSignin || isLogin ? (
+            
               <Routes>
                 {/* <Route path="/" element={<Dhome />} /> */}
                 <Route
@@ -156,6 +163,8 @@ function App() {
                   path="/pend_appointments"
                   element={<PendingAppointments />}
                 />
+                <Route path="/community" element={<Community/>} />
+                
 
                 <Route path="/dashboard" element={<DoctorDashboard />} />
                 <Route path="/" element={<DoctorProfile />} />
@@ -178,9 +187,7 @@ function App() {
                 <Route path="/scrap" element={<Scrap />} />
                 <Route path="/login-user" element={<UserLogin />} />
               </Routes>
-            ) : (
-              <Profile />
-            )}
+            
           </div>
         </div>
       ) : role === "NA" ? (
@@ -191,7 +198,11 @@ function App() {
             </div>
           )}
           <div
-            className={isHomePage || isforumPage ? " md:w-full " : "md:flex-grow md:w-[82%] ml-auto"} 
+            className={
+              isHomePage || isforumPage
+                ? " md:w-full "
+                : "md:flex-grow md:w-[82%] ml-auto"
+            }
           >
             {isHomePage ||
             isLogin_U ||
@@ -199,8 +210,9 @@ function App() {
             isRegister ||
             isRegister_U ||
             isTest ||
-            isforumPage||
-            isAboutUs || isScrap ? (
+            isforumPage ||
+            isAboutUs ||
+            isScrap || isLogin_D || isRegister_D? (
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/login" element={<Login />} />
@@ -220,14 +232,37 @@ function App() {
                   path="/register-professional"
                   element={<ProfessionalRegister />}
                 />
+                {/* <Route path="/" element={<ProfessionalLogin />} /> */}
+
                 <Route path="/about_us" element={<Aboutus />} />
-              <Route path="/scrap" element={<Scrap />} />
-
-
+                <Route path="/scrap" element={<Scrap />} />
               </Routes>
             ) : (
               <Profile />
             )}
+          </div>
+        </div>
+      ) : role === "A" ? (
+        <div className="felx">
+          {!(isHomePage || isforumPage) && (
+            <div className="md:w-[18%] hidden md:flex">
+              <Header />
+            </div>
+          )}
+          <div
+            className={
+              isHomePage || isforumPage
+                ? " md:w-full "
+                : "md:flex-grow md:w-[82%] ml-auto"
+            }
+          >
+            
+              <Routes>
+                <Route path="/" element={<Home />} />
+                
+                <Route path="/scrap" element={<Scrap />} />
+              </Routes>
+            
           </div>
         </div>
       ) : (

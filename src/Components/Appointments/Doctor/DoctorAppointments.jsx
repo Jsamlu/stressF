@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import AcceptedAppointments from "./AcceptedAppointments";
-import Sfooter from "@/Components/Sfooter";
 import { PendingAppointments } from "..";
 const DoctorAppointments = () => {
   const [appointment, setAppointment] = useState("A");
@@ -18,7 +17,6 @@ const DoctorAppointments = () => {
           :<PendingAppointments/>
         }
       </div>
-      <Sfooter />
     </>
   );
 };

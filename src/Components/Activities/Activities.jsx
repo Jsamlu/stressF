@@ -3,20 +3,20 @@ import React from "react";
 // import Footer from "../Footer.jsx"
 import Sfooter from "../Sfooter";
 import { useState } from "react";
-// import ACT2 from "./ACT2";
+import ACT2 from "./ACT2";
 
 // import MedList from "./MedList.jsx";
 // import SocList from "./SocList.jsx";
 // import SelfList from "./SelfList.jsx";
 // import SearchBar from "../SearchBar";
-import ACT from "./ACT";
+// import ACT from "./ACT";
 import S_header from "../S_header";
 import { Link } from "react-router-dom";
 export default function Activities() {
   const [searchTerm, setSearchTerm] = useState("");
 
   // Filter the ACT2 array based on search term
-  const filteredResults = ACT.filter((item) =>
+  const filteredResults = ACT2.filter((item) =>
     item.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 

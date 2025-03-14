@@ -1,13 +1,23 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { setLogin } from "../Store/Features/Login/logSclice";
 const LoginProfessional = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+     try {
+          dispatch(setLogin("D")); // Dispatch Redux action to update state
+          console.log("Role set to User");
+          navigate("/")
+        } catch (error) {
+          console.error("Error setting role:", error);
+        }
 
     if (!email || !password) {
       alert('Please fill in both email and password');
@@ -43,10 +53,8 @@ const LoginProfessional = () => {
      
     <>
       
-      <div className='relative h-screen'>
-       <img src="/assets2/log.png"  className='absolute top-0 left-0 w-full h-full object-cover z-0' alt="" /> 
-      </div>
-      <div className='card-container absolute inset-0 flex justify-center items-center z-10 pr-60'>
+      
+      <div className=' card-container h-screen flex items-center justify-center bg-gradient-to-br from-indigo-400 via-purple-400 to-sky-500'>
       <div className="card bg-gradient-to-br from-pink-300 via-purple-200 to-cyan-400 p-6 rounded-lg shadow-lg w-full max-w-md">
         <h2 className="text-2xl font-bold mb-4">Professional Login</h2>
         <form onSubmit={handleSubmit}>
