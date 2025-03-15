@@ -1,22 +1,8 @@
 const ACT2 = [
     
-    // meditation
     {
-      id: "1",
-      image: " ",
-      name: "Meditiation",
-      desc: " ",
-      link: [""],
-      v_emd:"",
-      Simage:"",
-      ctg:"Meditation",
-      lev:"-",
-      rev:"",
-      howTO:[``],
-    },
-    {
-        id: "2",
-        image: " ",
+        id: "1",
+        image: "/assets/ActAssets/",
         name: "Deep Breathing Exercises",
         desc: " ",
         link: [""],
@@ -28,8 +14,8 @@ const ACT2 = [
         howTO:[``],
       },
       {
-        id: "3",
-        image: " ",
+        id: "2",
+        image: "/assets/ActAssets/MuscleRelaxation.jpg",
         name: "Progressive Muscle Relaxation",
         desc: " ",
         link: [""],
@@ -41,8 +27,8 @@ const ACT2 = [
         howTO:[``],
       },
       {
-        id: "4",
-        image: " ",
+        id: "3",
+        image: "/assets/ActAssets/gratitude.jpg ",
         name: "Gratitude Practice",
         desc: " ",
         link: [""],
@@ -57,7 +43,7 @@ const ACT2 = [
       //physical activities
 
       {
-        id: "5",
+        id: "4",
         image: " ",
         name: "Yoga or Stretching",
         desc: " ",
@@ -70,8 +56,8 @@ const ACT2 = [
         howTO:[``],
       },
       {
-        id: "6",
-        image: " ",
+        id: "5",
+        image: "/assets/ActAssets/Jogging.jpg",
         name: "Walking or Jogging ",
         desc: " ",
         link: [""],
@@ -83,8 +69,8 @@ const ACT2 = [
         howTO:[``],
       },
       {
-        id: "7",
-        image: " ",
+        id: "6",
+        image: "/assets/ActAssets/Dance.jpg",
         name: "Dance",
         desc: " ",
         link: [""],
@@ -99,7 +85,7 @@ const ACT2 = [
     //    Journaling & Self-Reflection
 
     {
-        id: "8",
+        id: "7",
         image: " ",
         name: "Stream-of-Consciousness Writing ",
         desc: " ",
@@ -112,8 +98,8 @@ const ACT2 = [
         howTO:[``],
       },
       {
-        id: "9",
-        image: " ",
+        id: "8",
+        image: "/assets/ActAssets/MoodTracking.jpg",
         name: "Mood Tracking",
         desc: " ",
         link: [""],
@@ -125,8 +111,8 @@ const ACT2 = [
         howTO:[``],
       },
       {
-        id: "10",
-        image: " ",
+        id: "9",
+        image: "/assets/ActAssets/futureself.jpg",
         name: "Future Self Letters",
         desc: " ",
         link: [""],
@@ -140,8 +126,8 @@ const ACT2 = [
 
     //Creative Outlets
     {
-        id: "11",
-        image: " ",
+        id: "10",
+        image: "/assets/ActAssets/Painting.jpg",
         name: "Drawing or Painting ",
         desc: " ",
         link: [""],
@@ -153,8 +139,8 @@ const ACT2 = [
         howTO:[``],
       },
       {
-        id: "12",
-        image: " ",
+        id: "11",
+        image: "/assets/ActAssets/musicThreapy.jpg",
         name: "Music Therapy",
         desc: " ",
         link: [""],
@@ -166,8 +152,8 @@ const ACT2 = [
         howTO:[``],
       },
       {
-        id: "13",
-        image: " ",
+        id: "12",
+        image: "/assets/ActAssets/DiyCrafts.jpg",
         name: "DIY Crafts",
         desc: " ",
         link: [""],
@@ -179,8 +165,8 @@ const ACT2 = [
         howTO:[``],
       },
       {
-        id: "14",
-        image: " ",
+        id: "13",
+        image: "/assets/ActAssets/poetry.jpg",
         name: "Writing Poetry or Stories",
         desc: " ",
         link: [""],
@@ -195,8 +181,8 @@ const ACT2 = [
     //   Self-Care & Personal Enjoyment
 
     {
-        id: "15",
-        image: " ",
+        id: "14",
+        image: "/assets/ActAssets/RelaxingBath.jpg",
         name: "Take a Relaxing Bath",
         desc: " ",
         link: [""],
@@ -208,8 +194,8 @@ const ACT2 = [
         howTO:[``],
       },
       {
-        id: "16",
-        image: " ",
+        id: "15",
+        image: "/assets/ActAssets/skincare.jpg",
         name: "Skincare Routine",
         desc: " ",
         link: [""],
@@ -221,8 +207,8 @@ const ACT2 = [
         howTO:[``],
       },
       {
-        id: "17",
-        image: " ",
+        id: "16",
+        image: "/assets/ActAssets/Cooking.jpg",
         name: "Cook or Bake Something New",
         desc: " ",
         link: [""],
@@ -234,8 +220,8 @@ const ACT2 = [
         howTO:[``],
       },
       {
-        id: "18",
-        image: " ",
+        id: "17",
+        image: "/assets/ActAssets/soloDate.jpg",
         name: "Solo Date",
         desc: " ",
         link: [""],
