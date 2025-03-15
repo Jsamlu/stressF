@@ -6,6 +6,11 @@ export default function DoctorHeader() {
     { href: "/doc_appointments", label: "Appointments" },
     { href: "/community", label: "Community" },
 
+    //temp admin controls
+    { href: "/ADdashboard", label: "Admin dashboard" },
+    { href: "/history", label: "Admin History" },
+
+
   ];
   return (
     <div className="border-r shadow-sm fixed top-0 left-0 bottom-0 rounded-xl h-screen w-[18%] flex-col bg-white hidden md:flex">

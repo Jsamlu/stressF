@@ -60,6 +60,8 @@ import {
 import { useSelector } from "react-redux";
 import LoginUser from "./Components/Login/LoginUser";
 import LoginProfessional from "./Components/Login/LoginProfessional";
+import AdminDashboard from "./Components/Admin/AdminDashboard";
+import AdminHistory from "./Components/Admin/AdminHistory";
 
 function App() {
   const location = useLocation();
@@ -183,6 +185,11 @@ function App() {
                 />
 
                 {/* ERROR page */}
+
+                <Route path="/ADdashboard" element={<AdminDashboard />} />
+                <Route path="/history" element={<AdminHistory />} />
+
+
                 <Route path="*" element={<p>404 ERROR</p>} />
                 <Route path="/scrap" element={<Scrap />} />
                 <Route path="/login-user" element={<UserLogin />} />
@@ -234,6 +241,7 @@ function App() {
                 />
                 {/* <Route path="/" element={<ProfessionalLogin />} /> */}
 
+                
                 <Route path="/about_us" element={<Aboutus />} />
                 <Route path="/scrap" element={<Scrap />} />
               </Routes>
@@ -259,6 +267,9 @@ function App() {
             
               <Routes>
                 <Route path="/" element={<Home />} />
+                <Route path="/dashboard" element={<AdminDashboard />} />
+                <Route path="/history" element={<AdminHistory />} />
+
                 
                 <Route path="/scrap" element={<Scrap />} />
               </Routes>

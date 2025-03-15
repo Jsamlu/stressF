@@ -1,6 +1,6 @@
 import DoctorHeader from "@/Components/DoctorHeader";
 import Sfooter from "../../Sfooter";
-
+import Counter from "@/Components/Home/Counter";
 import React from "react";
 import CList from "@/Components/Counselling/CList";
 
@@ -8,8 +8,8 @@ function DoctorDashboard() {
   return (
     <>
       <DoctorHeader />
-      <div className=" h-full bg-sky-200 py-3">
-        <div className="md:h-[40%] w-[95%] px-5 rounded-xl mx-auto bg-gray-100 shadow-lg">
+      <div className=" h-full bg-gradient-to-br from-indigo-300 to-blue-300 py-3">
+        <div className="md:h-[40%] w-[95%] px-5 rounded-xl mx-auto bg-gray-100 shadow-xl">
           <div className="flex gap-x-5 w-full h-full ">
             <div className=" rounded-full w-[19%] h-[60%] self-center ">
               <img
@@ -26,6 +26,14 @@ function DoctorDashboard() {
               <p>{CList[1].degree}</p>
             </div>
           </div>
+        </div>
+        <div className="grid grid-cols-2 md:h-[60%] w-[95%] py-5  mx-auto ">
+          <div className="rounded-xl mx-auto md:h-full w-[95%] bg-gray-100 shadow-xl ">
+            <Counter n={10}/>
+            <p className="pl-5 text-xl">no of Scheduled appointments</p>
+          </div>
+          <div className="rounded-xl mx-auto md:h-full w-[95%] bg-gray-100 shadow-xl"></div>
+          
         </div>
       </div>
       <Sfooter />
