@@ -7,14 +7,21 @@ import { useNavigate } from "react-router-dom";
 //{/ value = -40 }
 const Result = ({n} ) => {
   n=n*2;
-  console.log(n);
+  
 
   let value =n-50;
+
+  const recomendations = [
+    {
+      name:"activity name",
+      img:"image dest",
+    },
+  ] // this will be an array or recomended activities
 
   //use navigate
   const nav = useNavigate();
   
-
+  const showRecomendations = null; 
 
   var temp=0
   // Calculate the angle for the pointer (0 to 180 degrees)
@@ -150,38 +157,27 @@ const Result = ({n} ) => {
             {/*this is recomendation tab */}
           <div className="grid grid-cols-3 my-10" onClick={()=>{
             nav("/activities");
-          }}>
-              <div className="col-span-2 grid grid-cols-2 gap-4">
+          }}>{showRecomendations?
+              recomendations.map((rec) =>{
+                return(<div className="col-span-2 grid grid-cols-2 gap-4">
                 <div className="flex gap-x-5 bg-white shadow-xl rounded-xl p-2">
                   <div className=" w-[30%] h-[100px] overflow-hidden rounded-full">
                     <img
-                      src="/assets/med/img4.jpg"
+                      src=""
                       alt=""
                       className="w-full h-full"
                     />
                   </div>
                   <div>
                     <p className="text-xl text-sky-800 font-semibold py-3">
-                      Praticing Mindfullness
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex gap-x-5 bg-white shadow-xl rounded-xl p-2">
-                  <div className=" w-[30%] h-[100px] overflow-hidden rounded-full">
-                    <img
-                      src="/assets/self/self3.jpg"
-                      alt=""
-                      className="w-full h-full"
-                    />
-                  </div>
-                  <div>
-                    <p className="text-xl text-sky-800 font-semibold py-3">
-                      Playing Games
+                      {rec.name}
                     </p>
                   </div>
                 </div>
               </div>
+                )
+              }):<p>login for acessing personalized recomendations</p>
+            }
             </div>
           </div>
       </div>
