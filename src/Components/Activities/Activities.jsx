@@ -3,22 +3,33 @@ import React from "react";
 // import Footer from "../Footer.jsx"
 import Sfooter from "../Sfooter";
 import { useState } from "react";
-import ACT2 from "./ACT2";
+// import ACT2 from "./ACT2";
 
 // import MedList from "./MedList.jsx";
 // import SocList from "./SocList.jsx";
 // import SelfList from "./SelfList.jsx";
 // import SearchBar from "../SearchBar";
-// import ACT from "./ACT";
+import ACT from "./ACT";
 import S_header from "../S_header";
 import { Link } from "react-router-dom";
+import {setActivity} from '../Store/Features/Activitiy/actSlice'
+import { useDispatch } from "react-redux";
+
 export default function Activities() {
   const [searchTerm, setSearchTerm] = useState("");
 
+  const dispatch = useDispatch()
   // Filter the ACT2 array based on search term
-  const filteredResults = ACT2.filter((item) =>
+  const filteredResults = ACT.filter((item) =>
     item.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
+
+//   const addActivityHandler = () => {
+//     dispatch(setActivity(actInp));
+//     console.log("Added");
+//     alert("Activity Added");
+
+// }
 
   return (
     <>
@@ -64,8 +75,11 @@ export default function Activities() {
                             >
                               visit
                             </Link>
-
-                            <button className="text-white text-center bg-blue-400 rounded-lg px-1 py-1 hover:bg-white   hover:font-bold hover:text-blue-800 border-2 border-white hover:boder-2 hover:border-blue-900 transition-all duration-400">
+                            
+                            <button  onClick={()=>{ 
+                              alert("Activity Added");
+                              dispatch(setActivity(item))
+                              } }  className="text-white text-center bg-blue-400 rounded-lg px-1 py-1 hover:bg-white   hover:font-bold hover:text-blue-800 border-2 border-white hover:boder-2 hover:border-blue-900 transition-all duration-400">
                               Add
                             </button>
                           </div>

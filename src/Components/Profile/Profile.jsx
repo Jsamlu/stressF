@@ -6,7 +6,8 @@ import { useSelector } from "react-redux";
 
 function Profile() {
 
-  const role = useSelector((state) => state.role)
+  const role = useSelector((state) => state.Lstate.role)
+  
 
   return <div className="h-[70vh]">{ role !== "NA" ? <Dashboard /> : <Login />}</div>;
 }

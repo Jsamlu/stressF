@@ -84,7 +84,7 @@ function App() {
   //scrap
   const isScrap = location.pathname === "/scrap";
 
-  const role = useSelector((state) => state.role) ?? "U";
+  const role = useSelector((state) => state.Lstate.role) ?? "U";
   console.log(role);
 
   return (
