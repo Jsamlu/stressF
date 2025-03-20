@@ -12,25 +12,38 @@ import { useState } from "react";
 import ACT from "./ACT";
 import S_header from "../S_header";
 import { Link } from "react-router-dom";
-import {setActivity} from '../Store/Features/Activitiy/actSlice'
+import { setActivity } from "../Store/Features/Activitiy/actSlice";
 import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+
 
 export default function Activities() {
   const [searchTerm, setSearchTerm] = useState("");
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   // Filter the ACT2 array based on search term
   const filteredResults = ACT.filter((item) =>
     item.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-//   const addActivityHandler = () => {
-//     dispatch(setActivity(actInp));
-//     console.log("Added");
-//     alert("Activity Added");
+  const acts = useSelector((state) => state.ActivityState.Acts);
 
-// }
+  //   const addActivityHandler = () => {
+  //     dispatch(setActivity(actInp));
+  //     console.log("Added");
+  //     alert("Activity Added");
 
+  // }
+  // console.log(acts.includes(ACT[0].id));
+
+  function checkAdded(Name){
+
+    for (let i = 0;i<acts.length;i++){
+      if(acts[i].name === Name)
+        return true;
+    }
+    return false
+  }
   return (
     <>
       <div id="Activities">
@@ -38,7 +51,7 @@ export default function Activities() {
           <S_header />
         </div>
         <div className="md:hidden h-[100px] w-full bg-blue-600"></div>
-        <div className=" p-10 bg-sky-100 min-h-screen">
+        <div className=" p-10 bg-gradient-to-b from-indigo-200 via-indigo-500 to-blue-500 min-h-screen">
           <div>
             <div className="flex justify-between items-center">
               <p className="text-5xl text-[#0f444c] font-bold">Activities</p>
@@ -75,11 +88,17 @@ export default function Activities() {
                             >
                               visit
                             </Link>
-                            
-                            <button  onClick={()=>{ 
-                              alert("Activity Added");
-                              dispatch(setActivity(item))
-                              } }  className="text-white text-center bg-blue-400 rounded-lg px-1 py-1 hover:bg-white   hover:font-bold hover:text-blue-800 border-2 border-white hover:boder-2 hover:border-blue-900 transition-all duration-400">
+
+                            <button
+                              id={item.id}
+                              onClick={() => {
+                                item.isAdded = true;
+                                dispatch(setActivity(item));
+                                console.log(checkAdded(item.name));
+                                (checkAdded(item.name) || item.isAdded)?document.getElementById(item.id).innerHTML="Added":document.getElementById(item.id).innerHTML="Add";
+                              }}
+                              className="text-white text-center bg-blue-400 rounded-lg px-1 py-1 hover:bg-white   hover:font-bold hover:text-blue-800 border-2 border-white hover:boder-2 hover:border-blue-900 transition-all duration-400"
+                            >
                               Add
                             </button>
                           </div>

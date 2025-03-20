@@ -62,6 +62,8 @@ import LoginUser from "./Components/Login/LoginUser";
 import LoginProfessional from "./Components/Login/LoginProfessional";
 import AdminDashboard from "./Components/Admin/AdminDashboard";
 import AdminHistory from "./Components/Admin/AdminHistory";
+import Faq from "./Components/Aboutus/Faq";
+import StressReports from "./Components/Aboutus/StressReports";
 
 function App() {
   const location = useLocation();
@@ -134,6 +136,10 @@ function App() {
               <Route path="/mazegame" element={<MazeGame />} />
               <Route path="/connectthedots" element={<ConnectTheDots />} />
               <Route path="/starrybackground" element={<StarryBackground />} />
+
+              <Route path="/faq" element={<Faq />} />
+              <Route path="/stressreports" element={<StressReports />} />
+
 
               {/* ERROR page */}
               <Route path="*" element={<p>404 ERROR</p>} />
