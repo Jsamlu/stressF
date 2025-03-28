@@ -2,13 +2,14 @@ import { useParams } from "react-router-dom";
 import { MdKeyboardArrowRight } from "react-icons/md";
 
 // import MedList from "./MedList";
-import ACT from "./ACT";
+// import ACT from "./ACT";
+import ACT2 from "./ACT2";
 import Sfooter from "../Sfooter";
 import S_header from "../S_header";
 
 export const ActivityId = () => {
   const { id } = useParams();
-  const Act = ACT.find((Act) => Act.id == id);
+  const Act = ACT2.find((Act) => Act.id == id);
   if (!Act) {
     return <p className="text-center text-red-500">Activity not found</p>;
   }

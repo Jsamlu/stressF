@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 //{/ value = -40 }
 const Result = ({n} ) => {
   n=n*2;
-  
+  if(n===0)n=0.1;
 
   let value =n-50;
 
@@ -59,7 +59,7 @@ const Result = ({n} ) => {
   // Function to get current stress level label
   const getStressLevel = (temp) => {
     if (temp > -50 && temp <= -25) return "Less Stress";
-    if (temp > -25 && temp <= 0) return "Modrate Stress";
+    if (temp > -25 && temp <= 0) return "Moderate Stress";
     if (temp > 0 && temp <= 25) return "Average Stress";
     if (temp > 25 && temp <= 50) return "Hyper Stress";
     return "Critical Stress";
