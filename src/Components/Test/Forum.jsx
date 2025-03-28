@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import QList from "./QList";
 import { useState } from "react";
 import { Result } from ".";
@@ -8,26 +7,26 @@ const valArr = [0];
 const Forum = () => {
   let [Index, setIndex] = useState(0);
   let [Question, setQuestion] = useState(QList[Index]);
-  const [answers, setAnswers] =useState([]);
+  const [answers, setAnswers] = useState([]);
   const [showRes, setShowRes] = useState(false);
 
   // Update answer when user selects an option
   const handleAnswerChange = (value) => {
     const newAnswers = [...answers];
-    newAnswers[Index] = value; // Update the current question's answer
+    newAnswers[Index] = value;
     setAnswers(newAnswers);
   };
 
   //previous & next button hande function
   function handelNext() {
-    if (Index === QList.length-1){
+    if (Index === QList.length - 1) {
       setShowRes(true);
     }
+
     if (Index < QList.length - 1) {
       setIndex(Index + 1);
-      setQuestion(QList[Index]);
+      setQuestion(QList[Index + 1]); // Fix to load the next question correctly
     }
-
   }
 
   const handlePrevious = () => {
@@ -38,7 +37,7 @@ const Forum = () => {
   };
 
   const getSumOfAnswers = () => {
-    return(answers.reduce((sum, value) => sum + Number(value), 0));
+    return answers.reduce((sum, value) => sum + Number(value), 0);
   };
 
   return (
@@ -74,82 +73,71 @@ const Forum = () => {
       {/* Forum starting */}
 
       <div className=" px-[15%] py-[5%]">
-        {!showRes ?
+        {!showRes ? (
           <div className="mb-5 p-10 bg-white rounded-xl">
-          <form>
-            <p className="md:text-2xl text-sm text-blue-500">
-              {Index + 1}.&nbsp;
-              {Question.question}
-            </p>
-            <div className="p-4 mt-5">
-              <ul className="flex flex-col gap-y-3">
-                {Question.options.map((options, index) => {
-                  return (
-                    <li className="flex p-3 bg-sky-200 rounded-xl">
-                      <input
-                        className="w-[20px] h-[20px] self-center mr-5"
-                        type="radio"
-                        name="ans"
-                        value={index + 1}
-                        onChange={() => handleAnswerChange(index + 1)}
-                      />
-                      <p className="md:text-lg text-xs text-sky-800">
-                        {options}
-                      </p>
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
+            <form>
+              <p className="md:text-2xl text-sm text-blue-500">
+                {Index + 1}.&nbsp;
+                {Question.question}
+              </p>
+              <div className="p-4 mt-5">
+                <ul className="flex flex-col gap-y-3">
+                  {Question.options.map((options, index) => {
+                    return (
+                      <li className="flex p-3 bg-sky-200 rounded-xl">
+                        <input
+                          className="w-[20px] h-[20px] self-center mr-5"
+                          type="radio"
+                          name="ans"
+                          value={index + 1}
+                          checked={answers[Index] === index + 1} // ✅ Ensures only one selection per question
+                          onChange={() => handleAnswerChange(index + 1)}
+                        />
+                        <p className="md:text-lg text-xs text-sky-800">
+                          {options}
+                        </p>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
 
-            {/*page handle buttons */}
+              {/*page handle buttons */}
 
-            <div className="flex w-[70%] mx-auto py-5 justify-between ">
-              <button
-                className="bg-cyan-500  hover:bg-cyan-400 hover:scale-105 font-semibold text-white w-[30%] py-3 px-3 rounded-full transition-all duration-100" 
-                onClick={handlePrevious}
-                type="button"
-              >
-                Previous
-              </button>
-              <button
-                id="next"
-                className="bg-cyan-500  hover:bg-cyan-400 hover:scale-105 font-semibold text-white w-[30%] py-3 px-3 rounded-full transition-all duration-100"
-                onClick={() => {
-                  handelNext();
-                  console.log(answers); 
-                }}
-                type="button"
-              >
-                {Index === QList.length-1 ? "Submit" :  "Next"}
-              </button>
-            </div>
-            <p className="text-center text-xl py-3 font-bold text-sky-500">{`${
-              Index + 1
-            } out of 10`}</p>
-          </form>
-        </div>
-
-         : <div>
-          <Result n={getSumOfAnswers()} /></div>}
-        
-        {/* <div className="mt-5 mr-5 mb-5">
-          <Link
-            className="p-2 hover:bg-sky-500 bg-sky-600 text-white rounded-xl text-2xl"
-            onClick={(e) => {
-              e.preventDefault();
-              setShowRes(true);
-            }}
-          >
-            End test
-          </Link>
-        </div> */}
-        
+              <div className="flex w-[70%] mx-auto py-5 justify-between ">
+                <button
+                  className="bg-cyan-500  hover:bg-cyan-400 hover:scale-105 font-semibold text-white w-[30%] py-3 px-3 rounded-full transition-all duration-100"
+                  onClick={handlePrevious}
+                  type="button"
+                >
+                  Previous
+                </button>
+                <button
+                  id="next"
+                  className="bg-cyan-500  hover:bg-cyan-400 hover:scale-105 font-semibold text-white w-[30%] py-3 px-3 rounded-full transition-all duration-100"
+                  onClick={() => {
+                    handelNext();
+                    console.log(answers);
+                  }}
+                  type="button"
+                >
+                  {Index === QList.length - 1 ? "Submit" : "Next"}
+                </button>
+              </div>
+              <p className="text-center text-xl py-3 font-bold text-sky-500">{`${
+                Index + 1
+              } out of 10`}</p>
+            </form>
+          </div>
+        ) : (
+          <div>
+            <Result n={getSumOfAnswers()} />
+          </div>
+        )}
       </div>
     </div>
   );
 };
 export { Forum, valArr };
-
 
 // here while calling of Handle next Function at final Question handle next show store that data in DB

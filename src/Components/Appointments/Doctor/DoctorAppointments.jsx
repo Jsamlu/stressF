@@ -5,7 +5,7 @@ const DoctorAppointments = () => {
   const [appointment, setAppointment] = useState("A");
   return (
     <>
-      <div className="bg-sky-200 min-h-screen py-7 px-7">
+      <div className=" min-h-full py-7 px-7">
         <div className='flex py-3'>
           <button onClick={() => setAppointment("A")} className="font-bold md:text-xl text-sky-900 focus:text-sky-500 w-[10%] p-3">Scheduled</button>
           <button onClick={() => setAppointment("P")} className="font-bold md:text-xl text-sky-900 focus:text-sky-500 w-[10%]">Pending</button>
