@@ -117,7 +117,6 @@ const Forum = () => {
                   className="bg-cyan-500  hover:bg-cyan-400 hover:scale-105 font-semibold text-white w-[30%] py-3 px-3 rounded-full transition-all duration-100"
                   onClick={() => {
                     handelNext();
-                    console.log(answers);
                   }}
                   type="button"
                 >

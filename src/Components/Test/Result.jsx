@@ -1,33 +1,38 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
-
-
+import ACT2 from "../Activities/ACT2";
+import { useSelector } from "react-redux";
 
 //{/ value = -40 }
-const Result = ({n} ) => {
-  n=n*2;
-  if(n===0)n=0.1;
+const Result = ({ n }) => {
+  const rval = () => {
+    if (n > 0 && n <= 16.6) {
+      return 3;
+    } else if (n > 16.7 && n <= 32.6) {
+      return 2;
+    } else return 1;
+  };
+  const searchLvl = rval();
 
-  let value =n-50;
+  const recomendations = ACT2.filter((item) => item.lev.includes(searchLvl));
+  console.log(recomendations);
 
-  const recomendations = [
-    {
-      name:"activity name",
-      img:"image dest",
-    },
-  ] // this will be an array or recomended activities
+  n = n * 2;
+  if (n === 0) n = 0.1;
+
+  let value = n - 50;
 
   //use navigate
   const nav = useNavigate();
-  
-  const showRecomendations = null; 
 
-  var temp=0
+  const showRecomendations = useSelector((state) => state.Lstate.role) !== "NA";
+
+  var temp = 0;
   // Calculate the angle for the pointer (0 to 180 degrees)
   const angle = (value / 100) * 180;
   if (value <= -50) {
-    temp= 0;
+    temp = 0;
   } else if (value <= -25 && value >= -50) {
     temp = 25;
   } else if (value <= 0 && value >= -25) {
@@ -58,7 +63,7 @@ const Result = ({n} ) => {
 
   // Function to get current stress level label
   const getStressLevel = (temp) => {
-    if (temp > -50 && temp <= -25) return "Less Stress";
+    if (temp >= -50 && temp <= -25) return "Less Stress";
     if (temp > -25 && temp <= 0) return "Moderate Stress";
     if (temp > 0 && temp <= 25) return "Average Stress";
     if (temp > 25 && temp <= 50) return "Hyper Stress";
@@ -131,15 +136,9 @@ const Result = ({n} ) => {
             const rotation = index * 36 + 18; // Center of each segment
             const radius = 100; // Distance from center for labels
             const rad = (rotation * Math.PI) / 180;
-            const x = radius * Math.cos(rad) *1.5;
-            const y = radius * Math.sin(rad) *1.5;
-            return (
-              <div
-              
-              >
-                {/* {level.label} */}
-              </div>
-            );
+            const x = radius * Math.cos(rad) * 1.5;
+            const y = radius * Math.sin(rad) * 1.5;
+            return <div>{/* {level.label} */}</div>;
           })}
         </div>
 
@@ -148,38 +147,36 @@ const Result = ({n} ) => {
           Stress Level: {currentLevel}
         </div>
       </div>
-      <div className="flex flex-col h-[70vh] w-[80%] bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow-lg my-5">
-          <div>
-            <h1 className="text-4xl font-semibold">Recommendation</h1>
+      <div className="flex flex-col min-h-[70vh] w-[80%] bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow-lg my-5">
+        <div>
+          <h1 className="text-4xl font-semibold">Recommendation</h1>
+        </div>
+        <hr className="h-[5px] bg-sky-900 w-[80%] my-5"></hr>
+        <div>
+          {/*this is recomendation tab */}
+          <div className="grid grid-cols-2 my-10 gap-x-3 gap-y-3 gap-0">
+            {showRecomendations ? (
+              recomendations.map((rec) => {
+                return (
+                  <Link className=" gap-4" to={`/activities/${rec.id}`}>
+                    <div className="flex gap-x-5 bg-white shadow-xl rounded-xl p-2">
+                      <div className=" w-[27%] h-[100px] overflow-hidden rounded-full">
+                        <img src={rec.image} alt="" className="w-full h-full" />
+                      </div>
+                      <div>
+                        <p className="text-xl text-sky-800 font-semibold py-3">
+                          {rec.name}
+                        </p>
+                      </div>
+                    </div>
+                  </Link>
+                );
+              })
+            ) : (
+              <p>login for acessing personalized recomendations</p>
+            )}
           </div>
-          <hr className="h-[5px] bg-sky-900 w-[80%] my-5"></hr>
-          <div > 
-            {/*this is recomendation tab */}
-          <div className="grid grid-cols-3 my-10" onClick={()=>{
-            nav("/activities");
-          }}>{showRecomendations?
-              recomendations.map((rec) =>{
-                return(<div className="col-span-2 grid grid-cols-2 gap-4">
-                <div className="flex gap-x-5 bg-white shadow-xl rounded-xl p-2">
-                  <div className=" w-[30%] h-[100px] overflow-hidden rounded-full">
-                    <img
-                      src=""
-                      alt=""
-                      className="w-full h-full"
-                    />
-                  </div>
-                  <div>
-                    <p className="text-xl text-sky-800 font-semibold py-3">
-                      {rec.name}
-                    </p>
-                  </div>
-                </div>
-              </div>
-                )
-              }):<p>login for acessing personalized recomendations</p>
-            }
-            </div>
-          </div>
+        </div>
       </div>
     </div>
   );
