@@ -29,56 +29,64 @@ export default function Counselling() {
     setShowForm(false); // Hide form after submission
   };
 
+  const [searchTerm, setSearchTerm] = useState("");
+  const filteredResults = CList.filter((item) =>
+    item.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
   return (
-    <div className="bg-indigo-300 w-full">
+    <div className="bg-indigo-300 w-full ">
       <div className="md:hidden">
         <S_header />
       </div>
 
       {/* <div className="md:hidden h-[100px] w-full bg-blue-600"></div> */}
-      <div className="flex justify-between">
+      <div className="">
         <h1 className="pl-10 pt-10 mb-5 text-3xl font-bold text-[#0f444c]">
           Counselling Services
         </h1>
-        <div className="flex justify-end px-5 md:px-20 ">
-          <SearchBar />
-        </div>
+        <input
+          type="text"
+          placeholder="Search..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          className=" mx-20 mt-5 w-[40%] p-2 border rounded mb-4"
+        />
       </div>
-      <div className="px-[10%] py-10 justify-evenly">
+      <div className="px-[10%] py-10 justify-evenly min-h-[50vh]">
         <div className="grid md:grid-cols-2 gap-y-10">
-          {CList.map((CList) => {
+          {filteredResults.map((List) => {
             return (
               <div className=" py-10 max-w-sm rounded-xl overflow-hidden shadow-lg bg-white border border-gray-200 transform hover:scale-105 transition-all duration-300">
                 <img
                   className="mx-6 my-2 w-22 h-22 object-cover rounded-full"
-                  src={CList.image}
-                  alt={CList.name}
+                  src={List.image}
+                  alt={List.name}
                 />
                 <div className="px-6 py-4">
                   <div className="font-bold text-xl mb-2 text-blue-600">
-                    {CList.name}
+                    {List.name}
                   </div>
                   <p className="text-gray-700 text-sm mb-2">
                     <span className="font-semibold">Service: </span>
-                    {CList.title.join(", ")}
+                    {List.title.join(", ")}
                   </p>
                   <p className="text-gray-700 text-sm mb-2">
                     <span className="font-semibold">Experience: </span>
-                    {CList.exp} years
+                    {List.exp} years
                   </p>
                   <p className="text-gray-700 text-sm mb-2">
                     <span className="font-semibold">Address: </span>
-                    {CList.addr}
+                    {List.addr}
                   </p>
                   <p className="text-gray-700 text-sm mb-2">
-                    <span className="font-semibold">Fees: </span>₹{CList.fees}
+                    <span className="font-semibold">Fees: </span>₹{List.fees}
                   </p>
                   <div className="flex items-center mb-2">
                     <span className="text-gray-700 text-sm font-semibold mr-2">
                       Rating:
                     </span>
                     <div className="flex items-center">
-                      {[...Array(CList.rating)].map((_, i) => (
+                      {[...Array(List.rating)].map((_, i) => (
                         <svg
                           key={i}
                           className="w-4 h-4 text-yellow-500"
@@ -92,12 +100,12 @@ export default function Counselling() {
                   </div>
                   <p
                     className={`text-sm font-semibold ${
-                      CList.availability === "available"
+                      List.availability === "available"
                         ? "text-green-500"
                         : "text-red-500"
                     }`}
                   >
-                    {CList.availability === "available"
+                    {List.availability === "available"
                       ? "Available"
                       : "Unavailable"}
                   </p>
@@ -106,7 +114,7 @@ export default function Counselling() {
                 <div className=" px-6 py-4 mx-auto">
                   <Link
                     className="w-[20%] text-xl text-center absolute bottom-6 left-10  text-sky-500 hover:text-sky-700 font-bold py-2 px-2 rounded-full focus:outline-none"
-                    to={`${CList.id}`}
+                    to={`${List.id}`}
                   >
                     Visit
                   </Link>
@@ -114,14 +122,14 @@ export default function Counselling() {
                   <button
                     onClick={() => {
                       setShowForm(true);
-                      setName(CList.name);
+                      setName(List.name);
                     }}
                     className={`w-[40%] absolute bottom-5 right-10 ${
-                      CList.availability === "available"
+                      List.availability === "available"
                         ? "bg-blue-500 hover:bg-blue-700"
                         : "bg-gray-500 cursor-not-allowed"
                     } text-white font-bold py-2 px-4 rounded-xl focus:outline-none`}
-                    disabled={CList.availability !== "available"}
+                    disabled={List.availability !== "available"}
                   >
                     Book Appointment
                   </button>

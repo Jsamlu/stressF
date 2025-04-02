@@ -141,7 +141,7 @@ const Result = ({ n }) => {
               </Link>
             ))
           ) : (
-            <p>Login for accessing personalized recommendations</p>
+            <Link to="/activities" className="hover:text-blue-400 text-blue-600 text-xl">Login for accessing personalized recommendations</Link>
           )}
         </div>
       </div>

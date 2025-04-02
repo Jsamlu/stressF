@@ -1,10 +1,13 @@
 import QList from "./QList";
 import { useState } from "react";
 import { Result } from ".";
-
+import { IoIosArrowBack } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
 const valArr = [0];
 
 const Forum = () => {
+  const nav = useNavigate();
+
   let [Index, setIndex] = useState(0);
   let [Question, setQuestion] = useState(QList[Index]);
   const [answers, setAnswers] = useState([]);
@@ -40,33 +43,47 @@ const Forum = () => {
     return answers.reduce((sum, value) => sum + Number(value), 0);
   };
 
+  const navBack = async (e) => {
+    if (confirm("Do you want to Quit the Quiz")) {
+      nav("/");
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-300 via-cyan-500 to-indigo-400 ">
       <div className="p-10 md:pt-3  pt-[80px]">
+          <button
+            onClick={navBack}
+            className="text-5xl text-blue-500"
+          >
+            <IoIosArrowBack className="hover:-translate-x-5 transition-all duration-300" /> 
+          </button>
         <div className=" bg-white my-10 w-[95%] mx-auto px-[15%] py-[5%] rounded-xl">
           <h1 className="md:text-2xl text-lg font-bold text-blue-500">
             How the test works:
           </h1>
-          <ul className="mt-5 list-decimal flex flex-col gap-4 text-gray-500  lg:text-xl md:2xl  text-lg">
-            <li>
-              <p className="">
-                You’ll answer questions based on your daily activities and how
-                you’re feeling.
-              </p>
-            </li>
-            <li>
-              <p>
-                For each question, you’ll have 5 answer choices ranging from
-                "Strongly Disagree" to "Strongly Agree."
-              </p>
-            </li>
-            <li>
-              <p>
-                Based on your answers, we’ll assess your stress levels and
-                recommend some activities tailored just for you!
-              </p>
-            </li>
-          </ul>
+          <div>
+            <ul className="mt-5 list-decimal flex flex-col gap-4 text-gray-500  lg:text-xl md:2xl  text-lg">
+              <li>
+                <p className="">
+                  You’ll answer questions based on your daily activities and how
+                  you’re feeling.
+                </p>
+              </li>
+              <li>
+                <p>
+                  For each question, you’ll have 5 answer choices ranging from
+                  "Strongly Disagree" to "Strongly Agree."
+                </p>
+              </li>
+              <li>
+                <p>
+                  Based on your answers, we’ll assess your stress levels and
+                  recommend some activities tailored just for you!
+                </p>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
 
