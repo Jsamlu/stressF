@@ -14,17 +14,13 @@ const Result = ({ n }) => {
   const recomendations = ACT2 ? ACT2.filter((item) => item.lev.includes(searchLvl)) : [];
 
   // Ensure n is within a valid range
-  let value = Math.max(-50, Math.min(n * 2 - 50, 50));
+  let value = Math.max(-50, Math.min(n*2-50, 50));
 
   // Map value to temp for stress level mapping
-  const mapToTemp = (val) => {
-    if (val <= -50) return 0;
-    if (val <= -25) return 25;
-    if (val <= 0) return 50;
-    if (val <= 25) return 75;
-    return 100;
-  };
-  const temp = mapToTemp(value);
+  // const mapToTemp = (val) => {
+  //   return val;
+  // };
+  const temp = value;
 
   // Define stress levels with labels and colors
   const stressLevels = [
@@ -43,12 +39,22 @@ const Result = ({ n }) => {
     { label: "Critical Stress", color: "bg-purple-600" },
   ];
 
+  const getStressAngle = (temp) => {
+    if (temp >= -50 && temp <= -25) return -80;    // Less Stress
+    if (temp >= -26 && temp <= 0) return -40;   // Moderate Stress
+    if (temp >= 1 && temp <= 25) return 0;     // Average Stress
+    if (temp >= 26 && temp <= 36) return 40;   // Hyper Stress
+    if (temp >= 37 && temp <= 50)return 80;                   // Critical Stress
+  };
+  
+
   const getStressLevel = (temp) => {
-    if (temp === 0) return "Less Stress";
-    if (temp === 25) return "Moderate Stress";
-    if (temp === 50) return "Average Stress";
-    if (temp === 75) return "Hyper Stress";
-    return "Critical Stress";
+    if (temp >= -50 && temp <= -25) return "Less Stress";       // Extreme Low
+    if (temp >= -26 && temp <= 0) return "Moderate Stress";   // Slightly Low
+    if (temp >= 1 && temp <= 25) return "Average Stress";      // Mid Level
+    if (temp >= 26 && temp <= 36) return "Hyper Stress";       // High Stress                    // Extreme High
+    if (temp >= 36 && temp <= 50) return "Critical Stress";       // High Stress                    // Extreme High
+    
   };
   const currentLevel = getStressLevel(temp);
 
@@ -57,7 +63,9 @@ const Result = ({ n }) => {
   const showRecomendations = useSelector((state) => state.Lstate.role) !== "NA";
 
   // Calculate the angle for the pointer (0 to 180 degrees)
-  const angle = (value / 100) * 180;
+  // const angle = ( / 100) * 180;
+
+  const angle = getStressAngle(temp);
 
   return (
     <div className="min-h-screen w-full flex flex-col justify-center items-center">
